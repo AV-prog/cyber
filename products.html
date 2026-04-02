@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/0e17cc80b3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar w-[1439px] h-[88px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex justify-between pt-[16px] pb-[16px] pr-[160px] pl-[160px]">
+        <div class="search">
+            <input type="text" placeholder="Search" class="w-[372px] h-[56px] bg-[#F5F5F5] pl-[38px] relative text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
+            <div class="search-icon absolute w-[24px] h-[24px] left-[170px] top-[33px]">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+            </div>
+        </div>
+            <div class="nav h-[19px] w-[369px] flex gap-x-[52px] absolute left-[600px] top-[35px]">
+                <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none">
+                    <a href="">Home</a>
+                </span>
+                <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none">
+                    <a href="">About</a>
+                </span>
+                <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none">
+                    <a href="">Contact Us </a>
+                </span>
+                <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none">
+                    <a href="">Blog</a>
+                </span>
+            </div>
+            <div class="icons w-[144px] h-[32px] gap-x[24px] relative">
+                <span class="h-[32px] w-[32px] absolute right-[140px] top-[18px] opacity-60" >
+                    <a href="">
+                        <i class="fa-regular fa-heart" style="color:#000000;"></i>
+                    </a>
+                </span>
+                <span class="h-[32px] w-[32px] absolute right-[90px] top-[18px] opacity-60">
+                    <a href="">
+                        <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
+                    </a>
+                </span>
+                <span class="h-[32px] w-[32px] absolute right-[40px] top-[18px] opacity-60">
+                    <a href="">
+                        <i class="fa-regular fa-user" style="color:#000000;"></i>
+                    </a>
+                </span>
+            </div>
+    </div>
+    <div class="breadcrumbs w-[1439px] h-[104px] pt-[40px] pb-[40px] pl-[160px] pr-[160px] relative">
+        <span class="w-[46px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[5px]">
+            <a href="">
+                Home
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[70px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span class="w-[60px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[7px] left-[280px]">
+            <a href="">
+                Catalog
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[74px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span class="w-[103px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#000000] absolute left-[420px] top-[42px]">
+            <a href="">
+                Smartphones
+            </a>
+        </span>
+    </div>
+
+    <div class="frames w-[1439px] h-[1560px] pt-[24px] pb-[56px] pl-[160px] pr-[160px]">
+        <div>
+            <div class="f1 w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] pl">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%] flex gap-x-[180px]">
+                    Brand
+                    <span>
+                        <i class="fa-sharp fa-solid fa-angle-up" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+                <div class="products-top w-[831px] h-[40px] absolute left-[500px] top-[225px] font-inter font-medium text-[16px] leading- [16px] tracking-[3%] text-[#6C6C6C]" >
+                    Selected Products: <span class="text-black w-[26px] h-[16px] font-medium font-inter text-[20px] leading-[16px] tracking-[3%] absolute top-[4px] left-[145px]">85</span>
+                    <div class="rating w-[256px] h-[40px] min-w-[140px] min-w-[256px] rounded-[8px] border-[0.5px] border-[#D4D4D4] justify-between pt-[8px] pb-[8px] pl-[16px] pr-[16px] absolute left-[500px] top-[-11px]">
+                        By Rating <span class="ml-[120px]"><i class="fa-sharp fa-solid fa-angle-down" style="color:#9F9F9F;"></i></span>
+                    </div>
+                </div>
+                <div class="products w-[831px] h-[1344px] ml-[340px] mt-[24px] flex gap-x-[24px]">
+                    <div class="product-column flex flex-col gap-y-[24px]">
+                        <div class="14pro w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative hover:cursor-pointer">
+                            <span class="absolute left-[210px]">
+                                <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                            </span>
+                            <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                <img src="img1.png" alt="14pro">
+                            </span>
+                            <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                Apple iphone 14 pro 512GB
+                            </span>
+                            <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[65px]">
+                                Gold(MQ233)
+                            </span>
+                            <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                $1437
+                            </span>
+                            <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                Buy Now
+                            </button>
+                        </div>
+
+                        <div class="product-column flex flex-col gap-y-[24px]">
+                            <div class="iphone14pro-1tb w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative  hover:cursor-pointer">
+                                <span class="absolute left-[210px]">
+                                    <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                </span>
+                                <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                    <img src="img9.png" alt="14pro">
+                                </span>
+                                <span class="flex gap-y-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[20px] text-center">
+                                    Apple iphone 14 pro 1TB
+                                </span>
+                                <span class="flex gap-y-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[88px]">
+                                    (MQ2V3)
+                                </span>
+                                <span class="flex gap-y-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                    $1499
+                                </span>
+                                <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                    Buy Now
+                                </button>
+                            </div>
+
+                            <div class="iphone14pro-1tb-extra w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative  hover:cursor-pointer">
+                                <span class="absolute left-[210px]">
+                                    <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                </span>
+                                <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                    <img src="img7.png" alt="14pro 256gb">
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[20px] text-center">
+                                    Apple iphone 13 mini 128GB
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[88px]">
+                                    Pink (MLK23)
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                    $850
+                                </span>
+                                <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-column flex flex-col gap-y-[24px]">
+                        <div class="product-row flex gap-x-[24px]">
+                            <div class="iphone11 w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative hover:cursor-pointer">
+                                <span class="absolute left-[210px]">
+                                    <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                </span>
+                                <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                    <img src="img2-3.png" alt="14pro">
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                    Apple iphone 11 128GB White
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[85px]">
+                                    (MQ233)
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                    $510
+                                </span>
+                                <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                    Buy Now
+                                </button>
+                            </div>
+
+                            <div class="iphone15 w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative  hover:cursor-pointer">
+                                <span class="absolute left-[210px]">
+                                    <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                </span>
+                                <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                    <img src="img2-3.png" alt="iphone15">
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                    Apple iphone 11 128G White
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[85px]">
+                                    (MQ233)
+                                </span>
+                                <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                    $550
+                                </span>
+                                <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-row flex gap-x-[24px]">
+                            <div class="product-column flex flex-col gap-y-[24px]">
+                                <div class="iphone1tb w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative  hover:cursor-pointer">
+                                    <span class="absolute left-[210px]">
+                                        <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                    </span>
+                                    <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                        <img src="img5.png" alt="14pro">
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                        Apple iphone 14 pro 1TB Gold
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[85px]">
+                                        (MQ2V3)
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                        $1399
+                                    </span>
+                                    <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                        Buy Now
+                                    </button>
+                                </div>
+
+                                <div class="iphone1tb-extra w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative hover:cursor-pointer">
+                                    <span class="absolute left-[210px]">
+                                        <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                    </span>
+                                    <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                        <img src="img8.png" alt="iphone14pro">
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                        Apple iphone 14 pro 256GB
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[40px]">
+                                        Space Black (MQ0T3)
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                        $1399
+                                    </span>
+                                    <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                        Buy Now
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="product-column flex flex-col gap-y-[24px]">
+                                <div class="iphone13 w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative hover:cursor-pointer">
+                                    <span class="absolute left-[210px]">
+                                        <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                    </span>
+                                    <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                        <img src="img6.png" alt="iphone13">
+                                    </span>
+                                    <span class="flex gap-y-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[10px] text-center">
+                                        Apple iphone 14 Pro 128GB
+                                    </span>
+                                    <span class="flex gap-y-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[85px]">
+                                       Deep Purple (MQ0G3)
+                                    </span>
+                                    <span class="flex gap-y-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                        $1600
+                                    </span>
+                                    <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                        Buy Now
+                                    </button>
+                                </div>
+
+                                <div class="iphone13-extra w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr[16px] bg-[#F6F6F6] relative hover:cursor-pointer">
+                                    <span class="absolute left-[210px]">
+                                        <i class="fa-regular fa-heart fa-xl" style="color:#9c9191;"></i>
+                                    </span>
+                                    <span class="absolute top-[67px] w-[160px] h-[160px] left-[45px] m-auto">
+                                        <img src="img9.png" alt="iphone14">
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[210px] font-inter text-[16px] font-medium leading-[24px] ml-[18px] text-center">
+                                        Apple iphone 14 pro 256GB 
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[5px] font-inter text-[16px] font-medium leading-[24px] ml-[75px]">
+                                        Silver (MQ103)
+                                    </span>
+                                    <span class="flex gap-x-[16px] mt-[15px] font-inter text-[16px] font-medium leading-[24px] ml-[90px] text-[24px]">
+                                        $1399
+                                    </span>
+                                    <button class="bg-black text-white w-[188px] h-[48px] rounded-[8px] pt-[12px] pb-[12px] pl-[64px] pr-[64px] text-[14px] font-inter leading-[24px] font-medium mt-[25px] ml-[20px] hover:bg-[#0F0F0F]">
+                                        Buy Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+            </div>
+        </div>
+        <div class="search w-[265px] h-[40px] relative">
+            <span>
+                <input type="text" class="pt-[8px] pb-[8px] pl-[38px] pr-[16px] bg-[#F5F5F5] mt-[9px] rounded-[8px] outline-none font-inter">
+            </span>
+            <span class="absolute left-[10px] top-[15px]">
+                <i class="fa-solid fa-magnifying-glass" style="color:#989898;"></i>
+            </span>
+        </div>
+        <div class="brands w-[256px] h-[280px] flex gap-y-[8px] relative">
+            <span class="mt-[20px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Apple" id="Apple" class="accent-black">
+                <label for="Apple">Apple</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    110
+                </span>
+            </span>
+             <span class="mt-[55px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Samsung" id="Samsung" class="accent-black">
+                <label for="Samsung">Samsung</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    125
+                </span>
+            </span>
+            <span class="mt-[90px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Xiaomi" id="Xiaomi" class="accent-black">
+                <label for="Xiaomi">Xiaomi</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    68
+                </span>
+            </span>
+            <span class="mt-[125px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Poco" id="Poco" class="accent-black">
+                <label for="Poco">Poco</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    44
+                </span>
+            </span>
+             <span class="mt-[160px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Oppo" id="Oppo" class="accent-black">
+                <label for="Oppo">Oppo</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    36
+                </span>
+            </span>
+            <span class="mt-[195px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Honor" id="Honor" class="accent-black">
+                <label for="Honor">Honor</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    10
+                </span>
+            </span>
+            
+            <span class="mt-[230px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Motorola" id="Motorola" class="accent-black">
+                <label for="Motorola">Motorola</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    10
+                </span>
+            </span>
+            <span class="mt-[265px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Nokia" id="Nokia" class="accent-black">
+                <label for="Nokia">Nokia</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    10
+                </span>
+            </span>
+            <span class="mt-[300px] w-[231.67] h-[24px] font-inter font-medium text-[15px] leading-[24px] absolute left-none">
+                <input type="checkbox" name="Realme" id="Realme" class="accent-black">
+                <label for="Realme">Realme</label>
+                <span class="text-[black] opacity-55 text-[15px] ml-[3px]">
+                    10
+                </span>
+            </span>
+        </div>
+        <div class="battery w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] mt-[60px] box-border">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%]">
+                    Battery Capacity
+                    <span class="ml-[75px]">
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+            </div>
+            
+        <div class="screen-t w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[10px] pb-[10px] mt-[20px] box-border">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%]">
+                    Screen Type
+                    <span class="ml-[115px]">
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+            </div>
+            <div class="screen-d w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[10px] pb-[10px] mt-[20px] box-border">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%]">
+                    Screen Diagonal
+                    <span class="ml-[78px]">
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+            </div>
+            <div class="protection w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[10px] pb-[10px] mt-[20px] box-border">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%]">
+                    Protection Class
+                    <span class="ml-[79px]">
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+            </div>
+            <div class="protection w-[256px] h-[48px] border-b-[0.5px] border-b-[#B5B5B5] pt-[10px] pb-[10px] mt-[20px] box-border">
+                <a href="">
+                <span class="w-[256px] h-[24px] font-inter text-[18px] font-medium leading-[24px] tracking-[3%]">
+                    Built-In Memory
+                    <span class="ml-[75px]">
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                    </span>
+                </span>
+                </a>
+            </div>
+    </div>    
+</body>
+</html>
