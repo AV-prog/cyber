@@ -9,11 +9,135 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Products</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .catalog-shell {
+            width: min(100%, 1300px);
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        .catalog-layout {
+            display: grid;
+            grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .products-grid > .iphonexyz-group,
+        .products-grid > .iphone-11-stack,
+        .products-grid > .products-col {
+            display: contents;
+        }
+
+        .product-card {
+            width: 100%;
+            min-width: 0;
+            height: 100%;
+        }
+
+        .product-card .image1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .product-card .image1 > span:last-child {
+            display: block;
+            width: 100%;
+            margin-left: 0 !important;
+            text-align: center;
+        }
+
+        .product-card .image1 > span:last-child > span {
+            display: block;
+            margin-left: 0 !important;
+            white-space: normal;
+        }
+
+        .product-card button {
+            width: 100%;
+            max-width: 188px;
+            justify-content: center;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 160px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .filter-block {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .filter-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .pagination-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 960px) {
+            .catalog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .mobile-search-button {
+                right: 72px;
+                left: auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .catalog-shell {
+                padding: 0 16px 48px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-search-button {
+                right: 64px;
+            }
+        }
+    </style>
 
 </head>
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[1]">
+    <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[24px] md:px-[40px] lg:px-[60px] mx-auto z-[1]">
         <div class="max-[960px]:pl-[25px]">
             <img class="object-scale-down" src="images/Logo Vector.svg" alt="Cyber Logo">
         </div>
@@ -25,7 +149,7 @@
             </div>
         </div>
 
-        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[22%] -translate-y-1/2 z-[100] max-[960px]:left-[305px]" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="mobile-search-button hidden max-[960px]:block absolute top-[50%] -translate-y-1/2 z-[100]" aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
 
@@ -46,7 +170,7 @@
 
         <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
             <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100">
-                <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="">Home</a>
+                <a id="home-page in" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
             </span>
             <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
                 <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="">About</a>
@@ -76,7 +200,7 @@
             </span>
         </div>
     </nav>
-    <div class="breadcrumbs w-[100%] max-w-[1439px] max-h-[104px] flex gap-x-[16px] pl-[160px] pr-[160px] pt-[40px] pb-[40px] items-center whitespace-nowrap">
+    <div class="breadcrumbs w-full max-w-[1300px] mx-auto flex flex-wrap gap-x-[16px] gap-y-[8px] px-[24px] md:px-[40px] lg:px-[60px] pt-[32px] pb-[32px] items-center whitespace-nowrap">
         <span class="font-inter font-medium text-[16px] text-[#A4A4A4]">
             <a href="#">
                 Home
@@ -99,34 +223,22 @@
             </a>
         </span>
     </div>
-    <div class="brands w-[500x] max-h-[760px] flex gap-[24px] ml-[160px]">
-        <div class="frame42 w-[256px] h-[48px] border-b-[0.5px] pt-[10px] pb-[10px] flex gap-[10px] border-b-[#B5B5B5]">
-                <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em] text-[#000000]">
-                    Brand
-                    <span class="ml-[230px] mt-[-16px] flex">
+    <main class="catalog-shell">
+        <div class="catalog-layout">
+            <aside class="w-full">
+                <div class="frame42 filter-block border-b-[0.5px] pt-[10px] pb-[10px] border-b-[#B5B5B5]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em] text-[#000000]">
+                        Brand
                         <i class="fa-sharp fa-solid fa-angle-up" style="color:#000000;"></i>
                     </span>
-                </span>
-        </div>
-        <div class="select max-w-[831px] max-h-[40px] flex justify-between ml-[50px] whitespace-nowrap font-inter font-medium gap-x-[6px] text-[16px] tracking-[0.03em] text-[#6C6C6C] mt-[15px]">
-            Selected Products: <span class="text-black">85</span>
-            <span class="w-[200px] h-[40px] min-w-[140px] rounded-[8px] border-[0.5px] justify-between flex pt-[8px] pb-[8px] pl-[16px] pr-[16px] border-[#D4D4D4] ml-[350px] mt-[-8px]">
-                    <span class="font-inter text-[15px] leading-none font-regular tracking-[-0.005em] text-[#000000] w-[65px] h-[16px]">
-                        By rating
-                        <span class="ml-[80px] mt-[10px]">
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color:#9F9F9F;"></i>
-                        </span>
-                    </span>
-            </span>
-    </div>
-    </div>
-    <div class="search2">
-            <input type="text" placeholder="Search" class="w-[256px] h-[40px] rounded-[8px] pl-[35px] pr-[16px] pt-[8px] pb-[8px] flex gap-[8px] bg-[#F5F5F5] ml-[155px] mt-[10px] font-inter text-[14px] font-medium text-[#656565] leading-[18px] outline-none">
-                <div class="icon flex ml-[160px] mt-[-26px]">
-                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
-                </div>       
-    </div>
-    <div class="brand-names max-w-[256px] max-h-[280px] flex flex-col gap-y-[8px] mt-[25px] ml-[160px]">
+                </div>
+                <div class="search2 relative mt-[12px]">
+                    <input type="text" placeholder="Search" class="w-full h-[40px] rounded-[8px] pl-[35px] pr-[16px] pt-[8px] pb-[8px] bg-[#F5F5F5] font-inter text-[14px] font-medium text-[#656565] leading-[18px] outline-none">
+                    <div class="icon absolute left-[12px] top-1/2 -translate-y-1/2">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                    </div>
+                </div>
+                <div class="brand-names w-full flex flex-col gap-y-[8px] mt-[25px]">
         <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
             <input type="checkbox" name="apple" id="apple" class="accent-black">
             <label for="apple">
@@ -181,59 +293,62 @@
                 Realme <span class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">35</span>
             </label>
         </span>
-    </div>
-    <div class="battery ml-[160px] mt-[30px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px] w-[256px] h-[48px]">
-        <span class="w-[256px] h-[24px]">
-            <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
-                Battery Capacity
-                <span class="ml-[80px]">
+                </div>
+                <div class="battery filter-block mt-[30px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
+                        Battery Capacity
+                        <span>
                     <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
-                </span>
-            </span>
-        </span>
-    </div>
-    <div class="screen ml-[160px] mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px] w-[256px] h-[48px]">
-        <span class="w-[256px] h-[24px]">
-            <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
-                Screen Type
-                <span class="ml-[120px]">
+                        </span>
+                    </span>
+                </div>
+                <div class="screen filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
+                        Screen Type
+                        <span>
                     <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
-                </span>
-            </span>
-        </span>
-    </div>
-    <div class="screen-pos ml-[160px] mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px] w-[256px] h-[48p">
-        <span class="w-[256px] h-[24px]">
-            <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
-                Screen Diagonal
-                <span class="ml-[83px]">
+                        </span>
+                    </span>
+                </div>
+                <div class="screen-pos filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
+                        Screen Diagonal
+                        <span>
                     <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
-                </span>
-            </span>
-        </span>
-    </div>
-    <div class="protection ml-[160px] mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px] w-[256px] h-[48p">
-        <span class="w-[256px] h-[24px]">
-            <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
-                Protection Class
-                <span class="ml-[83px]">
+                        </span>
+                    </span>
+                </div>
+                <div class="protection filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
+                        Protection Class
+                        <span>
                     <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
-                </span>
-            </span>
-        </span>
-    </div>
-    <div class="memory ml-[160px] mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px] w-[256px] h-[48p">
-        <span class="w-[256px] h-[24px]">
-            <span class="font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
-                Built-In Memory
-                <span class="ml-[82px]">
+                        </span>
+                    </span>
+                </div>
+                <div class="memory filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                    <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
+                        Built-In Memory
+                        <span>
                     <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
-                </span>
-            </span>
-        </span>
-    </div>
-    <div class="products-row ml-[460px] mt-[-660px] w-[831px] h-[1344px] flex flex-row gap-[10px]">
-         <div class="iphone-14pro w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+                        </span>
+                    </span>
+                </div>
+            </aside>
+            <section class="w-full">
+                <div class="flex flex-col gap-[16px] sm:flex-row sm:items-center sm:justify-between mb-[8px]">
+                    <p class="font-inter font-medium text-[16px] tracking-[0.03em] text-[#6C6C6C]">
+                        Selected Products: <span class="text-black">85</span>
+                    </p>
+                    <span class="w-full sm:w-[200px] h-[40px] rounded-[8px] border-[0.5px] justify-between flex items-center px-[16px] border-[#D4D4D4]">
+                        <span class="font-inter text-[15px] leading-none tracking-[-0.005em] text-[#000000]">
+                            By rating
+                        </span>
+                        <i class="fa-sharp fa-solid fa-angle-down" style="color:#9F9F9F;"></i>
+                    </span>
+                </div>
+                <div class="products-row products-grid">
+         <div class="iphone-14pro product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -254,7 +369,7 @@
             </div>
           </div>
         <div class="iphonexyz-group flex flex-col gap-[10px]">
-          <div class="iphonexyz w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+          <div class="iphonexyz product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -275,7 +390,7 @@
             </div>
         </div>
 
-          <div class="iphonE-14PROgold w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+          <div class="iphonE-14PROgold product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -295,7 +410,7 @@
                 </span>
             </div>
         </div>
-          <div class="iphonexyz w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+          <div class="iphonexyz product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -318,7 +433,7 @@
         </div>
 
         <div class="iphone-11-stack flex flex-col gap-[10px]">
-            <div class="iphone-11 w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+            <div class="iphone-11 product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
                 <div class="image1 mt-[25px]">
                     <span class="absolute top-5 left-55">
                         <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -339,7 +454,7 @@
                 </div>
 
             </div>
-            <div class="iphone-14purple w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+            <div class="iphone-14purple product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
                 <div class="image1 mt-[25px]">
                     <span class="absolute top-5 left-55">
                         <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -362,7 +477,7 @@
                     </span>
                 </div>
             </div>
-            <div class="iphone-14silver w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+            <div class="iphone-14silver product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
                 <div class="image1 mt-[25px]">
                     <span class="absolute top-5 left-55">
                         <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -383,9 +498,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="products-col ml-[460px] mt-[-900px] w-[831px] h-[1344px] flex flex-col gap-[10px]">
-        <div class="iphone-14prowhite w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
+                <div class="products-col flex flex-col gap-[10px]">
+        <div class="iphone-14prowhite product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -405,7 +519,7 @@
                 </span>
             </div>
         </div>
-        <div class="iphone-13 w-[266.33px] h-[432px] min-w-[200px] rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex flex-row gap-[16px] bg-[#F6F6F6] relative">
+        <div class="iphone-13 product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex flex-row gap-[16px] bg-[#F6F6F6] relative">
             <div class="image1 mt-[25px]">
                 <span class="absolute top-5 left-55">
                     <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
@@ -425,8 +539,10 @@
                 </span>
             </div>
         </div>
-    </div>
-    <div class="pages mt-[-440px] ml-187 w-[193px] h-[32px] flex gap-x-[8px]">
+                </div>
+                </div>
+                <div class="pagination-wrap">
+    <div class="pages w-[193px] h-[32px] flex gap-x-[8px]">
         <span class="opacity-20">
             <i class="fa-solid fa-angle-left" style="color: rgb(16, 16, 16);"></i>
         </span>
@@ -459,8 +575,12 @@
             <i class="fa-solid fa-angle-right" style="color: rgb(16, 16, 16);"></i>
         </span>
     </div>
-    <footer class="w-[1439px] h-[504px] pl-[160px] pt-[104px] pb-[104px] pr-[160px] bg-black flex gap-[24px] mt-[20px]">
-            <div class="cyber w-[384px] h-[94.87px] flex gap-y-[24px]">
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="w-full min-h-[240px] px-[24px] md:px-[40px] lg:px-[60px] pt-[72px] pb-[72px] bg-black flex gap-[24px] mt-[20px]">
+            <div class="cyber w-full max-w-[384px] h-[94.87px] flex gap-y-[24px]">
                 <span class="w-[65.4px] h-[22.87] text-white">
                     <img src="" alt="">
                 </span>
