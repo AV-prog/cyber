@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0e17cc80b3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Products</title>
+</head>
+<body class="font-inter">
+  <div class="w-full border-b border-gray-300 bg-white px-4 md:px-10 lg:px-20 py-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="relative w-full md:max-w-sm">
+        <input 
+          type="text" 
+          placeholder="Search"
+          class="w-full bg-gray-100 pl-10 pr-4 py-3 rounded-lg text-gray-600 outline-none"
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm md:text-base">
+        <a href="#" class="font-medium text-black">Home</a>
+        <a href="#" class="font-medium text-gray-400">About</a>
+        <a href="#" class="font-medium text-gray-400 whitespace-nowrap">Contact us</a>
+        <a href="#" class="font-medium text-gray-400">Blog</a>
+      </div>
+
+
+      <div class="flex items-center gap-5 text-gray-600 text-lg">
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+    </div>
+  </div>
+  <div class="w-full px-4 md:px-10 lg:px-20 py-6 flex flex-wrap items-center gap-3 text-sm md:text-base">
+    <span class="text-gray-400">Home ></span>
+    <span class="text-gray-400">Catalog ></span>
+    <span class="text-black">Smartphones</span>
+  </div>
+  <div class="flex flex-col lg:flex-row gap-8 px-4 md:px-10 lg:px-20">
+
+    <!-- SIDEBAR -->
+    <div class="w-full lg:w-64">
+
+      <!-- SEARCH -->
+      <div class="relative mb-4">
+        <input 
+          type="text" 
+          placeholder="Search"
+          class="w-full bg-gray-100 pl-10 pr-4 py-2 rounded-lg text-sm outline-none"
+        />
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+      </div>
+
+      <!-- FILTER TITLE -->
+      <div class="flex justify-between items-center border-b py-2">
+        <span class="font-medium">Brand</span>
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
+
+      <!-- BRAND LIST -->
+      <div class="flex flex-col gap-2 mt-3 text-sm">
+        <label><input type="checkbox" class="accent-black mr-2"> Apple <span class="text-xs text-gray-400">(110)</span></label>
+        <label><input type="checkbox" class="accent-black mr-2"> Samsung <span class="text-xs text-gray-400">(125)</span></label>
+        <label><input type="checkbox" class="accent-black mr-2"> Xiaomi <span class="text-xs text-gray-400">(68)</span></label>
+        <label><input type="checkbox" class="accent-black mr-2"> Poco <span class="text-xs text-gray-400">(44)</span></label>
+      </div>
+
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="flex-1">
+      <div class="flex flex-wrap justify-between items-center gap-3 mb-4 text-sm md:text-base">
+        <span>Selected Products: <span class="text-black">85</span></span>
+      </div>
+
+      <!-- Products would go here -->
+      <div class="bg-gray-100 h-40 rounded-lg flex items-center justify-center">
+        Products Area
+      </div>
+    </div>
+
+  </div>
+
+</body>
