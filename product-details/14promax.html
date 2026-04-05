@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/09dda602fe.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="images/Logo Vector.svg">
+    <link rel="icon" type="image/png" href="images/Logo-Vector blck.svg">
     <title>Cyber</title>
 </head>
 
@@ -223,59 +223,8 @@
         </div>
 
     </div>
-
     </div>
-
-    <script>
-        function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            expandImg.src = imgs.src;
-            expandImg.parentElement.style.display = "flex";
-
-            var thumbnails = document.querySelectorAll(".column img");
-            thumbnails.forEach(img => {
-                img.classList.remove("active", "opacity-100", "border-blue-500");
-                img.classList.add("opacity-50", "border-transparent");
-            });
-
-            imgs.classList.remove("opacity-50", "border-transparent");
-            imgs.classList.add("active", "opacity-100", "border-blue-500");
-        }
-
-        const storageButtons = document.querySelectorAll('.storage-btn');
-        const currentPriceEl = document.getElementById('currentPrice');
-        const originalPriceEl = document.getElementById('originalPrice');
-
-        const originalPrices = {
-            '128GB': 1199,
-            '256GB': 1299,
-            '512GB': 1399,
-            '1TB': 1499
-        };
-
-        storageButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active state from all buttons
-                storageButtons.forEach(btn => {
-                    btn.classList.remove('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
-                    btn.classList.add('border', 'border-gray-300', 'text-gray-500');
-                });
-
-                // Add active state to clicked button
-                button.classList.remove('border', 'border-gray-300', 'text-gray-500');
-                button.classList.add('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
-
-                // Update prices - FIX: use parseInt on dataset.price (just the number)
-                const newPrice = parseInt(button.dataset.price);
-                const storage = button.dataset.storage;
-                const newOriginalPrice = originalPrices[storage];
-
-                currentPriceEl.textContent = newPrice;
-                originalPriceEl.textContent = newOriginalPrice;
-            });
-        });
-    </script>
-     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+    <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
             <div class="font-inter">
                 <div class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
@@ -335,6 +284,56 @@
         </div>
     </footer>
     
+
+    <script>
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            expandImg.src = imgs.src;
+            expandImg.parentElement.style.display = "flex";
+
+            var thumbnails = document.querySelectorAll(".column img");
+            thumbnails.forEach(img => {
+                img.classList.remove("active", "opacity-100", "border-blue-500");
+                img.classList.add("opacity-50", "border-transparent");
+            });
+
+            imgs.classList.remove("opacity-50", "border-transparent");
+            imgs.classList.add("active", "opacity-100", "border-blue-500");
+        }
+
+        const storageButtons = document.querySelectorAll('.storage-btn');
+        const currentPriceEl = document.getElementById('currentPrice');
+        const originalPriceEl = document.getElementById('originalPrice');
+
+        const originalPrices = {
+            '128GB': 1199,
+            '256GB': 1299,
+            '512GB': 1399,
+            '1TB': 1499
+        };
+
+        storageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active state from all buttons
+                storageButtons.forEach(btn => {
+                    btn.classList.remove('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
+                    btn.classList.add('border', 'border-gray-300', 'text-gray-500');
+                });
+
+                // Add active state to clicked button
+                button.classList.remove('border', 'border-gray-300', 'text-gray-500');
+                button.classList.add('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
+
+                // Update prices - FIX: use parseInt on dataset.price (just the number)
+                const newPrice = parseInt(button.dataset.price);
+                const storage = button.dataset.storage;
+                const newOriginalPrice = originalPrices[storage];
+
+                currentPriceEl.textContent = newPrice;
+                originalPriceEl.textContent = newOriginalPrice;
+            });
+        });
+    </script>
 </body>
 
 </html>
