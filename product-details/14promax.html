@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <!-- navbar -->
+    <!-- Navbar Section -->
     <nav
-        class="navbar relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[1]">
-        <div id="navbar__logo" class="max-[960px]:pl-[25px]">
+        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
+        <div class="max-[960px]:pl-[25px]">
             <img class="object-scale-down" src="images/Logo-Vector blck.svg" alt="Cyber Logo">
         </div>
 
@@ -30,8 +30,25 @@
             </div>
         </div>
 
+        <button id="mobile-search-toggle"
+            class="hidden max-[960px]:block absolute top-[50%] right-[22%] -translate-y-1/2 z-[100] max-[960px]:left-[305px]"
+            aria-label="Toggle search" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
+        </button>
+
+        <div id="mobile-search-dropdown"
+            class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
+            <div class="relative">
+                <input type="text" placeholder="Search"
+                    class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
+                <div class="absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                </div>
+            </div>
+        </div>
+
         <button id="mobile-menu"
-            class="hidden max-[960px]:block absolute top-[20%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]"
+            class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]"
             aria-label="Toggle menu" aria-expanded="false">
             <span id="bar1"
                 class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
@@ -44,32 +61,32 @@
         <div id="navbar-menu"
             class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
             <span
-                class="font-inter text-[18px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100">
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100">
                 <a id="home-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
                     href="">Home</a>
             </span>
             <span
-                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
                 <a id="about-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
                     href="">About</a>
             </span>
             <span
-                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100">
                 <a id="contact-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]"
                     href="">Contact Us </a>
             </span>
             <span
-                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
                 <a id="blog-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]"
                     href="">Blog</a>
             </span>
         </div>
         <div
-            class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[20px]">
+            class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
             <span class="h-[32px] w-[32px] opacity-60">
                 <a href="">
                     <i class="fa-regular fa-heart" style="color:#000000;"></i>
