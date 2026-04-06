@@ -88,36 +88,8 @@
         </div>
     </nav>
 
-    <!-- breadcrumbs -->
-    <div class="breadcrumbs w-full max-w-[1300px] h-[104px] pt-[40px] pb-[40px] px-[140px] mx-auto relative">
-        <span
-            class="w-[46px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[5px]">
-            <a href="">
-                Home
-                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[70px]">
-                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
-                </span>
-            </a>
-        </span>
-        <span
-            class="w-[60px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[7px] left-[280px]">
-            <a href="">
-                Catalog
-                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[74px]">
-                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
-                </span>
-            </a>
-        </span>
-        <span
-            class="w-[200px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#000000] absolute left-[420px] top-[42px]">
-            <a href="">
-                iPhone 14 Pro
-            </a>
-        </span>
-    </div>
-
     <!-- Product Container -->
-    <div id="product" class="flex flex-row gap-8 p-8 px-[140px] align-center justify-center">
+    <div id="product" class="flex flex-row gap-8 p-8 px-[140px] align-center justify-center mt-[20px]">
         <!-- Thumbnails Column -->
         <div class="row flex flex-col gap-2" id="thumbnailRow">
             <div class="column w-12">
@@ -224,10 +196,42 @@
 
     </div>
     </div>
+
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs w-full max-w-[1300px] h-[104px] pt-[40px] pb-[40px] px-[140px] mx-auto relative">
+        <span
+            class="w-[46px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[5px]">
+            <a href="">
+                Home
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[70px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span
+            class="w-[60px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[7px] left-[280px]">
+            <a href="">
+                Catalog
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[74px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span
+            class="w-[200px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#000000] absolute left-[420px] top-[42px]">
+            <a href="">
+                iPhone 14 Pro
+            </a>
+        </span>
+    </div>
+
+    <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
-        <div class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
+        <div
+            class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
             <div class="font-inter">
-                <div class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+                <div
+                    class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
                     <div class="logo">
                         <img src="images/Logo Vector.png" alt="logo">
                     </div>
@@ -283,8 +287,8 @@
             </div>
         </div>
     </footer>
-    
 
+    <!-- javascript -->
     <script>
         function myFunction(imgs) {
             var expandImg = document.getElementById("expandedImg");
