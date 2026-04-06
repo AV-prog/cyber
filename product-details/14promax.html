@@ -241,6 +241,140 @@
         </span>
     </div>
 
+    <!--product description-->
+    <div class="w-[100%] bg-gray-100 p-10">
+        <div class="w-[70%] mx-auto bg-[white] p-8 shadow-sm">
+
+            <!-- header -->
+            <h2 class="text-2xl font-bold mb-6">Details</h2>
+
+            <!-- intro  -->
+            <p class="text-black text-md leading-relaxed mb-8">
+                Just as a book is judged by its cover, the first thing you notice when you pick up a modern smartphone
+                is
+                the display. Nothing surprising, because advanced technologies allow you to practically level the
+                display
+                frames and cutouts for the front camera and speaker, leaving no room for bold design solutions. And how
+                good
+                that in such realities Apple everything is fine with displays. Both critics and mass consumers always
+                praise
+                the quality of the picture provided by the products of the Californian brand. And last year's 6.7-inch
+                Retina panels, which had ProMotion, caused real admiration for many.
+            </p>
+
+            <!-- Screen Section -->
+            <div class="mb-6">
+                <h3 class="text-lg font-bold mb-4">Screen</h3>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-black">Screen diagonal</span>
+                        <span class="text-sm font-medium">6.7"</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-black">The screen resolution</span>
+                        <span class="text-sm font-medium">2796×1290</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-black">The screen refresh rate</span>
+                        <span class="text-sm font-medium">120 Hz</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-gray-600">The pixel density</span>
+                        <span class="text-sm font-medium">460 ppi</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-gray-600">Screen type</span>
+                        <span class="text-sm font-medium">OLED</span>
+                    </div>
+                    <div class="flex justify-between items-start py-2 border-b border-gray-100">
+                        <span class="text-sm text-gray-600">Additionally</span>
+                        <div class="text-right text-sm">
+                            <p>Dynamic Island</p>
+                            <p>Always-On display</p>
+                            <p>HDR display</p>
+                            <p>True Tone</p>
+                            <p>Wide color (P3)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CPU Section -->
+            <div class="mb-6">
+                <h3 class="text-lg font-bold mb-4">CPU</h3>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-gray-600">CPU</span>
+                        <span class="text-sm font-medium">A16 Bionic</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm text-gray-600">Number of cores</span>
+                        <span class="text-sm font-medium">6</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="flex justify-center mt-8">
+                <button id="viewMoreBtn"
+                    class="px-8 py-2.5 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-200 transition duration-100 ease-in-out flex items-center gap-2">
+                    View More
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Hidden content (revealed on click) -->
+            <div id="moreContent" class="hidden mt-6 space-y-6">
+                <!-- Camera Section -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Camera</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Main camera</span>
+                            <span class="text-sm font-medium">48 MP, f/1.78, 24mm (wide)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Ultra wide camera</span>
+                            <span class="text-sm font-medium">12 MP, f/2.2, 13mm</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Telephoto camera</span>
+                            <span class="text-sm font-medium">12 MP, f/2.8, 77mm (3x optical zoom)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Front camera</span>
+                            <span class="text-sm font-medium">12 MP, f/1.9, 23mm (wide)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Battery Section -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Battery</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Battery capacity</span>
+                            <span class="text-sm font-medium">4323 mAh</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Charging</span>
+                            <span class="text-sm font-medium">Fast charging (50% in 30 min)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-sm text-gray-600">Wireless charging</span>
+                            <span class="text-sm font-medium">MagSafe, Qi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
@@ -306,6 +440,7 @@
 
     <!-- javascript -->
     <script>
+        //thumbnail
         function myFunction(imgs) {
             var expandImg = document.getElementById("expandedImg");
             expandImg.src = imgs.src;
@@ -321,6 +456,7 @@
             imgs.classList.add("active", "opacity-100", "border-blue-500");
         }
 
+        //change price on click
         const storageButtons = document.querySelectorAll('.storage-btn');
         const currentPriceEl = document.getElementById('currentPrice');
         const originalPriceEl = document.getElementById('originalPrice');
@@ -352,6 +488,20 @@
                 currentPriceEl.textContent = newPrice;
                 originalPriceEl.textContent = newOriginalPrice;
             });
+        });
+
+        //view more
+        document.getElementById('viewMoreBtn').addEventListener('click', function () {
+            const moreContent = document.getElementById('moreContent');
+            const arrow = this.querySelector('svg');
+
+            if (moreContent.classList.contains('hidden')) {
+                moreContent.classList.remove('hidden');
+                this.innerHTML = `View Less <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
+            } else {
+                moreContent.classList.add('hidden');
+                this.innerHTML = `View More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
+            }
         });
     </script>
 </body>
