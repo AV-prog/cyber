@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/09dda602fe.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="images/Logo-Vector-blck.svg">
+    <title>Cyber</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav
+        class="navbar relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[1]">
+        <div id="navbar__logo" class="max-[960px]:pl-[25px]">
+            <img class="object-scale-down" src="images/Logo-Vector-blck.svg" alt="Cyber Logo">
+        </div>
+
+        <div class="search relative max-[960px]:hidden">
+            <input type="text" placeholder="Search"
+                class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
+            <div class="search-icon absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+            </div>
+        </div>
+
+        <button id="mobile-menu"
+            class="hidden max-[960px]:block absolute top-[20%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        </button>
+
+        <div id="navbar-menu"
+            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span
+                class="font-inter text-[18px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100">
+                <a id="home-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
+                    href="">Home</a>
+            </span>
+            <span
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                <a id="about-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
+                    href="">About</a>
+            </span>
+            <span
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100">
+                <a id="contact-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]"
+                    href="">Contact Us </a>
+            </span>
+            <span
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[18px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                <a id="blog-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]"
+                    href="">Blog</a>
+            </span>
+        </div>
+        <div
+            class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[20px]">
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-regular fa-heart" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-regular fa-user" style="color:#000000;"></i>
+                </a>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Product Container -->
+    <div id="product" class="flex flex-row gap-8 p-8 px-[140px] align-center justify-center mt-[20px]">
+        <!-- Thumbnails Column -->
+        <div class="row flex flex-col gap-2" id="thumbnailRow">
+            <div class="column w-12">
+                <img src="images/14pro1.png"
+                    class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
+                    alt="Phone" onclick="myFunction(this);" />
+            </div>
+            <div class="column w-12">
+                <img src="images/14pm2.png"
+                    class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
+                    alt="Phone" onclick="myFunction(this);" />
+            </div>
+            <div class="column w-12">
+                <img src="images/14pm3.png"
+                    class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded transition-opacity duration-200"
+                    alt="Phone" onclick="myFunction(this);" />
+            </div>
+            <div class="column w-12">
+                <img src="images/14pm4.png"
+                    class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
+                    alt="Phone" onclick="myFunction(this);" />
+            </div>
+        </div>
+
+        <!-- Main Image Container - matches gallery height -->
+        <div class="container flex justify-center w-[300px] mb-[100px]">
+            <img id="expandedImg" src="images/14pro1.png " class="max-h-[600px] w-auto object-contain rounded-lg" />
+        </div>
+
+        <!-- Product Info Container -->
+        <div class="product-info flex flex-col w-[400px]">
+            <h1 class="text-4xl font-bold mb-4">Apple iPhone 14 Pro</h1>
+
+            <div class="price text-3xl font-bold mb-4">
+                $<span id="currentPrice">1399</span>
+                <span class="line-through text-gray-400 text-xl">$<span id="originalPrice">1499</span></span>
+            </div>
+
+            <div class="color-selection mb-4">
+                <p class="text-[14px] mb-2">Select color :</p>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full bg-black border-2 border-gray-300"></button>
+                    <button class="w-10 h-10 rounded-full bg-purple-600 border-2 border-gray-300"></button>
+                    <button class="w-10 h-10 rounded-full bg-red-600 border-2 border-gray-300"></button>
+                    <button class="w-10 h-10 rounded-full bg-yellow-500 border-2 border-gray-300"></button>
+                    <button class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300"></button>
+                </div>
+            </div>
+
+            <div class="storage-options flex gap-2 mb-4 w-full" id="storageContainer">
+                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+                    data-storage="128GB" data-price="1099">128GB</button>
+                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+                    data-storage="256GB" data-price="1199">256GB</button>
+                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+                    data-storage="512GB" data-price="1299">512GB</button>
+                <button
+                    class="storage-btn flex-1 py-3 border-2 border-black rounded-lg font-semibold bg-white text-sm active"
+                    data-storage="1TB" data-price="1399">1TB</button>
+            </div>
+
+            <div class="specs-grid grid grid-cols-3 gap-2 mb-4">
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <p class="text-xs text-gray-500">Screen size</p>
+                    <p class="font-semibold text-sm">6.7"</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-solid fa-microchip"></i></div>
+                    <p class="text-xs text-gray-500">CPU</p>
+                    <p class="font-semibold text-sm">Apple A16 Bionic</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-solid fa-cookie"></i></div>
+                    <p class="text-xs text-gray-500">Number of Cores</p>
+                    <p class="font-semibold text-sm">6</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-solid fa-camera"></i></div>
+                    <p class="text-xs text-gray-500">Main camera</p>
+                    <p class="font-semibold text-sm">48-12-12 MP</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-regular fa-camera"></i></div>
+                    <p class="text-xs text-gray-500">Front-camera</p>
+                    <p class="font-semibold text-sm">12 MP</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg text-center">
+                    <div class="text-2xl mb-1"><i class="fa-solid fa-battery-full"></i></div>
+                    <p class="text-xs text-gray-500">Battery capacity</p>
+                    <p class="font-semibold text-sm">4323 mAh</p>
+                </div>
+            </div>
+
+            <div class="action-buttons flex gap-3 mb-4">
+                <button class="flex-1 py-3 border-2 border-black rounded-lg font-semibold hover:bg-gray-100 transition"
+                    onclick="alert('Added to Wishlist')">Add
+                    to Wishlist</button>
+                <button class="flex-1 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition"
+                    onclick="alert('Added to Cart')">Add
+                    to Cart</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs w-full max-w-[1300px] h-[104px] pt-[40px] pb-[40px] px-[140px] mx-auto relative">
+        <span
+            class="w-[46px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[5px]">
+            <a href="">
+                Home
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[70px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span
+            class="w-[60px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[7px] left-[280px]">
+            <a href="">
+                Catalog
+                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[74px]">
+                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
+                </span>
+            </a>
+        </span>
+        <span
+            class="w-[200px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#000000] absolute left-[420px] top-[42px]">
+            <a href="">
+                iPhone 14 Pro
+            </a>
+        </span>
+    </div>
+
+    <!-- footer -->
+    <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+        <div
+            class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
+            <div class="font-inter">
+                <div
+                    class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+                    <div class="logo">
+                        <img src="images/Logo-Vector.svg" alt="logo">
+                    </div>
+                    <span>We are a residential interior design firm located in</span>
+                    <span>Portland. Our boutique-studio offers more than</span>
+                </div>
+                <div class="mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
+                    <span>
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Services</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Bonus Program</a></span>
+                    <span><a href="#">Gift Cards</a></span>
+                    <span><a href="#">Credit and Payment</a></span>
+                    <span><a href="#">Service Contracts</a></span>
+                    <span><a href="#">Non-cash Accounts</a></span>
+                    <span><a href="#">Payment</a></span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Assistacnce to the buyer</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Find an order</a></span>
+                    <span><a href="#">Terms of delivery</a></span>
+                    <span><a href="#">Exchange and return of goods</a></span>
+                    <span><a href="#">Guarantee</a></span>
+                    <span><a href="#">Frequently asked questions</a></span>
+                    <span><a href="#">Terms of use of the site</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- javascript -->
+    <script>
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            expandImg.src = imgs.src;
+            expandImg.parentElement.style.display = "flex";
+
+            var thumbnails = document.querySelectorAll(".column img");
+            thumbnails.forEach(img => {
+                img.classList.remove("active", "opacity-100", "border-blue-500");
+                img.classList.add("opacity-50", "border-transparent");
+            });
+
+            imgs.classList.remove("opacity-50", "border-transparent");
+            imgs.classList.add("active", "opacity-100", "border-blue-500");
+        }
+
+        const storageButtons = document.querySelectorAll('.storage-btn');
+        const currentPriceEl = document.getElementById('currentPrice');
+        const originalPriceEl = document.getElementById('originalPrice');
+
+        const originalPrices = {
+            '128GB': 1199,
+            '256GB': 1299,
+            '512GB': 1399,
+            '1TB': 1499
+        };
+
+        storageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active state from all buttons
+                storageButtons.forEach(btn => {
+                    btn.classList.remove('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
+                    btn.classList.add('border', 'border-gray-300', 'text-gray-500');
+                });
+
+                // Add active state to clicked button
+                button.classList.remove('border', 'border-gray-300', 'text-gray-500');
+                button.classList.add('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
+
+                // Update prices - FIX: use parseInt on dataset.price (just the number)
+                const newPrice = parseInt(button.dataset.price);
+                const storage = button.dataset.storage;
+                const newOriginalPrice = originalPrices[storage];
+
+                currentPriceEl.textContent = newPrice;
+                originalPriceEl.textContent = newOriginalPrice;
+            });
+        });
+    </script>
+</body>
+
+</html>
