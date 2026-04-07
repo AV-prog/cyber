@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+            .about-hero {
+                position: relative;
+                width: 100%;
+                height: 60vh; /* responsive height */
+                min-height: 250px; /* prevents it from being too small */
+                
+                background-image: url('Tech Images.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+
+            /* Dark overlay for that faded look */
+            .about-hero .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4); /* adjust darkness here */
+            }
+            /* Text styling */
+            .about-hero .content {
+                position: relative; /* stays above overlay */
+                z-index: 2;
+                text-align: center;
+            }
+            .about-hero h1 {
+                color: white;
+                font-size: 48px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                font-family: 'Inter', Arial, sans-serif;
+            .header h1 {
+                font-size: 50px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-align: center;
+            }
+            }
+            @media screen and (min-width: 480px) {
+            .banner1 {
+                padding-top: 48px;
+            }
+            }
+            .banner1 {
+                line-height: 120px;
+                text-align: left;
+                margin-left: 22px;
+                font-size: 10vh;
+            }
+            .banner1 h1 {
+                font-family: 'Anton';
+                /*line-height: 190px;*/
+            }
+            .banner1 p {
+                font-size: 27px;
+                font-family: 'Playfair Display', serif;
+                margin-top: -100px;
+            }
+            .banner2 img {
+                width: 700px;  
+                height: 400px;
+                margin-left: 15px;
+                float: left;
+            }
+        </style>
+    </head>
+</html>
+
+<body>
+    <section class="about-hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>ABOUT US</h1>
+        </div>
+    </section>
+    <div class ="banner1">
+        <h1>WE<br>SERVE<br>ATHLETES*</h1>
+        <p>*If you have a body, you are an athlete</p>
+    </div>
+    <div class="banner2">
+        <img src="Rimuru.jpg" alt="Please Wait while your image loads.">
+        <div class="banner2-text">
+            <h1> Alysa Liu is winning on her own terms</h1>
+            <p>The Gold Medal-winning figure skater and sport icon for authenticity- reflects on pressure, success and learning to trust her own path</p>
+        </div>
+    </div>
+</body>
