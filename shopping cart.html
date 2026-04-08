@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0e17cc80b3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/png" href="images/cyber white.svg">
+    <title>Cyber</title>
+</head>
+<body>  
+     <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[24px] md:px-[40px] lg:px-[60px] mx-auto z-[1]">
+        <div class="max-[960px]:pl-[25px]">
+            <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+        </div>
+
+        <div class="search relative max-[960px]:hidden">
+            <input type="text" placeholder="Search" class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
+            <div class="search-icon absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+            </div>
+        </div>
+
+        <button id="mobile-search-toggle" class="mobile-search-button hidden max-[960px]:block absolute top-[50%] -translate-y-1/2 z-[100]" aria-label="Toggle search" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
+        </button>
+
+        <div id="mobile-search-dropdown" class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
+            <div class="relative">
+                <input type="text" placeholder="Search" class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
+                <div class="absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                </div>
+            </div>
+        </div>
+
+        <button id="mobile-menu" class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]" aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        </button>
+
+        <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page in" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
+            </span>
+            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="About.html">About</a>
+            </span>
+            <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="">Contact Us </a>
+            </span>
+            <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]" href="">Blog</a>
+            </span>
+        </div>
+        <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
+            <span class="h-[32px] w-[32px] opacity-60" >
+                <a href="">
+                    <i class="fa-regular fa-heart" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="login-signup/login.html">
+                    <i class="fa-regular fa-user" style="color:#000000;"></i>
+                </a>
+            </span>
+        </div>
+    </nav>
+    <div class="container w-full max-w-[1300px] h-fit mt-15 mb-5 mx-auto flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
+
+    <div class="cart w-full flex-1 h-fit mb-30 font-inter">
+            <span class="font-bold text-lg leading-[24px]">Shopping Cart</span>
+            <div class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
+                <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/cart phone.svg" alt="">
+                <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 sm:flex-1">
+                    <span>Apple iphone 14 Pro Max</span>
+                    <span class="">128GB Deep purple</span>
+                    <span class="font-regular text-[11px] mt-2">#25139526913984</span>
+                </div>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 sm:ml-auto sm:mt-7">
+                        <span class="text-[22px] cursor-pointer"><i class="fa-sharp fa-solid fa-minus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="w-[35px] h-[27px] cursor-none border-[0.5px] border-[#D9D9D9] pl-[10px] pr-[10px] pt-[2px] pb-[2px] rounded-[4px]">1</span>
+                        <span class="text-[20px] cursor-pointer"><i class="fa-sharp fa-solid fa-plus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="ml-4">$1399</span>
+                        <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs" style="color: rgb(16, 16, 16);"></i></a></span>
+                    </div>
+            </div>
+            <div class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
+                <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/pods cart.svg" alt="">
+                <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 sm:flex-1">
+                    <span>Airpods Max Silver</span>
+                    <span class="font-regular text-[11px] mt-2">#25139526913984</span>
+                </div>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 sm:ml-auto sm:mt-7">
+                        <span class="text-[22px] cursor-pointer"><i class="fa-sharp fa-solid fa-minus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="w-[35px] h-[27px] cursor-none border-[0.5px] border-[#D9D9D9] pl-[10px] pr-[10px] pt-[2px] pb-[2px] rounded-[4px]">1</span>
+                        <span class="text-[20px] cursor-pointer"><i class="fa-sharp fa-solid fa-plus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="ml-4">$549</span>
+                        <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs" style="color: rgb(16, 16, 16);"></i></a></span>
+                    </div>
+            </div>
+            <div class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
+                <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/watch cart.svg" alt="">
+                <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 font-inter sm:flex-1">
+                    <span>Apple Watch Series 9</span>
+                    <span>GPS 41mm Starlight</span>
+                    <span>Aluminium</span>
+                    <span class="font-regular text-[11px] mt-2">#25139526913984</span>
+                </div>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 sm:ml-auto sm:mt-7">
+                        <span class="text-[22px] cursor-pointer"><i class="fa-sharp fa-solid fa-minus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="w-[35px] h-[27px] cursor-none border-[0.5px] border-[#D9D9D9] pl-[10px] pr-[10px] pt-[2px] pb-[2px] rounded-[4px]">1</span>
+                        <span class="text-[20px] cursor-pointer"><i class="fa-sharp fa-solid fa-plus fa-2xs" style="color: rgb(16, 16, 16);"></i></span>
+                        <span class="ml-4">$399</span>
+                        <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs" style="color: rgb(16, 16, 16);"></i></a></span>
+                    </div>
+            </div>
+    </div>
+         <div class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-[#EBEBEB] flex flex-col px-[20px] py-[24px] sm:px-10">
+            <span class="font-bold text-lg leading-[24px]">Order Summary</span>
+            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Discount code/ Promo code</span>
+            <input type="text" name="promo" id="promo" placeholder="code" class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3">
+            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Your bonus card number</span>
+            <div class="relative">
+                <input type="text" number="bonus-card" id="bonus-card" placeholder="Enter card Number" class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3 pr-[88px]">
+                <span class="absolute border-[1px] rounded-[6px] h-[35px] w-[70px] right-[12px] top-1/6 -translate-y-1/2 px-4 py-1 font-inter hover:bg-black hover:text-white cursor-pointer">
+                    Apply
+                </span>
+                    <div class="flex items-center justify-between gap-4 mt-5">
+                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Subtotal</span>
+                    <span class="font-inter font-medium">$2347</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between gap-4">
+                        <span class="text-[#545454]">Estimated Tax</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between gap-4">
+                        <span class="text-[#545454] whitespace-nowrap">Estimated Shipping and handling</span>
+                        <span>$29</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-4 mt-5">
+                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Total</span>
+                    <span class="font-inter font-medium">$2426</span>
+                    </div>
+            </div>
+            <button class="w-full h-[56px] rounded-[6px] pt-[16px] pb-[16px] px-[24px] bg-[#000000] text-white font-white font-medium mt-5 hover:transform-[scale(1.05)]">
+                <a href="">
+                    Checkout
+                </a>
+            </button>
+
+        </div>
+   
+    </div>
+    
+    <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+        <div class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
+            <div class="font-inter">
+                <div class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+                    <div class="logo">
+                        <img src="images/cyber white.svg" alt="logo">
+                    </div>
+                    <span>We are a residential interior design firm located in</span>
+                    <span>Portland. Our boutique-studio offers more than</span>
+                </div>
+                <div class="mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
+                    <span>
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Services</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Bonus Program</a></span>
+                    <span><a href="#">Gift Cards</a></span>
+                    <span><a href="#">Credit and Payment</a></span>
+                    <span><a href="#">Service Contracts</a></span>
+                    <span><a href="#">Non-cash Accounts</a></span>
+                    <span><a href="#">Payment</a></span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Assistacnce to the buyer</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Find an order</a></span>
+                    <span><a href="#">Terms of delivery</a></span>
+                    <span><a href="#">Exchange and return of goods</a></span>
+                    <span><a href="#">Guarantee</a></span>
+                    <span><a href="#">Frequently asked questions</a></span>
+                    <span><a href="#">Terms of use of the site</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
