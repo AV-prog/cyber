@@ -165,43 +165,156 @@
 
      <!--Category-->
     <section class="w-full h-[352px] rotate-0 opacity-100 pt-[80px] pr-[160px] pb-[80px] pl-[160px] flex flex-col gap-[32px]">
-        <div class="w-[1120px] h-[32px] rotate-0 opacity-100 flex items-center justify-between">
-            <p>Broswe By Category</p>
-            <i class="fa-solid fa-chevron-left"></i>
-            <i class="fa-solid fa-chevron-right"></i>
+        <div class="w-full h-[32px] rotate-0 opacity-100 flex items-center justify-between">
+            <p class="w-[239px] h-[32px] rotate-0 opacity-100 font-inter font-medium text-[24px] leading-[32px] tracking-[1%] leading-trim-none text-[#000000]">Browse By Category</p>
+            <div class="w-[80px] h-[32px] rotate-0 opacity-100 flex items-center gap-[16px]">
+                <i id="cat-left" class="fa-solid fa-chevron-left w-[32px] h-[32px] text-[28px] cursor-pointer opacity-40"></i>
+                <i id="cat-right" class="fa-solid fa-chevron-right w-[32px] h-[32px] text-[28px] cursor-pointer"></i>
+            </div>
         </div>
-        <div>
-            <a href=""><i class="fa-thin fa-mobile"></i>Phone</a>
-            <a href=""><i class="fa-light fa-watch"></i>Smart Watches</a>
-            <a href=""><i class="fa-solid fa-computer"></i>Computers</a>
-            <a href=""><i class="fa-light fa-headphones"></i>Headphones</a>
-            <a href=""><i class="fa-light fa-camera"></i>Cameras</a>
-            <a href=""><i class="fa-light fa-gamepad"></i>Gaming</a>
-            <a href=""><i class="fa-solid fa-music"></i>Audio</a>
-            <a href=""><i class="fa-solid fa-music"></i>Audio</a>
-        </div> 
-     </section>
+
+        <!-- show only first 6 cards initially -->
+        <div class="w-full overflow-hidden">
+            <div id="category-track" class="w-full h-[128px] rotate-0 opacity-100 flex gap-[32px] transition-transform duration-300 ease-in-out [&>a]:box-border [&>a]:flex-none">
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-mobile-screen w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Phone</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-car w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center whitespace-nowrap">Cars</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-computer w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Computers</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-headphones w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Headphones</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-camera w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Cameras</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-gamepad w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Gaming</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-music w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Audio</p></a>
+                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href=""><i class="fa-solid fa-truck w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Deliveries</p></a>
+            </div>
+        </div>
+    </section>
 
      <!--Products-->
-     <section>
-        <div>
-            <a href="#new-arrivals"></a>
-            <a href=""></a>
-            <a href=""></a>
+     <section class="w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
+        <div class="w-full max-w-[1120px] h-[32px] flex gap-[32px]">
+            <a class="w-[120px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#new-arrivals">New Arrival</a>
+            <a class="w-[120px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#bestsellers">Bestseller</a>
+            <a class="w-[120px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#on-sale">Featured Products</a>
         </div>
+
         <!--New arrivals-->
-        <div id="new-arrivals">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+        <div class="w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2"
+        id="new-arrivals">
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$900</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/camera.png" alt="Blackmagic Pocket Cinema Camera 6k">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Blackmagic Pocket Cinema Camera 6k</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$2535</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/apple-watch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium ">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple Watch Series 9 GPS 41mm Starlight Aluminium </p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$399</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/headphone.png" alt="AirPods Max Silver Starlight Aluminium">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">AirPods Max Silver Starlight Aluminium</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$549</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/gwatch.png" alt="Samsung Galaxy Watch6 Classic 47mm Black">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Samsung Galaxy Watch6 Classic 47mm Black</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$369</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/zfold.png" alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$1799</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/buds.png" alt="Galaxy Buds FE Graphite">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[20px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Galaxy Buds FE Graphite</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$99.99</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/tablet.png" alt='Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021'>
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$398</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
         </div>
+
         <!--Bestsellers-->
-        <div id="Bestsellers">
+        <div class="w-full max-w-[1120px] h-[880px] rotate-0 opacity-100 flex gap-[16px]" id="Bestsellers">
             <div class="card"></div>
             <div class="card"></div>
             <div class="card"></div>
@@ -212,7 +325,7 @@
             <div class="card"></div>
         </div>
         <!--Featured Products-->
-        <div id="Featured-products">
+        <div class="w-full max-w-[1120px] h-[880px] rotate-0 opacity-100 flex gap-[16px]" id="Featured-products">
             <div class="card"></div>
             <div class="card"></div>
             <div class="card"></div>
@@ -237,20 +350,85 @@
 
 
     <!--Discount-->
-    <section>
-        <p></p>
+    <section class="w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
+        <div class="w-full max-w-[1120px] h-[32px] flex gap-[32px]">
+            <a class="w-[200px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#new-arrivals">Discounts up to 50%</a>
+        </div>
+
         <!--New arrivals-->
-        <div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+        <div class="w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2"
+        id="new-arrivals">
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$900</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$900</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$900</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
+        
+            <div class="w-full h-[432px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
+                <div class="w-[236px] h-[32px] gap-[8px]"></div>
+                <div class="w-[160px] h-[160px]">
+                    <img class="ml-[15px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                </div>
+                <div class="w-[236px] h-[160px] gap-[24px]">
+                    <div class="w-[236px] h-[88px] gap-[16px] -ml-[20px] mt-[50px]">
+                        <p class="w-[236px] h-[48px] font-['Inter'] font-medium text-[16px] leading-[24px] text-center">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                        <p class="w-[236px] h-[24px] font-['Inter'] font-semibold text-[24px] leading-[24px] tracking-[0.03em] text-center">$900</p>
+                    </div>
+                    <a href="products.html" class="w-[196px] h-[56px] text-[16px] flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] bg-[#000000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out mt-[10px] border border-[#000000]">Add to Cart</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!--Final Banner-->
-    <section>
-        <div></div>
+    <section class="w-full max-w-[1440px] h-[448px] rotate-0 opacity-100 flex gap-[8px] bg-[url(/images/Final-Banner-Image.png)] bg-cover bg-center mx-auto mt-[56px] rounded-[12px]">
+        <div class="w-full max-w-[553px] h-[200px] rotate-0 opacity-100 flex gap-[40px]">
+            <div class="w-full max-w-[553px] h-[104px] rotate-0 opacity-100">
+                <p class="font-['Inter'] font-thin text-[72px] leading-[72px] tracking-[-0.01em] text-center">Big Summer <span class="font-['Inter'] font-light text-[72px] leading-[72px] tracking-[-0.01em] text-center">Sale</span></p>
+                <p class="font-['Inter'] font-normal text-[16px] leading-[32px] tracking-[0] text-center text-[#787878]">Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
+            </div>
+            <div class="w-[191px] h-[56px] rotate-0 opacity-100 py-[16px] px-[56px] gap-[8px] rounded-[6px] border-[1px] border-[#FFFFFF]">
+                <a class="w-[79px] h-[24px] rotate-0 opacity-100 font-['Inter'] font-medium text-[16px] leading-[24px] tracking-[0] text-center">
+                    Shop Now
+                </a>
+            </div>
+        </div>
     </section>
 
     <!--Footer-->
@@ -421,4 +599,54 @@
     navLogo?.addEventListener('click', hideMobileMenu);
     navLogo?.addEventListener('click', hideMobileSearch);
 </script>
+<!-- Category slider (Audio hidden at start, shown on right click) -->
+    <script>
+        const catLeft = document.querySelector('#cat-left');
+        const catRight = document.querySelector('#cat-right');
+        const categoryTrack = document.querySelector('#category-track');
+
+        if (catLeft && catRight && categoryTrack) {
+            let categoryIndex = 0;
+            const visibleCards = 6;
+            const scrollCards = 2;
+
+            const getMaxIndex = () => {
+                const totalCards = categoryTrack.querySelectorAll('a').length;
+                const hiddenCards = Math.max(totalCards - visibleCards, 0);
+                return Math.ceil(hiddenCards / scrollCards);
+            };
+
+            const getStep = () => {
+                const firstCard = categoryTrack.querySelector('a');
+                if (!firstCard) return 0;
+                const gap = parseFloat(getComputedStyle(categoryTrack).columnGap || getComputedStyle(categoryTrack).gap || '0');
+                return firstCard.getBoundingClientRect().width + gap;
+            };
+
+            const updateCategorySlider = () => {
+                const step = getStep();
+                categoryTrack.style.transform = `translateX(-${categoryIndex * step * scrollCards}px)`;
+                const maxIndex = getMaxIndex();
+                catLeft.classList.toggle('opacity-40', categoryIndex === 0);
+                catRight.classList.toggle('opacity-40', categoryIndex === maxIndex);
+            };
+
+            catRight.addEventListener('click', () => {
+                const maxIndex = getMaxIndex();
+                if (categoryIndex < maxIndex) {
+                    categoryIndex += 1;
+                    updateCategorySlider();
+                }
+            });
+
+            catLeft.addEventListener('click', () => {
+                if (categoryIndex > 0) {
+                    categoryIndex -= 1;
+                    updateCategorySlider();
+                }
+            });
+
+            updateCategorySlider();
+        }
+    </script>
 </html>
