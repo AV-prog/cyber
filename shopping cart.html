@@ -75,6 +75,35 @@
             </span>
         </div>
     </nav>
+     <div class="payment max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 font-inter">
+        <!-- progress -->
+        <div class="aia flex items-center mb-12 w-[50%] mx-auto">
+            <!-- step 1 -->
+            <div class="flex items-center gap-2 text-black">
+                <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-[15px] text-white">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </div>
+                <div class="hidden sm:block">
+                    <p class="text-md">Step 1</p>
+                    <p class="text-sm font-medium">Cart</p>
+                </div>
+            </div>
+
+            <!-- connector -->
+            <div class="flex-1 h-px bg-gray-200 mx-4"></div>
+
+            <!-- step 2 -->
+            <div class="flex items-center gap-2 text-gray-400">
+                <div class="w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center text-[15px] text-white">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <div class="hidden sm:block">
+                    <p class="text-md">Step 2</p>
+                    <p class="text-sm font-bold">Payment</p>
+                </div>
+            </div>
+        </div>
+
     <div class="container w-full max-w-[1300px] h-fit mt-15 mb-5 mx-auto flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
 
     <div class="cart w-full flex-1 h-fit mb-30 font-inter">
@@ -128,7 +157,7 @@
          <div class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10  flex flex-col px-[20px] py-[24px] sm:px-10">
             <span class="font-bold text-lg leading-[24px]">Order Summary</span>
             <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Discount code/ Promo code</span>
-            <input type="text" name="promo" id="promo" placeholder="code" class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3">
+            <input type="text" name="promo" id="promo" placeholder="Code" class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3">
             <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Your bonus card number</span>
             <div class="relative">
                 <input type="text" number="bonus-card" id="bonus-card" placeholder="Enter card Number" class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3 pr-[88px]">
@@ -153,7 +182,7 @@
                     </div>
             </div>
             <button class="w-full h-[56px] rounded-[6px] pt-[16px] pb-[16px] px-[24px] bg-[#000000] text-white font-white font-medium mt-5 hover:transform-[scale(1.05)]">
-                <a href="">
+                <a href="payment.html">
                     Checkout
                 </a>
             </button>
