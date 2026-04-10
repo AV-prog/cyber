@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[22%] -translate-y-1/2 z-[100] max-[960px]:left-[305px]" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[15%] -translate-y-1/2 z-[100]" aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
 
@@ -81,23 +81,23 @@
     <main class="w-full bg-white py-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
         <div class="mx-auto max-w-[1300px]">
             <!-- Step Indicator -->
-            <div class="flex items-center justify-between mb-[60px] max-[960px]:mb-[40px]">
+            <div class="flex items-center justify-between mb-[60px] max-[960px]:mb-[40px] max-[640px]:flex-col max-[640px]:gap-y-[20px] max-[640px]:items-center">
                 <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B]">1</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B]">Step 1</span>
-                    <span class="text-[14px] font-semibold text-[#000000]">Address</span>
+                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">1</div>
+                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 1</span>
+                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Address</span>
                 </div>
-                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px]"></div>
+                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px] max-[640px]:w-[2px] max-[640px]:h-[20px] max-[640px]:mx-0 max-[480px]:h-[16px]"></div>
                 <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#000000] flex items-center justify-center text-[14px] font-medium text-[#FFFFFF]">2</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B]">Step 2</span>
-                    <span class="text-[14px] font-semibold text-[#000000]">Shipping</span>
+                    <div class="w-[40px] h-[40px] rounded-full bg-[#000000] flex items-center justify-center text-[14px] font-medium text-[#FFFFFF] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">2</div>
+                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 2</span>
+                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Shipping</span>
                 </div>
-                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px]"></div>
+                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px] max-[640px]:w-[2px] max-[640px]:h-[20px] max-[640px]:mx-0 max-[480px]:h-[16px]"></div>
                 <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B]">3</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B]">Step 3</span>
-                    <span class="text-[14px] font-semibold text-[#000000]">Payment</span>
+                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">3</div>
+                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 3</span>
+                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Payment</span>
                 </div>
             </div>
 
@@ -148,19 +148,15 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="flex items-center justify-end gap-[16px]">
-                    <button class="px-[40px] py-[12px] border-[1px] border-[#000000] rounded-[8px] text-[16px] font-semibold text-[#000000] bg-white hover:bg-[#000000] hover:text-white transition-all duration-300">Back</button>
-                    <button class="px-[40px] py-[12px] bg-[#000000] rounded-[8px] text-[16px] font-semibold text-white hover:bg-[#333333] transition-all duration-300">Next</button>
+                <div class="flex items-center justify-end gap-[16px] max-[640px]:flex-col max-[640px]:gap-[12px] max-[640px]:items-stretch">
+                    <button class="px-[40px] py-[12px] border-[1px] border-[#000000] rounded-[8px] text-[16px] font-semibold text-[#000000] bg-white hover:bg-[#000000] hover:text-white transition-all duration-300 max-[640px]:w-full">Back</button>
+                    <button class="px-[40px] py-[12px] bg-[#000000] rounded-[8px] text-[16px] font-semibold text-white hover:bg-[#333333] transition-all duration-300 max-[640px]:w-full">Next</button>
                 </div>
             </div>
         </div>
     </main>
 
-
-
-
-
-
+<!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
             class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
@@ -168,7 +164,7 @@
                 <div
                     class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
                     <div class="logo">
-                        <img src="../images/cyber black.svg" alt="logo">
+                        <img src="images/cyber white.svg" alt="logo">
                     </div>
                     <span>We are a residential interior design firm located in</span>
                     <span>Portland. Our boutique-studio offers more than</span>
@@ -222,3 +218,6 @@
             </div>
         </div>
     </footer>
+
+
+
