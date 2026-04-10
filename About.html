@@ -55,16 +55,16 @@
 
         <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
             <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="home-page in" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
+                <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
             </span>
             <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="">About</a>
+                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="About.html">About</a>
             </span>
             <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="">Contact Us </a>
+                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="#">Contact Us </a>
             </span>
             <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px] " href="">Blog</a>
+                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px] " href="#">Blog</a>
             </span>
         </div>
         <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
@@ -97,13 +97,13 @@
                 <span>SELL</span>
                 <span>GADGETS*</span>
                 </div>
-                <span class="mt-4 max-w-[18ch] text-[clamp(1rem,2.4vw,1.75rem)] font-light leading-snug tracking-tight whitespace-nowrap">
+                <span class="mt-4 max-w-[18ch] text-[clamp(1rem,2.4vw,1.75rem)] font-light leading-snug tracking-tight">
                     *if you need a device, visit cyber.
                 </span>
             </div>
 
             <div class="flex flex-col items-center gap-[20px] lg:items-start lg:gap-[28px]">
-                <img class="w-full max-w-[640px] h-auto object-contain hover:transform-[scale(1.3)]" src="images/MacBook-Pro-14-mq.png" alt="MacBook Pro">
+                <img class="w-full max-w-[640px] h-auto object-contain transition-transform duration-300 hover:scale-[1.02] lg:hover:scale-[1.08]" src="images/MacBook-Pro-14-mq.png" alt="MacBook Pro">
                 <div class="max-w-[620px] font-['Anton'] text-[#111111]">
                     <div class="flex items-start gap-[12px] text-[clamp(2rem,5vw,3.5rem)] leading-none">
                         <i class="fa-brands fa-apple pt-[6px]" style="color: rgb(16, 16, 16);"></i>
@@ -116,62 +116,49 @@
             </div>
         </section>
 
-        <section class="text-center px-5 py-12">
-    
-    <h1 class="text-[40px] ml-5 mb-[-10px] text-left font-semibold">
-      Inside our Design and Innovation
-    </h1>
+        <section class="mx-auto w-full max-w-[1300px] px-[24px] py-[32px] sm:px-[40px] sm:py-[48px] lg:px-[60px] lg:py-[72px] font-['Anton'] font-light tracking-wide">
+            <h1 class="mb-[-10px] text-left text-[clamp(1.8rem,4vw,2.5rem)] font-semibold text-[#111111]">
+                Inside our Design and Innovation
+            </h1>
 
-    <div class="flex gap-3 items-stretch mt-8">
+            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-lg bg-[#f9f9f9] p-5 text-black shadow-md transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="images/iPhone Motherboard.jpg" alt="Innovation lab" class="h-[220px] w-full rounded-md object-cover sm:h-[240px]">
+                    <div class="mt-4 text-left">
+                        <h2 class="text-[clamp(1.2rem,2.3vw,1.75rem)] font-semibold leading-tight">
+                            The Space where Cyber Creates the Future of Gadgets
+                        </h2>
+                        <p class="mt-2 text-sm leading-6 text-[#4a4a4a]">
+                            Get a behind-the-scenes look at Cyber's innovation lab, where cutting-edge ideas take shape and tomorrow's gadgets begin their journey from concept to creation.
+                        </p>
+                    </div>
+                </div>
 
-      <!-- Card 1 -->
-      <div class="w-[350px] p-5 hover:text-gray-500 transition">
-        <div>
-          <img src="images/iPhone Motherboard.jpg" alt="Loading..." class="w-[350px] h-[250px] object-cover">
-        </div>
-        <div class="text-left mt-4">
-          <h2 class="text-2xl font-semibold">
-            The Space where Cyber Creates the Future of Gadgets
-          </h2>
-          <p class="text-sm mt-2">
-            Get a behind-the-scenes look at Cyber’s innovation lab, where cutting-edge ideas take shape and tomorrow’s gadgets begin their journey from concept to creation.
-          </p>
-        </div>
-      </div>
+                <div class="rounded-lg bg-[#f9f9f9] p-5 text-black shadow-md transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="images/About-showcase.jpg" alt="iPhone showcase" class="h-[220px] w-full rounded-md object-cover sm:h-[240px]">
+                    <div class="mt-4 text-left">
+                        <h2 class="text-[clamp(1.2rem,2.3vw,1.75rem)] font-semibold leading-tight">
+                            Why the iPhone 12 Could Change the Game
+                        </h2>
+                        <p class="mt-2 text-sm leading-6 text-[#4a4a4a]">
+                            Explore how the iPhone 12 redefined smartphone expectations with its refined design, powerful performance, and features that helped shape a new era of mobile technology.
+                        </p>
+                    </div>
+                </div>
 
-      <!-- Card 2 -->
-      <div class="w-[350px] p-5 hover:text-gray-500 transition">
-        <div>
-          <img src="images/About-showcase.jpg" alt="Loading..." class="w-[350px] h-[250px] object-cover">
-        </div>
-        <div class="text-left mt-4">
-          <h2 class="text-2xl font-semibold">
-            Why the iPhone 12 Could Change the Game
-          </h2>
-          <p class="text-sm mt-2">
-            Explore how the iPhone 12 redefined smartphone expectations with its refined design, powerful performance, and features that helped shape a new era of mobile technology.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="w-[350px] p-5 hover:text-gray-500 transition">
-        <div>
-          <img src="images/About-homescreen.jpg" alt="Loading..." class="w-[350px] h-[250px] object-cover">
-        </div>
-        <div class="text-left mt-4">
-          <h2 class="text-2xl font-semibold">
-            Journey of a Masterpiece: The Story of the iPhone 14 Pro
-          </h2>
-          <p class="text-sm mt-2">
-            Follow the evolution of the iPhone 14 Pro from concept to completion, and discover the innovation, precision, and craftsmanship behind one of Apple’s most advanced devices.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    </section>
+                <div class="rounded-lg bg-[#f9f9f9] p-5 text-black shadow-md transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="images/About-homescreen.jpg" alt="iPhone 14 Pro story" class="h-[220px] w-full rounded-md object-cover sm:h-[240px]">
+                    <div class="mt-4 text-left">
+                        <h2 class="text-[clamp(1.2rem,2.3vw,1.75rem)] font-semibold leading-tight">
+                            Journey of a Masterpiece: The Story of the iPhone 14 Pro
+                        </h2>
+                        <p class="mt-2 text-sm leading-6 text-[#4a4a4a]">
+                            Follow the evolution of the iPhone 14 Pro from concept to completion, and discover the innovation, precision, and craftsmanship behind one of Apple's most advanced devices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="mx-auto w-full max-w-[1300px] px-[24px] py-[32px] sm:px-[40px] lg:px-[60px] lg:py-[72px]">
             <div class="text-center">
