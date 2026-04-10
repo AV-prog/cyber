@@ -11,10 +11,11 @@
 <body class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.14),_transparent_22%),#eef2f7] text-slate-900 antialiased">
   <div class="min-h-screen">
     <nav
-        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
+        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[24px] md:px-[40px] lg:px-[60px] mx-auto z-[1]">
         <div class="max-[960px]:pl-[25px]">
-            <img class="object-scale-down" src="../images/cyber black.svg" alt="Cyber Logo">
+            <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
         </div>
+
         <div class="search relative max-[960px]:hidden">
             <input type="text" placeholder="Search"
                 class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
@@ -24,7 +25,7 @@
         </div>
 
         <button id="mobile-search-toggle"
-            class="hidden max-[960px]:block absolute top-[50%] right-[22%] -translate-y-1/2 z-[100] max-[960px]:left-[305px]"
+            class="mobile-search-button hidden max-[960px]:block absolute top-[50%] -translate-y-1/2 z-[100]"
             aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
@@ -54,25 +55,25 @@
         <div id="navbar-menu"
             class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
             <span
-                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100">
-                <a id="home-page"
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page in"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
-                    href="">Home</a>
+                    href="index.html">Home</a>
             </span>
             <span
-                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
                 <a id="about-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
-                    href="">About</a>
+                    href="About.html">About</a>
             </span>
             <span
-                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
                 <a id="contact-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]"
                     href="">Contact Us </a>
             </span>
             <span
-                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100">
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
                 <a id="blog-page"
                     class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]"
                     href="">Blog</a>
@@ -86,12 +87,12 @@
                 </a>
             </span>
             <span class="h-[32px] w-[32px] opacity-60">
-                <a href="">
+                <a href="shopping cart.html">
                     <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
                 </a>
             </span>
             <span class="h-[32px] w-[32px] opacity-60">
-                <a href="">
+                <a href="login-signup/login.html">
                     <i class="fa-regular fa-user" style="color:#000000;"></i>
                 </a>
             </span>
