@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,55 +12,81 @@
     <link rel="icon" type="image/png" href="images/cyber white.svg">
     <title>Cyber</title>
 </head>
+
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
+    <nav
+        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
         <div class="max-[960px]:pl-[25px]">
             <img class="object-scale-down" src="../images/cyber black.svg" alt="Cyber Logo">
         </div>
 
         <div class="search relative max-[960px]:hidden">
-            <input type="text" placeholder="Search" class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
+            <input type="text" placeholder="Search"
+                class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
             <div class="search-icon absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
                 <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
             </div>
         </div>
 
-        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[15%] -translate-y-1/2 z-[100]" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle"
+            class="hidden max-[960px]:block absolute top-[50%] right-[15%] -translate-y-1/2 z-[100]"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
 
-        <div id="mobile-search-dropdown" class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
+        <div id="mobile-search-dropdown"
+            class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
+                <input type="text" placeholder="Search"
+                    class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
                 <div class="absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
                     <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
                 </div>
             </div>
         </div>
 
-        <button id="mobile-menu" class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
-        <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
-            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
+        <div id="navbar-menu"
+            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
+                    href="index.html">Home</a>
             </span>
-            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="about.html">About</a>
+            <span
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="about-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
+                    href="about.html">About</a>
             </span>
-            <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="">Contact Us </a>
+            <span
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="contact-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]"
+                    href="">Contact Us </a>
             </span>
-            <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]" href="">Blog</a>
+            <span
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="blog-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]"
+                    href="">Blog</a>
             </span>
         </div>
-        <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
-            <span class="h-[32px] w-[32px] opacity-60" >
+        <div
+            class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
+            <span class="h-[32px] w-[32px] opacity-60">
                 <a href="">
                     <i class="fa-regular fa-heart" style="color:#000000;"></i>
                 </a>
@@ -79,37 +106,63 @@
 
     <!-- Shipping Section -->
     <main class="w-full bg-white py-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
-        <div class="mx-auto max-w-[1300px]">
-            <!-- Step Indicator -->
-            <div class="flex items-center justify-between mb-[60px] max-[960px]:mb-[40px] max-[640px]:flex-col max-[640px]:gap-y-[20px] max-[640px]:items-center">
-                <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">1</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 1</span>
-                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Address</span>
+        <div class="mx-auto max-w-6xl">
+            <!-- progress -->
+            <div class="aia flex items-center mb-12 w-[90%] mx-auto">
+                <!-- step 1 -->
+                <div class="flex items-center gap-2 text-gray-400">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-[15px] text-white">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="text-md">Step 1</p>
+                        <p class="text-sm font-medium">Address</p>
+                    </div>
                 </div>
-                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px] max-[640px]:w-[2px] max-[640px]:h-[20px] max-[640px]:mx-0 max-[480px]:h-[16px]"></div>
-                <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#000000] flex items-center justify-center text-[14px] font-medium text-[#FFFFFF] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">2</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 2</span>
-                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Shipping</span>
+
+                <!-- connector -->
+                <div class="flex-1 h-px bg-gray-200 mx-4"></div>
+
+                <!-- step 2 -->
+                <div class="flex items-center gap-2 text-black">
+                    <div
+                        class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-[15px] text-white">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="text-md">Step 2</p>
+                        <p class="text-sm font-bold">Shipping</p>
+                    </div>
                 </div>
-                <div class="flex-1 h-[2px] bg-[#E8E8E8] mx-[12px] max-[960px]:mx-[8px] max-[640px]:w-[2px] max-[640px]:h-[20px] max-[640px]:mx-0 max-[480px]:h-[16px]"></div>
-                <div class="flex flex-col items-center gap-[8px]">
-                    <div class="w-[40px] h-[40px] rounded-full bg-[#E8E8E8] flex items-center justify-center text-[14px] font-medium text-[#8B8B8B] max-[480px]:w-[32px] max-[480px]:h-[32px] max-[480px]:text-[12px]">3</div>
-                    <span class="text-[12px] font-medium text-[#8B8B8B] max-[480px]:text-[10px]">Step 3</span>
-                    <span class="text-[14px] font-semibold text-[#000000] max-[480px]:text-[12px]">Payment</span>
+
+                <!-- connector -->
+                <div class="flex-1 h-px bg-gray-200 mx-4"></div>
+
+                <!-- step 3 -->
+                <div class="flex items-center gap-2 text-gray-400">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-[15px] text-white">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="text-md">Step 3</p>
+                        <p class="text-sm font-medium">Payment</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Shipment Method Section -->
             <div>
                 <h2 class="text-[24px] font-semibold text-[#000000] mb-[24px]">Shipment Method</h2>
-                
+
                 <!-- Option 1: Free Shipment -->
-                <div class="mb-[16px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
+                <div
+                    class="mb-[16px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-[16px]">
-                            <input type="radio" name="shipment" id="free-shipment" value="free" checked class="w-[24px] h-[24px] cursor-pointer">
+                            <input type="radio" name="shipment" id="free-shipment" value="free" checked
+                                class="w-[24px] h-[24px] cursor-pointer">
                             <label for="free-shipment" class="cursor-pointer">
                                 <div class="text-[16px] font-semibold text-[#000000]">Free</div>
                                 <div class="text-[14px] font-medium text-[#8B8B8B]">Regular shipment</div>
@@ -120,13 +173,17 @@
                 </div>
 
                 <!-- Option 2: Express Shipment -->
-                <div class="mb-[16px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
+                <div
+                    class="mb-[16px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-[16px]">
-                            <input type="radio" name="shipment" id="express-shipment" value="express" class="w-[24px] h-[24px] cursor-pointer">
+                            <input type="radio" name="shipment" id="express-shipment" value="express"
+                                class="w-[24px] h-[24px] cursor-pointer">
                             <label for="express-shipment" class="cursor-pointer">
-                                <div class="text-[16px] font-semibold text-[#000000]"><span class="text-[#C0C0C0]">$8.50</span></div>
-                                <div class="text-[14px] font-medium text-[#C0C0C0]">Get your delivery as soon as possible</div>
+                                <div class="text-[16px] font-semibold text-[#000000]"><span
+                                        class="text-[#C0C0C0]">$8.50</span></div>
+                                <div class="text-[14px] font-medium text-[#C0C0C0]">Get your delivery as soon as
+                                    possible</div>
                             </label>
                         </div>
                         <span class="text-[14px] font-medium text-[#8B8B8B]">1 Oct, 2023</span>
@@ -134,24 +191,33 @@
                 </div>
 
                 <!-- Option 3: Scheduled Shipment -->
-                <div class="mb-[40px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
+                <div
+                    class="mb-[40px] p-[20px] border-[1px] border-[#D5D5D5] rounded-[8px] cursor-pointer hover:border-[#000000] transition-all duration-300">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-[16px]">
-                            <input type="radio" name="shipment" id="schedule-shipment" value="schedule" class="w-[24px] h-[24px] cursor-pointer">
+                            <input type="radio" name="shipment" id="schedule-shipment" value="schedule"
+                                class="w-[24px] h-[24px] cursor-pointer">
                             <label for="schedule-shipment" class="cursor-pointer">
-                                <div class="text-[16px] font-semibold text-[#000000]"><span class="text-[#C0C0C0]">Schedule</span></div>
-                                <div class="text-[14px] font-medium text-[#C0C0C0]">Pick a date when you want to get your delivery</div>
+                                <div class="text-[16px] font-semibold text-[#000000]"><span
+                                        class="text-[#C0C0C0]">Schedule</span></div>
+                                <div class="text-[14px] font-medium text-[#C0C0C0]">Pick a date when you want to get
+                                    your delivery</div>
                             </label>
                         </div>
-                        <button class="text-[14px] font-medium text-[#8B8B8B] hover:text-[#000000] transition-all duration-300">Select Date</button>
+                        <button
+                            class="text-[14px] font-medium text-[#8B8B8B] hover:text-[#000000] transition-all duration-300">Select
+                            Date</button>
                     </div>
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="flex items-center justify-end gap-[16px] max-[640px]:flex-col max-[640px]:gap-[12px] max-[640px]:items-stretch">
-                    <button class="px-[40px] py-[12px] border-[1px] border-[#000000] rounded-[8px] text-[16px] font-semibold text-[#000000] bg-white hover:bg-[#000000] hover:text-white transition-all duration-300 max-[640px]:w-full">Back</button>
+                <div
+                    class="flex items-center justify-end gap-[16px] max-[640px]:flex-col max-[640px]:gap-[12px] max-[640px]:items-stretch">
+                    <button
+                        class="px-[40px] py-[12px] border-[1px] border-[#000000] rounded-[8px] text-[16px] font-semibold text-[#000000] bg-white hover:bg-[#000000] hover:text-white transition-all duration-300 max-[640px]:w-full">Back</button>
                     <a href="payment.html">
-                    <button class="px-[40px] py-[12px] bg-[#000000] rounded-[8px] text-[16px] font-semibold text-white hover:bg-[#333333] transition-all duration-300 max-[640px]:w-full">Next</button>
+                        <button
+                            class="px-[40px] py-[12px] bg-[#000000] rounded-[8px] text-[16px] font-semibold text-white hover:bg-[#333333] transition-all duration-300 max-[640px]:w-full">Next</button>
 
                     </a>
                 </div>
@@ -159,7 +225,7 @@
         </div>
     </main>
 
-<!-- footer -->
+    <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
             class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
@@ -221,6 +287,3 @@
             </div>
         </div>
     </footer>
-
-
-
