@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Logo-Vector.svg">
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 font-inter">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="text-center">
+        <!-- Animated Spinner -->
+        <div class="relative w-16 h-16 mx-auto mb-6">
+            <div class="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-black rounded-full border-t-transparent animate-spin"></div>
+        </div>
+
+        <h2 class="text-xl font-semibold text-gray-900 mb-2">Processing Payment...</h2>
+        <p class="text-gray-500 text-sm">Please wait while we confirm your transaction</p>
+
+        <!-- Progress Bar -->
+        <div class="w-64 h-1 bg-gray-200 rounded-full mt-6 mx-auto overflow-hidden">
+            <div id="progress-bar" class="h-full bg-black w-0 transition-all duration-[5000ms] ease-out"></div>
+        </div>
+    </div>
+
+    <!-- Success Card (Hidden Initially) -->
+    <div id="success-card" class="hidden bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-md w-full text-center">
+
+        <!-- Green Circle with Checkmark -->
+        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Payment Confirmed!</h1>
+        <p class="text-gray-500 mb-8">Your transaction has been completed successfully.</p>
+
+        <!-- Order Details -->
+        <div class="bg-gray-50 rounded-xl p-4 mb-8 space-y-2 text-left text-sm">
+            <div class="flex justify-between">
+                <span class="text-gray-500">Order ID</span>
+                <span class="font-medium text-gray-900">#ORD-2026-8842</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-500">Amount</span>
+                <span class="font-medium text-gray-900">$299.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-500">Date</span>
+                <span class="font-medium text-gray-900">Apr 10, 2026</span>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="space-y-3">
+            <button
+                class="w-full bg-black text-white font-medium py-3 px-6 rounded-xl hover:scale-105 transition-transform duration-300"
+                onclick="goToProducts()">
+                Continue Shopping
+            </button>
+            <button
+                class="w-full bg-white text-gray-700 font-medium py-3 px-6 rounded-xl border border-gray-200 hover:border-black transition-border duration-300"
+                onclick="goToPayment()">
+                View Order Details
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // animate progress bar
+        setTimeout(() => {
+            document.getElementById('progress-bar').classList.remove('w-0');
+            document.getElementById('progress-bar').classList.add('w-full');
+        }, 100);
+
+        // random delay between 5-10 seconds
+        const delay = Math.floor(Math.random() * 5000) + 5000;
+
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+            document.getElementById('success-card').classList.remove('hidden');
+        }, delay);
+
+        function goToProducts() {
+            window.location.href = 'products.html';
+        }
+
+        function goToPayment() {
+            window.location.href = 'payment.html';
+        }
+    </script>
+
+</body>
+
+</html>
