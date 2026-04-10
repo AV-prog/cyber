@@ -385,7 +385,7 @@
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
                 <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <i id="heart" class="heart-icon fa-regular fa-heart fa-lg style="color: rgba(16, 16, 16, 0.443);"></i>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -410,7 +410,7 @@
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
                 <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <i id="heart" class="heart-icon fa-regular fa-heart fa-lg style="color: rgba(16, 16, 16, 0.443);"></i>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -435,7 +435,7 @@
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
                 <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <i id="heart" class="heart-icon fa-regular fa-heart fa-lg style="color: rgba(16, 16, 16, 0.443);"></i>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -460,7 +460,7 @@
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
                 <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <i id="heart" class="heart-icon fa-regular fa-heart fa-lg style="color: rgba(16, 16, 16, 0.443);"></i>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -611,6 +611,15 @@
                 this.innerHTML = `View More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
             }
         });
+    </script>
+    <script>
+        const hearts = document.querySelectorAll(".heart-icon");
+        hearts.forEach(heart => {
+        heart.addEventListener("click", () => {
+        heart.classList.toggle("fa-regular");
+        heart.classList.toggle("fa-solid");
+  });
+});
     </script>
 </body>
 
