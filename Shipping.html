@@ -16,9 +16,12 @@
 
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
+    <nav
+        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
         <div class="max-[960px]:pl-[25px]">
-            <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+            <a href="index.html">
+                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+            </a>
         </div>
 
         <div class="search relative max-[960px]:hidden">
@@ -29,7 +32,9 @@
             </div>
         </div>
 
-        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[15%] -translate-y-1/2 z-[100]" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle"
+            class="hidden max-[960px]:block absolute top-[50%] right-[15%] -translate-y-1/2 z-[100]"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
 
@@ -55,12 +60,19 @@
                 class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
-        <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
-            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
+        <div id="navbar-menu"
+            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
+                    href="index.html">Home</a>
             </span>
-            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="about.html">About</a>
+            <span
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="about-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
+                    href="about.html">About</a>
             </span>
             <span
                 class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
@@ -104,7 +116,7 @@
                 <div class="flex items-center gap-2 text-gray-400">
                     <div
                         class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-[15px] text-white">
-                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <i class="fa-solid fa-house"></i>
                     </div>
                     <div class="hidden sm:block">
                         <p class="text-md">Step 1</p>
@@ -119,7 +131,7 @@
                 <div class="flex items-center gap-2 text-black">
                     <div
                         class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-[15px] text-white">
-                        <i class="fa-solid fa-credit-card"></i>
+                        <i class="fa-solid fa-truck-fast"></i>
                     </div>
                     <div class="hidden sm:block">
                         <p class="text-md">Step 2</p>
@@ -134,7 +146,7 @@
                 <div class="flex items-center gap-2 text-gray-400">
                     <div
                         class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-[15px] text-white">
-                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <i class="fa-solid fa-credit-card"></i>
                     </div>
                     <div class="hidden sm:block">
                         <p class="text-md">Step 3</p>
