@@ -11,15 +11,18 @@
     <script src="https://kit.fontawesome.com/09dda602fe.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
     <script src="script/script.js" defer></script>
-    <link rel="favicon" type="image/png" href="images/Logo-Vector.svg">
+    <link rel="icon" type="image/png" href="/images/Logo-Vector.svg">
     <title>Cyber</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden bg-white">
     <!-- Navbar Section -->
-    <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
-        <div class="max-[960px]:pl-[25px]">
-            <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+    <nav
+        class="relative w-full max-w-[1300px] min-h-[88px] max-[960px]:min-h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between gap-4 py-[16px] px-4 sm:px-6 lg:px-[140px] mx-auto z-[10000]">
+        <div class="max-[960px]:pl-[5px]">
+            <a href="index.html">
+                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+            </a>
         </div>
 
         <div class="search relative max-[960px]:hidden">
@@ -29,7 +32,9 @@
             </div>
         </div>
 
-        <button id="mobile-search-toggle" class="hidden max-[960px]:block absolute top-[50%] right-[22%] -translate-y-1/2 z-[100] max-[960px]:left-[305px]" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle"
+            class="hidden max-[960px]:block absolute top-1/2 right-[72px] -translate-y-1/2 z-[100] sm:right-[86px]"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
         </button>
 
@@ -42,24 +47,42 @@
             </div>
         </div>
 
-        <button id="mobile-menu" class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class="hidden max-[960px]:block absolute top-1/2 right-4 -translate-y-1/2 z-[100]"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
-        <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
-            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
-                <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
+        <div id="navbar-menu"
+            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
+                    href="index.html">Home</a>
             </span>
-            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
-                <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="about.html">About</a>
+            <span
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="about-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
+                    href="About.html">About</a>
             </span>
-            <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
-                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="contact-us.html">Contact Us </a>
+            <span
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="contact-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
+                    href="">Contact Us </a>
             </span>
-            <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
-                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]" href="blog.html">Blog</a>
+            <span
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="blog-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
+                    href="">Blog</a>
             </span>
         </div>
         <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
@@ -82,9 +105,11 @@
     </nav>
 
     <!-- Product Container -->
-    <div id="product" class="flex flex-row gap-8 p-8 px-[140px] align-center justify-center mt-[20px]">
+    <div id="product"
+        class="flex flex-col lg:flex-row items-start justify-center gap-8 px-4 sm:px-6 lg:px-[140px] py-8 mt-[20px]">
         <!-- Thumbnails Column -->
-        <div class="row flex flex-col gap-2" id="thumbnailRow">
+        <div class="row flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible w-full lg:w-auto justify-center lg:justify-start"
+            id="thumbnailRow">
             <div class="column w-12">
                 <img src="images/14pm1.png"
                     class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
@@ -108,15 +133,16 @@
         </div>
 
         <!-- Main Image Container - matches gallery height -->
-        <div class="container flex justify-center w-[300px] mb-[100px]">
-            <img id="expandedImg" src="images/14pm1.png " class="max-h-[600px] w-auto object-contain rounded-lg" />
+        <div class="container flex justify-center w-full max-w-[320px] sm:max-w-[420px] lg:w-[300px] mb-0 lg:mb-[100px]">
+            <img id="expandedImg" src="images/14pm1.png "
+                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" />
         </div>
 
         <!-- Product Info Container -->
-        <div class="product-info flex flex-col w-[400px]">
-            <h1 class="text-4xl font-bold mb-4">Apple iPhone 14 Pro Max</h1>
+        <div class="product-info flex flex-col w-full max-w-[520px] lg:w-[400px]">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Apple iPhone 14 Pro Max</h1>
 
-            <div class="price text-3xl font-bold mb-4">
+            <div class="price text-2xl sm:text-3xl font-bold mb-4">
                 $<span id="currentPrice">1399</span>
                 <span class="line-through text-gray-400 text-xl">$<span id="originalPrice">1499</span></span>
             </div>
@@ -132,19 +158,19 @@
                 </div>
             </div>
 
-            <div class="storage-options flex gap-2 mb-4 w-full" id="storageContainer">
-                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+            <div class="storage-options flex flex-wrap gap-2 mb-4 w-full" id="storageContainer">
+                <button class="storage-btn basis-[calc(50%-0.25rem)] sm:basis-auto sm:flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
                     data-storage="128GB" data-price="1099">128GB</button>
-                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+                <button class="storage-btn basis-[calc(50%-0.25rem)] sm:basis-auto sm:flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
                     data-storage="256GB" data-price="1199">256GB</button>
-                <button class="storage-btn flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
+                <button class="storage-btn basis-[calc(50%-0.25rem)] sm:basis-auto sm:flex-1 py-3 border border-gray-300 rounded-lg text-gray-500 text-sm "
                     data-storage="512GB" data-price="1299">512GB</button>
                 <button
-                    class="storage-btn flex-1 py-3 border-2 border-black rounded-lg font-semibold bg-white text-sm active"
+                    class="storage-btn basis-[calc(50%-0.25rem)] sm:basis-auto sm:flex-1 py-3 border-2 border-black rounded-lg font-semibold bg-white text-sm active"
                     data-storage="1TB" data-price="1399">1TB</button>
             </div>
 
-            <div class="specs-grid grid grid-cols-3 gap-2 mb-4">
+            <div class="specs-grid grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
                 <div class="bg-gray-100 p-3 rounded-lg text-center">
                     <div class="text-2xl mb-1"><i class="fa-solid fa-mobile-screen"></i></div>
                     <p class="text-xs text-gray-500">Screen size</p>
@@ -177,7 +203,7 @@
                 </div>
             </div>
 
-            <div class="action-buttons flex gap-3 mb-4">
+            <div class="action-buttons flex flex-col sm:flex-row gap-3 mb-4">
                 <button class="flex-1 py-3 border-2 border-black rounded-lg font-semibold hover:bg-gray-100 transition"
                     onclick="alert('Added to Wishlist')">Add
                     to Wishlist</button>
@@ -190,36 +216,25 @@
     </div>
 
     <!-- breadcrumbs -->
-    <div class="breadcrumbs w-full max-w-[1300px] h-[104px] pt-[40px] pb-[40px] px-[140px] mx-auto relative">
-        <span
-            class="w-[46px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[5px]">
+    <div class="breadcrumbs w-full max-w-[1300px] px-4 sm:px-6 lg:px-[140px] py-6 mx-auto">
+        <div class="flex flex-wrap items-center gap-2 font-inter font-medium text-[14px] sm:text-[16px] leading-[16px] text-[#A4A4A4]">
             <a href="../index.html">
                 Home
-                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[70px]">
-                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
-                </span>
             </a>
-        </span>
-        <span
-            class="w-[60px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#A4A4A4] absolute top[7px] left-[280px]">
+            <i class="fa-sharp fa-solid fa-angle-right text-[12px]" style="color:#A4A4A4;"></i>
             <a href="../products.html">
                 Catalog
-                <span class="w-[6px] h-[12px] font-inter absolute top-[1px] left-[74px]">
-                    <i class="fa-sharp fa-solid fa-angle-right" style="color:#A4A4A4;"></i>
-                </span>
             </a>
-        </span>
-        <span
-            class="w-[200px] h-[16px] font-inter font-medium text-[16px] leading-[16px] text-[#000000] absolute left-[420px] top-[42px]">
-            <a href="">
+            <i class="fa-sharp fa-solid fa-angle-right text-[12px]" style="color:#A4A4A4;"></i>
+            <a href="" class="text-[#000000]">
                 iPhone 14 Pro Max
             </a>
-        </span>
+        </div>
     </div>
 
     <!--product description-->
-    <div class="w-[100%] bg-gray-100 p-10">
-        <div class="w-[70%] mx-auto bg-[white] p-8 shadow-sm">
+    <div class="w-full bg-gray-100 px-4 sm:px-6 lg:px-10 py-10">
+        <div class="w-full max-w-[1200px] mx-auto bg-[white] p-5 sm:p-8 shadow-sm">
 
             <!-- header -->
             <h2 class="text-2xl font-bold mb-6">Details</h2>
@@ -352,7 +367,7 @@
     </div>
 
     <!-- related products -->
-    <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <h2 class="text-2xl font-bold mb-8">Related Products</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
