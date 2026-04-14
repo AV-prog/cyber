@@ -11,11 +11,111 @@
     <script src="script/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/Logo-Vector.svg">
     <title>Cyber</title>
+    <style>
+        @media (min-width: 961px) {
+            .products-grid > div > div:first-child,
+            .discount-grid > div > div:first-child,
+            #bestsellers > div > div:first-child,
+            #on-sale > div > div:first-child {
+                margin-top: 32px;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .site-shell {
+                width: 100%;
+            }
+
+            .search,
+            .icons,
+            #mobile-search-toggle {
+                display: none !important;
+            }
+
+            nav {
+                max-width: none !important;
+                height: 88px !important;
+                padding: 0 20px !important;
+                border-bottom-color: #d9d9d9 !important;
+            }
+
+            #mobile-menu {
+                display: block !important;
+                top: 50% !important;
+                right: 20px !important;
+                transform: translateY(-50%) !important;
+            }
+
+            #mobile-menu span {
+                background: #1f1a2c !important;
+                height: 3px !important;
+                width: 32px !important;
+                margin: 6px 0 !important;
+            }
+
+            .hero-section {
+                flex-direction: column !important;
+                gap: 8px !important;
+                padding: 56px 16px 0 !important;
+                overflow: hidden;
+            }
+
+            .hero-copy {
+                width: 100% !important;
+                min-width: 0 !important;
+                height: auto !important;
+                margin-top: 0 !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 20px !important;
+            }
+
+            .hero-copy .eyebrow {
+                height: auto !important;
+                font-size: 34px !important;
+                line-height: 1.1 !important;
+                opacity: 0.4 !important;
+            }
+
+            .hero-copy h1 {
+                height: auto !important;
+                font-size: 96px !important;
+                line-height: 0.92 !important;
+            }
+
+            .hero-copy .hero-desc {
+                margin-top: 0 !important;
+                font-size: 19px !important;
+                line-height: 1.45 !important;
+                max-width: 360px;
+            }
+
+            .hero-copy .hero-cta {
+                width: 100% !important;
+                max-width: 284px;
+                margin-top: 4px !important;
+            }
+
+            .hero-media {
+                width: 100% !important;
+                min-width: 0 !important;
+                height: auto !important;
+                margin-top: 20px !important;
+            }
+
+            .hero-media img {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar Section -->
     <nav class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[10000]">
-        <div class="max-[960px]:pl-[25px]">
+        <div class="max-[960px]:pl-[5px]">
             <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
         </div>
 
@@ -46,31 +146,31 @@
         </button>
 
         <div id="navbar-menu" class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
-            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+            <span class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
                 <a id="home-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]" href="index.html">Home</a>
             </span>
-            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+            <span class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
                 <a id="about-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]" href="about.html">About</a>
             </span>
-            <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="">Contact Us </a>
+            <span class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
+                <a id="contact-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]" href="contact-us.html">Contact Us </a>
             </span>
-            <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]" href="">Blog</a>
+            <span class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:opacity-100 transition-opacity duration-300">
+                <a id="blog-page" class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]" href="blog.html">Blog</a>
             </span>
         </div>
         <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
-            <span class="h-[32px] w-[32px] opacity-60" >
+            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300" >
                 <a href="">
                     <i class="fa-regular fa-heart" style="color:#000000;"></i>
                 </a>
             </span>
-            <span class="h-[32px] w-[32px] opacity-60">
+            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300">
                 <a href="shopping cart.html">
                     <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
                 </a>
             </span>
-            <span class="h-[32px] w-[32px] opacity-60">
+            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300">
                 <a href="login.html">
                     <i class="fa-regular fa-user" style="color:#000000;"></i>
                 </a>
@@ -79,34 +179,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="w-full h-[593px] flex justify-between opacity-100 px-[150px] bg-gradient-to-r from-[#211C24] via-[#211C24] to-[#211C24] max-[960px]:h-[900px] max-[960px]:flex-col max-[960px]:gap-[48px] max-[960px]:pt-[88px] max-[960px]:px-[16px] max-[960px]:justify-start">
+    <section class="hero-section w-full h-[593px] flex justify-between opacity-100 px-[150px] bg-gradient-to-r from-[#211C24] via-[#211C24] to-[#211C24] max-[960px]:h-[900px] max-[960px]:flex-col max-[960px]:gap-[48px] max-[960px]:pt-[88px] max-[960px]:px-[16px] max-[960px]:justify-start">
         <!--content-->
-        <div class="w-[714px] h-[256px] min-w-[400px] rotate-0 opacity-100 flex flex-col max-[960px]:items-center gap-[24px] mt-[152px] max-[960px]:w-[343px] max-[960px]:min-w-0 max-[960px]:h-[256px] max-[960px]:gap-[16px] max-[960px]:mt-0 max-[960px]:text-center">
-            <p class="h-[32px] rotate-0 opacity-40 text-[#FFFFFF] font-inter font-semibold text-[23px] leading-[32px] tracking-[0%] justify-center">Pro.Beyond.</p>
-            <p class="h-[72px] rotate-0 opacity-100 text-[#FFFFFF] font-inter font-thin text-[94px] leading-[72px] tracking-[-1%] max-[960px]:text-[80px] max-[960px]:leading-[64px]">IPhone 14 <span class="font-semibold">Pro</span></p>
-            <p class="font-inter font-medium text-[18px] leading-[24px] tracking-[0%] max-[960px]:mt-[70px] text-[#909090]">Created to change everything for the better. For everyone</p>
-            <a href="login.html" class="w-[196px] h-[56px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#FFFFFF] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px]">Shop Now</a>
+        <div class="hero-copy w-[714px] h-[256px] min-w-[400px] rotate-0 opacity-100 flex flex-col max-[960px]:items-center gap-[24px] mt-[152px] max-[960px]:w-[343px] max-[960px]:min-w-0 max-[960px]:h-[256px] max-[960px]:gap-[16px] max-[960px]:mt-0 max-[960px]:text-center">
+            <p class="eyebrow h-[32px] rotate-0 opacity-40 text-[#FFFFFF] font-inter font-semibold text-[23px] leading-[32px] tracking-[0%] justify-center">Pro.Beyond.</p>
+            <h1 class="h-[72px] rotate-0 opacity-100 text-[#FFFFFF] font-inter font-thin text-[94px] leading-[72px] tracking-[-1%] max-[960px]:text-[80px] max-[960px]:leading-[64px]">IPhone 14 <span class="font-semibold">Pro</span></h1>
+            <p class="hero-desc font-inter font-medium text-[18px] leading-[24px] tracking-[0%] max-[960px]:mt-[70px] text-[#909090]">Created to change everything for the better. For everyone</p>
+            <a href="login.html" class="hero-cta w-[196px] h-[56px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#FFFFFF] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px]">Shop Now</a>
         </div>
 
         <!--image-->
-        <div class="w-[406px] h-[632px] min-w-[200px] rotate-0 opacity-100 mt-[50px] max-[960px]:w-full max-[960px]:min-w-0 max-[960px]:h-auto max-[960px]:mt-[100px]">
+        <div class="hero-media w-[406px] h-[632px] min-w-[200px] rotate-0 opacity-100 mt-[50px] max-[960px]:w-full max-[960px]:min-w-0 max-[960px]:h-auto max-[960px]:mt-[100px]">
             <img class="object-cover" src="images/hero.png" alt="Hero Image">
         </div>
      </section>
 
      <!--Small Banners-->
-    <section class="w-full h-[600px] flex flex-row rotate-0 opacity-100 z-[200] max-[960px]:h-auto max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:px-0 max-[960px]:gap-0">
+    <section class="promo-grid w-full h-[600px] flex flex-row rotate-0 opacity-100 z-[200] max-[960px]:h-auto max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:px-0 max-[960px]:gap-0">
         <!--left-->
         <div class="w-1/2 rotate-0 opacity-100 flex flex-col bg-[#FFFFFF] max-[960px]:w-full max-[960px]:items-stretch max-[960px]:gap-0">
             <!--top-->
-            <div class="w-full h-1/2 rotate-0 opacity-100 px-[20px] flex flex-row items-center justify-between gap-[32px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:justify-center max-[960px]:items-center max-[960px]:flex-col max-[960px]:gap-[16px] max-[960px]:order-3">
+            <div class="promo-top w-full h-1/2 rotate-0 opacity-100 px-[20px] flex flex-row items-center justify-between gap-[32px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:justify-center max-[960px]:items-center max-[960px]:flex-col max-[960px]:gap-[16px] max-[960px]:order-3">
                 <!--image-->
-                <div class="w-[420px] h-[450px] rotate-0 opacity-100 shrink-0 -ml-[148px] max-[960px]:w-[70%] max-[960px]:max-w-[260px] max-[960px]:h-auto max-[960px]:ml-0">
+                <div class="promo-top-image w-[420px] h-[450px] rotate-0 opacity-100 shrink-0 -ml-[148px] max-[960px]:w-[70%] max-[960px]:max-w-[260px] max-[960px]:h-auto max-[960px]:ml-0">
                     <img class="w-full h-full object-contain" src="images/playstation.png" alt="PlayStation">
                 </div>
 
                 <!--content-->
-                <div class="w-[338px] h-[128px] max-w-[404px] rotate-0 opacity-100 flex flex-col gap-[16px] -ml-[60px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:ml-0 max-[960px]:items-center max-[960px]:text-center">
+                <div class="promo-top-copy w-[338px] h-[128px] max-w-[404px] rotate-0 opacity-100 flex flex-col gap-[16px] -ml-[60px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:ml-0 max-[960px]:items-center max-[960px]:text-center">
                     <p class="w-[338px] h-[40px] rotate-0 opacity-100 text-[#000000] font-inter font-medium text-[49px] leading-[40px] tracking-[0%] leading-trim-none max-[960px]:w-full max-[960px]:text-[36px]">Playstation 5</p>
                     <p class="w-[338px] h-[72px] rotate-0 opacity-100 text-[#909090] font-inter font-medium text-[14px] leading-[24px] tracking-[0%] leading-trim-none max-[960px]:w-full max-[960px]:h-auto">Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.</p>
                 </div>
@@ -115,28 +215,28 @@
             <!--bottom-->
             <div class="w-full h-1/2 rotate-0 opacity-100 flex flex-row items-center justify-between gap-[32px] max-[960px]:h-auto max-[960px]:justify-center max-[960px]:items-center max-[960px]:flex-col max-[960px]:gap-[16px]">
                 <!--left-->
-               <div class="w-1/2 h-full rotate-0 opacity-100 bg-[#EDEDED] flex flex-row z-[150] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px] max-[960px]:z-[0] max-[960px]:order-1">
+               <div class="promo-airpods w-1/2 h-full rotate-0 opacity-100 bg-[#EDEDED] flex flex-row z-[150] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px] max-[960px]:z-[0] max-[960px]:order-1">
                     <!--image-->
-                     <div class="w-[320px] h-[303px] rotate-0 opacity-100 shrink-0 -ml-[168px] max-[960px]:w-[65%] max-[960px]:max-w-[180px] max-[960px]:h-auto max-[960px]:ml-0">
+                     <div class="promo-airpods-image w-[320px] h-[303px] rotate-0 opacity-100 shrink-0 -ml-[168px] max-[960px]:w-full max-[960px]:max-w-[180px] max-[960px]:h-auto max-[960px]:ml-0">
                         <img class="w-full h-full object-contain" src="images/headphone.png" alt="Headphones">
                     </div>
 
                     <!--content-->
-                    <div class="w-[140px] h-[143px] max-w-[168px] rotate-0 opacity-100 flex flex-col gap-[8px] items-center justify-between mt-[70px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:text-center">
+                    <div class="promo-airpods-copy w-[140px] h-[143px] max-w-[168px] rotate-0 opacity-100 flex flex-col gap-[8px] items-center justify-between mt-[70px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:text-center">
                         <p class="w-[140px] h-[120px] rotate-0 opacity-100 font-inter font-light text-[29px] leading-[40px] tracking-[0%] leading-trim-none text-[#000000] -ml-[10px] max-[960px]:w-[300px] max-[960px]:h-auto max-[960px]:ml-0">Apple AirPods <span class="font-inter font-medium text-[29px] leading-[40px] tracking-[0%] leading-trim-none">Max</span></p>
                         <p class="w-[140px] h-[48px] rotate-0 opacity-100 text-[#909090] font-inter font-medium text-[13px] leading-[24px] tracking-[0%] max-[960px]:w-[300px] max-[960px]:h-auto">Computational audio. Listen, it's powerful</p>
                     </div>
                 </div>
 
                 <!--right-->
-               <div class="w-1/2 h-full rotate-0 opacity-100 bg-[#353535] flex flex-row -ml-[168px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:-mt-[20px] max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px] max-[960px]:ml-0 max-[960px]:order-2">
+               <div class="promo-vision w-1/2 h-full rotate-0 opacity-100 bg-[#353535] flex flex-row -ml-[168px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:-mt-[20px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px] max-[960px]:ml-0 max-[960px]:order-2">
                     <!--image-->
-                    <div class="w-[320px] h-[303px] rotate-0 opacity-100 shrink-0 -ml-[168px] max-[960px]:w-[75%] max-[960px]:max-w-[260px] max-[960px]:h-auto max-[960px]:ml-0">
+                    <div class="promo-vision-image w-[320px] h-[303px] rotate-0 opacity-100 shrink-0 -ml-[168px] max-[960px]:w-[75%] max-[960px]:max-w-[260px] max-[960px]:h-auto max-[960px]:ml-0">
                         <img class="w-full h-full object-contain -scale-x-100" src="images/vision-pro.png" alt="Vision Pro">
                     </div>
 
                     <!--content-->
-                    <div class="w-[140px] h-[143px] max-w-[168px] rotate-0 opacity-100 flex flex-col gap-[8px] items-center justify-between mt-[70px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:text-center">
+                    <div class="promo-vision-copy w-[140px] h-[143px] max-w-[168px] rotate-0 opacity-100 flex flex-col gap-[8px] items-center justify-between mt-[70px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:text-center">
                         <p class="w-[140px] h-[120px] rotate-0 opacity-100 font-inter font-light text-[29px] leading-[40px] tracking-[0%] leading-trim-none text-[#FFFFFF] -ml-[10px] max-[960px]:w-[300px] max-[960px]:h-auto max-[960px]:ml-0">Apple Vision <span class="font-inter font-medium text-[29px] leading-[40px] tracking-[0%] leading-trim-none">Pro</span></p>
                         <p class="w-[140px] h-[48px] rotate-0 opacity-100 text-[#909090] font-inter font-medium text-[13px] leading-[24px] tracking-[0%] max-[960px]:w-[250px] max-[960px]:h-auto">An immersive way to experience entertainment</p>
                     </div>
@@ -146,16 +246,16 @@
         </div>
 
         <!--right-->
-        <div class="w-1/2 h-full rotate-0 opacity-100 bg-[#EDEDED] flex flex-row max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px]">
+        <div class="promo-right w-1/2 h-full rotate-0 opacity-100 bg-[#EDEDED] flex flex-row max-[960px]:w-full max-[960px]:h-auto max-[960px]:px-[16px] max-[960px]:py-[24px] max-[960px]:flex-col max-[960px]:items-center max-[960px]:justify-center max-[960px]:gap-[16px]">
             <!--content-->
-            <div class="w-1/2 h-full rotate-0 opacity-100 flex flex-col mt-[120px] ml-[30px] px-[20px] gap-[24px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:ml-0 max-[960px]:px-0 max-[960px]:items-center max-[960px]:text-center max-[960px]:order-2">
+            <div class="promo-right-copy w-1/2 h-full rotate-0 opacity-100 flex flex-col mt-[120px] ml-[30px] px-[20px] gap-[24px] max-[960px]:w-full max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:ml-0 max-[960px]:px-0 max-[960px]:items-center max-[960px]:text-center max-[960px]:order-2">
                 <p class="w-[330px] h-[112px] rotate-0 opacity-100 font-inter font-thin text-[64px] leading-[56px] tracking-[0%] leading-trim-none max-[960px]:w-full max-[960px]:h-auto max-[960px]:text-[48px] max-[960px]:leading-[48px]">Macbook <span class="font-inter font-medium text-[64px] leading-[56px] tracking-[0%] leading-trim-none max-[960px]:text-[48px] max-[960px]:leading-[48px]">Air</span></p>
                 <p class="w-[330px] h-[72px] rotate-0 opacity-100 font-inter font-medium text-[14px] leading-[24px] tracking-[0%] text-[#909090] max-[960px]:w-full max-[960px]:h-auto">The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
-                <a href="login.html" class="w-[193px] h-[53px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#000000] text-[#000000] hover:bg-[#000000] hover:text-[#FFFFFF] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px] max-[960px]:w-[303px] max-[960px]:h-[63px] max-[960px]:text-[20px]">Shop Now</a>
+                <a href="login.html" class="promo-button w-[193px] h-[53px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#000000] text-[#000000] hover:bg-[#000000] hover:text-[#FFFFFF] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px] max-[960px]:w-[303px] max-[960px]:h-[63px] max-[960px]:text-[20px]">Shop Now</a>
             </div>
             
             <!--image-->
-           <div class="w-[240px] h-[503px] rotate-0 opacity-100 shrink-0 mt-[30px] ml-auto mr-0 max-[960px]:w-full max-[960px]:max-w-[450px] max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:ml-0 max-[960px]:mr-0 max-[960px]:order-1">
+           <div class="promo-right-image w-[240px] h-[503px] rotate-0 opacity-100 shrink-0 mt-[30px] ml-auto mr-0 max-[960px]:w-full max-[960px]:max-w-[450px] max-[960px]:h-auto max-[960px]:mt-0 max-[960px]:ml-0 max-[960px]:mr-0 max-[960px]:order-1">
                 <picture>
                     <source class="w-full h-full object-contain" media="(max-width: 960px)" srcset="images/MacBook-Pro-14-mq.png">
                     <img class="w-full h-full object-contain" src="images/MacBook-Pro-14.png" alt="MacBook Pro 14">
@@ -165,7 +265,7 @@
      </section>
 
      <!--Category-->
-    <section class="w-full h-[352px] rotate-0 opacity-100 pt-[80px] pr-[160px] pb-[80px] pl-[160px] flex flex-col gap-[32px]">
+    <section class="category-section w-full h-[352px] rotate-0 opacity-100 pt-[80px] pr-[160px] pb-[80px] pl-[160px] flex flex-col gap-[32px]">
         <div class="w-full h-[32px] rotate-0 opacity-100 flex items-center justify-between">
             <p class="w-[239px] h-[32px] rotate-0 opacity-100 font-inter font-medium text-[24px] leading-[32px] tracking-[1%] leading-trim-none text-[#000000]">Browse By Category</p>
             <div class="w-[80px] h-[32px] rotate-0 opacity-100 flex items-center gap-[16px]">
@@ -176,32 +276,29 @@
 
         <!-- show only first 6 cards initially -->
         <div class="w-full overflow-hidden">
-            <div id="category-track" class="w-full h-[128px] rotate-0 opacity-100 flex gap-[32px] transition-transform duration-300 ease-in-out [&>a]:box-border [&>a]:flex-none">
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-mobile-screen w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Phone</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-car w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center whitespace-nowrap">Cars</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-computer w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Computers</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-headphones w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Headphones</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-camera w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Cameras</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-gamepad w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Gaming</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-music w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Audio</p></a>
-                <a class="w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-truck w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Deliveries</p></a>
+            <div id="category-track" class="category-track w-full h-[128px] rotate-0 opacity-100 flex gap-[32px] transition-transform duration-300 ease-in-out [&>a]:box-border [&>a]:flex-none">
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-mobile-screen w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Phones</p></a>
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-regular fa-clock w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center whitespace-nowrap">Smart Watches</p></a>
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-camera w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Cameras</p></a>
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-headphones w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Headphones</p></a>
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-computer w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Computers</p></a>
+                <a class="category-card w-[calc((100%-160px)/6)] min-w-[calc((100%-160px)/6)] h-[102px] rotate-0 opacity-100 pt-[16px] pr-[20px] pb-[16px] pl-[23px] gap-[6px] rounded-[12px] flex flex-col items-center justify-center bg-[#EDEDED]" href="login.html"><i class="fa-solid fa-gamepad w-[40px] h-[40px] rotate-0 opacity-100 text-[24px]"></i><p class="w-auto h-[20px] rotate-0 opacity-100 font-['Inter'] font-medium text-[13.6px] leading-[20px] tracking-[0] text-center">Gaming</p></a>
             </div>
         </div>
     </section>
 
      <!--Products-->
-     <section class="w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
-        <div class="w-full max-w-[1120px] h-[32px] flex gap-[32px]">
-            <a class="w-[120px] h-[32px] -ml-[10px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#new-arrivals">New Arrival</a>
+     <section class="products-section w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
+        <div class="products-tabs w-full max-w-[1120px] h-[32px] flex gap-[32px]">
+            <a class="w-[120px] h-[32px] -ml-[10px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center active-tab" href="#new-arrivals">New Arrival</a>
             <a class="w-[120px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#bestsellers">Bestseller</a>
             <a class="w-[170px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#on-sale">Featured Products</a>
         </div>
 
         <!--New arrivals-->
-        <div class="w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2"
+        <div class="products-grid w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2"
         id="new-arrivals">
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-full h-full max-w-[130px] max-h-[130px]">
                     <img class="ml-[32px]" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
                 </div>
@@ -215,7 +312,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[11px]" src="images/camera.png" alt="Blackmagic Pocket Cinema Camera 6k">
                 </div>
@@ -229,7 +325,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[12px]" src="images/apple-watch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium ">
                 </div>
@@ -243,7 +338,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-full h-full max-w-[140px] max-h-[140px]">
                     <img class="ml-[25px]" src="images/headphone.png" alt="AirPods Max Silver Starlight Aluminium">
                 </div>
@@ -257,7 +351,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/gwatch.png" alt="Samsung Galaxy Watch6 Classic 47mm Black">
                 </div>
@@ -271,7 +364,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/zfold.png" alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black">
                 </div>
@@ -285,7 +377,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/buds.png" alt="Galaxy Buds FE Graphite">
                 </div>
@@ -299,7 +390,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/tablet.png" alt='Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021'>
                 </div>
@@ -316,7 +406,6 @@
         <!--Bestsellers-->
         <div class="w-full max-w-[1120px] h-[700px] rotate-0 opacity-100 flex gap-[16px] hidden" id="bestsellers">
             <div class="w-full h-full min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="max-w-[700px] max-h-[700px] mx-auto">
                     <img class="w-full h-full object-cover -scale-x-100" src="images/vision-pro.png" alt="Bestseller Product">
                 </div>
@@ -333,7 +422,6 @@
         <!--Featured Products-->
         <div class="w-full max-w-[1120px] h-[400px] rotate-0 opacity-100 flex gap-[16px] hidden" id="on-sale">
             <div class="w-full min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="flex flex-row mt-[40px]">
                     <div class="w-[300px] h-[260px]">
                         <img class="h-full object-fill" src="images/14pro1.png" alt="Featured Product 1">
@@ -349,7 +437,6 @@
             </div>
             
             <div class="w-full min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="flex flex-row mt-[40px] pl-[10px]">
                     <div class="w-[300px] h-[260px]">
                         <img class="h-full object-fill" src="images/zfold.png" alt="Featured Product 1">
@@ -368,8 +455,8 @@
 
 
     <!-- Another Banner -->
-    <section id="services" class="w-full max-w-[1440px] h-[600px] rotate-0 opacity-100 mx-auto mt-[40px] bg-[#000000]">
-        <div class="wrapper flex flex-row">            
+    <section id="services" class="services-section w-full max-w-[1440px] h-[600px] rotate-0 opacity-100 mx-auto mt-[40px] bg-[#000000]">
+        <div class="wrapper services-wrapper flex flex-row">            
             <div class="card w-[360px] h-[600px] min-w-[280px] pt-[376px] pr-[32px] pb-[56px] pl-[32px] bg-[#FFFFFF]">
                 <div class="-ml-[10px]">
                     <img class="w-[190px] h-[180px] rotate-[30deg] opacity-100 relative top-[22px] left-0 -mt-[330px]" src="images/huawei.png" alt="Huawei">
@@ -421,14 +508,13 @@
 
 
     <!--Discount-->
-    <section class="w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
+    <section class="discount-section w-full max-w-[1440px] opacity-100 pt-[56px] pr-[160px] pb-[56px] pl-[160px] flex flex-col gap-[32px] mx-auto">
         <div class="w-full max-w-[1120px] h-[32px] flex gap-[32px]">
             <a class="w-[200px] h-[32px] font-['Inter'] font-medium text-[18px] leading-[32px] text-center" href="#new-arrivals">Discounts up to 50%</a>
         </div>
 
-        <div class="w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2">
+        <div class="discount-grid w-full max-w-[1120px] grid grid-cols-4 gap-[16px] max-[960px]:grid-cols-2">
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-full h-full max-w-[140px] max-h-[140px]">
                     <img class="ml-[25px]" src="images/img1.png" alt="AirPods Max Silver Starlight Aluminium">
                 </div>
@@ -442,7 +528,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-full h-full max-w-[140px] max-h-[140px]">
                     <img class="ml-[25px]" src="images/headphone.png" alt="AirPods Max Silver Starlight Aluminium">
                 </div>
@@ -456,7 +541,6 @@
             </div>
         
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/apple-watch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium ">
                 </div>
@@ -470,7 +554,6 @@
             </div>
 
             <div class="w-full h-[402px] min-w-[200px] pt-[24px] pr-[16px] pb-[24px] pl-[16px] gap-[16px] rounded-[9px] bg-[#F6F6F6]">
-                <div class="w-[236px] h-[32px] gap-[8px]"></div>
                 <div class="w-[160px] h-[160px]">
                     <img class="ml-[15px]" src="images/img9.png" alt="Apple iPhone 14 Pro 1TB Gold (MQV23) ">
                 </div>
@@ -486,30 +569,30 @@
     </section>
 
     <!--Final Banner-->
-    <section class="w-full max-w-[1440px] h-[460px] rotate-0 opacity-100 flex gap-[8px] bg-[url(/images/Final-Banner-Image.png)] bg-cover bg-center mx-auto mt-[56px]">
-        <div class="w-full max-w-[703px] h-[200px] rotate-0 opacity-100 flex flex-col justify-content items-center gap-[40px] text-[#FFFFFF] my-auto mx-auto">
+    <section class="summer-banner w-full max-w-[1440px] h-[460px] rotate-0 opacity-100 flex gap-[8px] bg-[url(/images/Final-Banner-Image.png)] bg-cover bg-center mx-auto mt-[56px]">
+        <div class="summer-copy w-full max-w-[703px] h-[200px] rotate-0 opacity-100 flex flex-col justify-content items-center gap-[40px] text-[#FFFFFF] my-auto mx-auto">
             <div class="w-full max-w-[703px] h-[104px] rotate-0 opacity-100">
-                <p class="font-['Inter'] font-extralight text-[72px] leading-[72px] tracking-[-0.01em] text-center">Big Summer <span class="font-['Inter'] text-[72px] leading-[72px] tracking-[-0.01em] text-center">Sale</span></p>
+                <h2 class="font-['Inter'] font-extralight text-[72px] leading-[72px] tracking-[-0.01em] text-center">Big Summer <span class="font-['Inter'] text-[72px] leading-[72px] tracking-[-0.01em] text-center">Sale</span></h2>
                 <p class="font-['Inter'] font-normal text-[16px] leading-[32px] tracking-[0] text-center text-[#787878]">Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
             </div>
             <div>
-                <a href="login.html" class="w-[193px] h-[53px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#FFFFFF] text-[#FFFFFF] mt-[16px] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px] max-[960px]:w-[303px] max-[960px]:h-[63px] max-[960px]:text-[20px]">Shop Now</a>
+                <a href="login.html" class="summer-cta w-[193px] h-[53px] text-[17px] rotate-0 opacity-100 flex items-center justify-center gap-[8px] pt-[16px] pr-[56px] pb-[16px] pl-[56px] rounded-[6px] border border-[#FFFFFF] text-[#FFFFFF] mt-[16px] hover:bg-[#FFFFFF] hover:text-[#000000] transition-colors duration-300 ease-in-out max-[960px]:mt-[10px] max-[960px]:w-[303px] max-[960px]:h-[63px] max-[960px]:text-[20px]">Shop Now</a>
             </div>
         </div>
     </section>
 
     <!--Footer-->
-      <footer class="w-full bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+      <footer class="site-footer w-full bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
-            <div class="font-inter">
-                <div class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+            <div class="footer-brand font-inter">
+                <div class="footer-copy txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
                     <div class="logo">
                         <img src="images/cyber white.svg" alt="logo">
                     </div>
                     <span>We are a residential interior design firm located in</span>
                     <span>Portland. Our boutique-studio offers more than</span>
                 </div>
-                <div class="mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
+                <div class="footer-social mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
                     <span>
                         <a href="#" aria-label="X">
                             <i class="fa-brands fa-x-twitter fa-sm" style="color:#FFFFFF;"></i>
@@ -535,7 +618,7 @@
 
             <div class="font-inter text-white">
                 <span class="text-[17px] font-semibold">Services</span>
-                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                <div class="footer-links mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
                     <span><a href="#">Bonus Program</a></span>
                     <span><a href="#">Gift Cards</a></span>
                     <span><a href="#">Credit and Payment</a></span>
@@ -546,8 +629,8 @@
             </div>
 
             <div class="font-inter text-white">
-                <span class="text-[17px] font-semibold">Assistacnce to the buyer</span>
-                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                <span class="text-[17px] font-semibold">Assistance to the buyer</span>
+                <div class="footer-links mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
                     <span><a href="#">Find an order</a></span>
                     <span><a href="#">Terms of delivery</a></span>
                     <span><a href="#">Exchange and return of goods</a></span>
@@ -567,11 +650,12 @@
 
         if (catLeft && catRight && categoryTrack) {
             let categoryIndex = 0;
-            const visibleCards = 6;
             const scrollCards = 2;
+            const getVisibleCards = () => window.innerWidth <= 960 ? 2 : 6;
 
             const getMaxIndex = () => {
                 const totalCards = categoryTrack.querySelectorAll('a').length;
+                const visibleCards = getVisibleCards();
                 const hiddenCards = Math.max(totalCards - visibleCards, 0);
                 return Math.ceil(hiddenCards / scrollCards);
             };
@@ -584,6 +668,13 @@
             };
 
             const updateCategorySlider = () => {
+                if (window.innerWidth <= 960) {
+                    categoryTrack.style.transform = 'none';
+                    catLeft.classList.add('opacity-40');
+                    catRight.classList.add('opacity-40');
+                    return;
+                }
+
                 const step = getStep();
                 categoryTrack.style.transform = `translateX(-${categoryIndex * step * scrollCards}px)`;
                 const maxIndex = getMaxIndex();
@@ -607,37 +698,81 @@
             });
 
             updateCategorySlider();
+            window.addEventListener('resize', updateCategorySlider);
         }
     </script>
 <!--Best sellers and featured products visibility -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Select all tab links and product sections
-const tabLinks = document.querySelectorAll('.tab-link');
-const sections = {
-  'new-arrivals': document.getElementById('new-arrivals'),
-  'bestsellers': document.getElementById('bestsellers'),
-  'on-sale': document.getElementById('on-sale')
-};
+            const sections = {
+              'new-arrivals': document.getElementById('new-arrivals'),
+              'bestsellers': document.getElementById('bestsellers'),
+              'on-sale': document.getElementById('on-sale')
+            };
 
-// Add click event to each link
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
+            const tabLinks = document.querySelectorAll('.products-tabs a');
+            const isMobileView = window.innerWidth <= 960;
 
-    const targetId = this.getAttribute('href').substring(1);
+            if (isMobileView) {
+              const cardSections = [sections['new-arrivals'], sections['bestsellers'], sections['on-sale'], document.querySelector('.discount-grid')];
 
-    // Hide all sections
-    Object.values(sections).forEach(section => {
-      section.classList.add('hidden');
-    });
+              document.querySelectorAll('.services-wrapper .card a').forEach(link => {
+                link.classList.add('service-cta');
+              });
 
-    // Show the clicked section
-    if (sections[targetId]) {
-      sections[targetId].classList.remove('hidden');
-    }
-  });
-});
+              cardSections.forEach((section, sectionIndex) => {
+                if (!section) return;
+
+                const cards = section.children;
+                Array.from(cards).forEach((card, cardIndex) => {
+                  card.classList.add('shop-card');
+
+                  const media = card.children[1];
+                  if (media) media.classList.add('product-media');
+
+                  const copy = card.children[2];
+                  if (copy) {
+                    copy.classList.add('product-copy');
+
+                    const meta = copy.children[0];
+                    if (meta) {
+                      const texts = meta.querySelectorAll('p');
+                      if (texts[0]) texts[0].classList.add('product-title');
+                      if (texts[1]) texts[1].classList.add('product-price');
+                    }
+
+                    const button = copy.querySelector('a');
+                    if (button) {
+                      button.classList.add('product-button');
+                      button.textContent = 'Buy Now';
+                    }
+                  }
+
+                  if (sectionIndex === 0 && cardIndex === 5) {
+                    card.classList.add('is-favorite');
+                  }
+                });
+              });
+            }
+
+            tabLinks.forEach(link => {
+              link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+
+                tabLinks.forEach(tab => tab.classList.remove('active-tab'));
+                this.classList.add('active-tab');
+
+                Object.values(sections).forEach(section => {
+                  if (section) section.classList.add('hidden');
+                });
+
+                if (sections[targetId]) {
+                  sections[targetId].classList.remove('hidden');
+                }
+              });
+            });
         });
     </script>
 </html>
