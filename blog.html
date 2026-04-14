@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0e17cc80b3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script/script.js" defer></script>
+    <link rel="icon" type="image/png" href="images/Logo-Vector-blck.svg">
+    <title>Cyber Blog</title>
+</head>
+
+<body id="top" class="bg-white font-inter">
+    <nav
+        class="relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[24px] md:px-[40px] lg:px-[60px] mx-auto z-[1]">
+        <div class="max-[960px]:pl-[25px]">
+            <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+        </div>
+
+        <div class="search relative max-[960px]:hidden">
+            <input type="text" placeholder="Search"
+                class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
+            <div class="search-icon absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+            </div>
+        </div>
+
+        <button id="mobile-search-toggle"
+            class="mobile-search-button hidden max-[960px]:block absolute top-[50%] -translate-y-1/2 z-[100]"
+            aria-label="Toggle search" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
+        </button>
+
+        <div id="mobile-search-dropdown"
+            class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
+            <div class="relative">
+                <input type="text" placeholder="Search"
+                    class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
+                <div class="absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                </div>
+            </div>
+        </div>
+
+        <button id="mobile-menu"
+            class="hidden max-[960px]:block absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        </button>
+
+        <div id="navbar-menu"
+            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
+            <span
+                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="home-page in"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[30px]"
+                    href="index.html">Home</a>
+            </span>
+            <span
+                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="about-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[80px]"
+                    href="About.html">About</a>
+            </span>
+            <span
+                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="contact-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[130px]"
+                    href="">Contact Us </a>
+            </span>
+            <span
+                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
+                <a id="blog-page"
+                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:table max-[960px]:pl-[25px] max-[960px]:-mt-[180px]"
+                    href="">Blog</a>
+            </span>
+        </div>
+        <div
+            class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-regular fa-heart" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="">
+                    <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
+                </a>
+            </span>
+            <span class="h-[32px] w-[32px] opacity-60">
+                <a href="login-signup/login.html">
+                    <i class="fa-regular fa-user" style="color:#000000;"></i>
+                </a>
+            </span>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="news max-w-[900px] mx-auto my-10 px-5">
+        <div class="heading">
+            <h1 class="text-[38px] font-bold mb-5 leading-tight">
+                iPhone 16 Pro Max Review: The Ultimate Flagship Experience Redefined
+            </h1>
+            <img src="images/16promax.webp" alt="iPhone 16 Pro Max Titanium Design"
+                class="w-[800px] h-auto rounded-md mb-8" />
+        </div>
+
+        <div class="body-text text-lg text-justify">
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Breaking News: iPhone 16 Series Launch</h2>
+            <p class="mb-5 text-gray-800">
+                Apple has officially unveiled the iPhone 16 Pro Max, featuring the revolutionary A18 Pro chip built on
+                3nm architecture. The device introduces a groundbreaking 48MP Fusion camera system with improved
+                low-light performance and 5x optical zoom capabilities. Early benchmarks suggest a 20% performance boost
+                over its predecessor, making it the fastest smartphone ever created.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                "The iPhone 16 Pro Max represents our most ambitious leap in mobile photography," said Tim Cook during
+                the keynote at Apple Park. The new Camera Control button, positioned on the right side of the frame,
+                allows instant access to zoom and focus controls, transforming how users capture moments.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                Pre-orders have exceeded expectations, with delivery times stretching into November for certain
+                configurations. The base model starts at $1,199, while the 1TB variant tops out at $1,599. Analysts
+                predict this could be Apple's best-selling Pro Max device to date.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Samsung Galaxy S25 Ultra Leaks</h2>
+            <img src="images/s25ultra.webp" alt="Samsung Galaxy S25 Ultra Render"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                Reliable tipsters have revealed renders of the upcoming Samsung Galaxy S25 Ultra, expected to launch in
+                January 2025. The device appears to feature a boxier design reminiscent of the Galaxy Note series,
+                complete with an integrated S Pen slot. The 200MP main sensor receives a significant upgrade with
+                variable aperture technology.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                Samsung is reportedly testing a Snapdragon 8 Gen 4 for Galaxy chip with clock speeds reaching 4.32GHz.
+                The 6.9-inch Dynamic AMOLED 2X display will reportedly achieve peak brightness of 3,000 nits, setting a
+                new industry standard for outdoor visibility.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Google Pixel 9 Pro: AI Photography King</h2>
+            <img src="images/googlepixel.jpg" alt="Google Pixel 9 Pro Camera Module"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                Google's Pixel 9 Pro has arrived with the most advanced computational photography suite ever seen on a
+                smartphone. The new "Add Me" feature uses AI to seamlessly insert the photographer into group shots,
+                solving a decades-old problem. Magic Editor now supports video, allowing users to remove unwanted
+                objects from moving footage.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                The Tensor G4 chip focuses on efficiency, delivering 7 years of OS updates and security patches. At
+                $999, the Pixel 9 Pro undercuts its main competitors while offering exclusive features like Call Screen
+                with Gemini integration and Live Translate during video calls.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">OnePlus 13: Speed Meets Value</h2>
+            <img src="images/oneplus.jpg" alt="OnePlus 13 Smartphone Design" class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                OnePlus continues its flagship killer legacy with the OnePlus 13, launching globally next month. The
+                device pairs the Snapdragon 8 Gen 3 with a massive 6,000mAh battery supporting 100W wired and 50W
+                wireless charging. OxygenOS 15 introduces AI features previously reserved for premium competitors.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                The 6.82-inch LTPO AMOLED display boasts a 120Hz refresh rate and 4500 nits peak brightness. Pricing
+                starts at an aggressive $899 for the 12GB/256GB configuration, making it one of the best value
+                propositions in the premium segment.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Foldable Wars: Galaxy Z Fold 6 vs Pixel Fold 2</h2>
+            <img src="images/foldable.jpg" alt="Samsung Galaxy Z Fold 6 and Google Pixel Fold 2 Comparison"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                The foldable market is heating up with two major contenders. Samsung's Galaxy Z Fold 6 features a wider
+                cover screen, finally addressing user complaints about narrow external displays. The crease is nearly
+                invisible, and the IP48 rating offers dust resistance for the first time in a foldable device.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                Google's Pixel Fold 2 counters with a thinner profile and superior camera hardware inherited from the
+                Pixel 9 series. The 8-inch inner display supports stylus input, and the Tensor G4 chip enables on-device
+                AI processing that doesn't require cloud connectivity.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Best Budget Phones Under $500</h2>
+            <img src="images/budget.jpg" alt="Collection of Best Budget Smartphones 2024"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                Premium features are trickling down to affordable devices faster than ever. The Samsung Galaxy A55
+                offers an AMOLED display and 5G connectivity at just $449. Google's Pixel 8a delivers flagship camera
+                performance for $499, while the OnePlus Nord 4 impresses with 100W charging and a premium metal unibody
+                design.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                These devices prove that spending four figures isn't necessary for a quality smartphone experience. Each
+                offers 3-4 years of software support, 120Hz displays, and capable camera systems that handle social
+                media and everyday photography with ease.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">Charging Technology Breakthrough</h2>
+            <img src="images/300w.webp" alt="Fast Charging Technology Illustration"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                Realme has demonstrated 300W wired charging technology that fills a 4,000mAh battery in under 5 minutes.
+                While commercial availability remains limited, Xiaomi and OPPO are preparing 240W solutions for their
+                2025 flagships. These advances require new battery chemistries to maintain longevity over 800+ charge
+                cycles.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                Wireless charging is also evolving, with the Qi2 standard bringing magnetic alignment to Android
+                devices. Apple's MagSafe ecosystem finally has competition, as Samsung and Google prepare certified
+                accessories for their upcoming releases.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">5G-Advanced and Satellite Connectivity</h2>
+            <img src="images/sos.jpg" alt="Satellite Emergency SOS on Smartphone"
+                class="w-full h-auto rounded-md mb-6" />
+            <p class="mb-5 text-gray-800">
+                The iPhone 16 and Pixel 9 series now support 5G-Advanced (5.5G) networks, offering theoretical speeds up
+                to 10Gbps where infrastructure permits. More importantly, emergency satellite connectivity has expanded
+                beyond Apple to Android manufacturers. Samsung's Galaxy S24 series connects to Iridium satellites for
+                two-way messaging in remote areas.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                Qualcomm's Snapdragon X75 modem enables these features while improving power efficiency by 20%. As
+                carriers deploy mid-band spectrum globally, users can expect more consistent high-speed coverage in
+                suburban and rural regions previously limited to 4G LTE.
+            </p>
+
+            <h2 class="text-[26px] mt-10 mb-4 font-bold">What's Next in 2025?</h2>
+            <p class="mb-5 text-gray-800">
+                Industry insiders point to several transformative technologies on the horizon. Solid-state batteries
+                promise 50% higher energy density, potentially enabling week-long battery life. Under-display cameras
+                will finally deliver truly fullscreen experiences without notches or punch holes.
+            </p>
+
+            <p class="mb-5 text-gray-800">
+                AI agents capable of performing complex tasks across multiple apps are being developed by Apple, Google,
+                and Samsung. These digital assistants will book appointments, fill forms, and manage communications with
+                minimal user intervention, fundamentally changing how we interact with our devices.
+            </p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+        <div
+            class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
+            <div class="font-inter">
+                <div
+                    class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+                    <div class="logo">
+                        <img src="images/cyber white.svg" alt="logo">
+                    </div>
+                    <span>We are a residential interior design firm located in</span>
+                    <span>Portland. Our boutique-studio offers more than</span>
+                </div>
+                <div class="mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
+                    <span>
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Services</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Bonus Program</a></span>
+                    <span><a href="#">Gift Cards</a></span>
+                    <span><a href="#">Credit and Payment</a></span>
+                    <span><a href="#">Service Contracts</a></span>
+                    <span><a href="#">Non-cash Accounts</a></span>
+                    <span><a href="#">Payment</a></span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Assistacnce to the buyer</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Find an order</a></span>
+                    <span><a href="#">Terms of delivery</a></span>
+                    <span><a href="#">Exchange and return of goods</a></span>
+                    <span><a href="#">Guarantee</a></span>
+                    <span><a href="#">Frequently asked questions</a></span>
+                    <span><a href="#">Terms of use of the site</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scroll to top -->
+    <a href="#top" id="scrollTopBtn"
+        class="go-top fixed bottom-6 right-6 px-4 py-3 bg-black text-white rounded-md text-sm opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-gray-600">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </a>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+    </script>
+</body>
+
+</html>
