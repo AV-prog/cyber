@@ -178,6 +178,11 @@
         </div>
     </nav>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-[30px] right-[30px] hidden w-[50px] h-[50px] bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 z-[1000] max-[960px]:bottom-[20px] max-[960px]:right-[20px] max-[960px]:hidden max-[960px]:w-[40px] max-[960px]:h-[40px]" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" style="color:#FFFFFF;"></i>
+    </button>
+
     <!-- Hero Section -->
     <section class="hero-section w-full h-[593px] flex justify-between opacity-100 px-[150px] bg-gradient-to-r from-[#211C24] via-[#211C24] to-[#211C24] max-[960px]:h-[900px] max-[960px]:flex-col max-[960px]:gap-[48px] max-[960px]:pt-[88px] max-[960px]:px-[16px] max-[960px]:justify-start">
         <!--content-->
@@ -773,6 +778,24 @@
                 }
               });
             });
+        });
+
+        // Back to Top Button functionality
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.classList.remove('hidden');
+          } else {
+            backToTopBtn.classList.add('hidden');
+          }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
     </script>
 </html>
