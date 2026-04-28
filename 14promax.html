@@ -12,95 +12,110 @@
     <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
     <script src="script/script.js" defer></script>
     <link rel="icon" type="image/png" href="/images/Logo-Vector.svg">
+    <style>
+        .wishlist-heart {
+            transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .wishlist-heart svg {
+            transition: transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+        }
+
+        .wishlist-heart.is-liked {
+            color: #ef4444 !important;
+            opacity: 1 !important;
+        }
+
+        .wishlist-heart.is-liked svg {
+            fill: #ef4444;
+            stroke: #ef4444;
+        }
+
+        @keyframes heartPop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .wishlist-heart.pop {
+            animation: heartPop 0.28s ease;
+        }
+    </style>
     <title>Cyber</title>
 </head>
 
 <body class="overflow-x-hidden bg-white">
     <!-- Navbar Section -->
-    <nav
-        class="relative w-full max-w-[1300px] min-h-[88px] max-[960px]:min-h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between gap-4 py-[16px] px-4 sm:px-6 lg:px-[140px] mx-auto z-[10000]">
-        <div class="max-[960px]:pl-[5px]">
-            <a href="index.html">
-                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
-            </a>
+    <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+        <!-- Logo -->
+        <div>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo"></a>
         </div>
 
-        <div class="search relative max-[960px]:hidden">
-            <input type="text" placeholder="Search" class="w-[326px] h-[56px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[16px] gap-x-[8px]">
-            <div class="search-icon absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
-                <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+        <!-- Desktop Search -->
+        <div class="search relative hidden sm:block">
+            <input type="text" placeholder="Search" class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
+                <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
             </div>
         </div>
 
-        <button id="mobile-search-toggle"
-            class="hidden max-[960px]:block absolute top-1/2 right-[72px] -translate-y-1/2 z-[100] sm:right-[86px]"
-            aria-label="Toggle search" aria-expanded="false">
-            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60" style="color:#000000;"></i>
+        <!-- Mobile Search Toggle -->
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden" aria-label="Toggle search" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
         </button>
 
-        <div id="mobile-search-dropdown" class="hidden max-[960px]:block absolute left-0 top-full w-full px-[25px] py-[10px] bg-[#FFFFFF] border-b-[1px] border-b-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98]">
+        <!-- Mobile Search Dropdown -->
+        <div id="mobile-search-dropdown" class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-[48px] bg-[#F5F5F5] pl-[38px] text-[#656565] font-inter text-[16px] font-medium outline-none rounded-[8px] p-[12px]">
-                <div class="absolute w-[24px] h-[24px] left-[12px] top-1/2 -translate-y-1/2">
-                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                <input type="text" placeholder="Search" class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
                 </div>
             </div>
         </div>
-
-        <button id="mobile-menu"
-            class="hidden max-[960px]:block absolute top-1/2 right-4 -translate-y-1/2 z-[100]"
-            aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1"
-                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2"
-                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3"
-                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu" class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
-        <div id="navbar-menu"
-            class="nav h-[19px] w-[323px] flex items-center gap-x-[45px] max-[960px]:grid max-[960px]:grid-cols-1 max-[960px]:gap-y-0 max-[960px]:m-0 max-[960px]:w-full max-[960px]:absolute max-[960px]:left-0 max-[960px]:top-[-1000px] max-[960px]:opacity-100 max-[960px]:transition-all max-[960px]:duration-500 max-[960px]:ease-in-out max-[960px]:z-[-1] max-[960px]:[&.active]:bg-[#ffffff] max-[960px]:[&.active]:top-full max-[960px]:[&.active]:z-[99] max-[960px]:[&.active]:h-[60vh] max-[960px]:[&.active]:text-[1.6rem] max-[960px]:[&.active]:p-0">
-            <span
-                class="font-inter text-[16px] font-medium text-[#000000] w-[46px] h-[19px] leading-none opacity-30 max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="home-page"
-                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
-                    href="index.html">Home</a>
-            </span>
-            <span
-                class="w-[46px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="about-page"
-                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
-                    href="About.html">About</a>
-            </span>
-            <span
-                class="w-[86px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none whitespace-nowrap max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="contact-page"
-                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
-                    href="">Contact Us </a>
-            </span>
-            <span
-                class="w-[34px] h-[19px] text-[#000000] opacity-30 font-inter font-medium text-[16px] leading-none max-[960px]:w-full max-[960px]:opacity-100 hover:transform-[scale(1.2)]">
-                <a id="blog-page"
-                    class="max-[960px]:block max-[960px]:text-left max-[960px]:py-[10px] max-[960px]:w-full max-[960px]:pl-[25px]"
-                    href="">Blog</a>
-            </span>
+        <!-- Navbar Menu -->
+        <div id="navbar-menu" class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
+            <a id="about-page" href="about.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact Us</a>
+            <a id="blog-page" href="blog.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+
+            <!-- Mobile Icons in Menu -->
+            <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
+                <a href="" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
+                <a href="shopping cart.html" class="text-xl"><i class="fa-solid fa-cart-shopping text-black"></i></a>
+                <a href="login.html" class="text-xl"><i class="fa-regular fa-user text-black"></i></a>
+            </div>
         </div>
-        <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
-            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300" >
-                <a href="">
-                    <i class="fa-regular fa-heart" style="color:#000000;"></i>
-                </a>
-            </span>
-            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300">
-                <a href="shopping cart.html">
-                    <i class="fa-solid fa-cart-shopping" style="color:#000000;"></i>
-                </a>
-            </span>
-            <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300">
-                <a href="login.html">
-                    <i class="fa-regular fa-user" style="color:#000000;"></i>
-                </a>
-            </span>
+
+        <!-- Desktop Icons -->
+        <div class="hidden sm:flex items-center justify-between w-[126px] h-8 ml-5">
+            <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-regular fa-heart text-black"></i>
+            </a>
+            <a href="shopping cart.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-solid fa-cart-shopping text-black"></i>
+            </a>
+            <a href="login.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-regular fa-user text-black"></i>
+            </a>
         </div>
     </nav>
 
@@ -375,7 +390,7 @@
             <!-- product card 1 -->
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
+                <button class="absolute top-4 right-4 text-gray-400 wishlist-heart" type="button">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -400,7 +415,7 @@
             <!-- product card 2 -->
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
+                <button class="absolute top-4 right-4 text-gray-400 wishlist-heart" type="button">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -425,7 +440,7 @@
             <!-- product card 3 -->
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
+                <button class="absolute top-4 right-4 text-gray-400 wishlist-heart" type="button">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -450,7 +465,7 @@
             <!-- product card 4 -->
             <div
                 class="bg-[#F6F6F6] rounded-lg p-4 flex flex-col relative group hover:scale-105 transition-scale duration-100">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
+                <button class="absolute top-4 right-4 text-gray-400 wishlist-heart" type="button">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -594,6 +609,31 @@
             });
         });
 
+        // hearts
+        const heartButtons = document.querySelectorAll('.wishlist-heart');
+
+        heartButtons.forEach(heart => {
+            heart.addEventListener('click', function (e) {
+                if (this.tagName === 'A') e.preventDefault();
+
+                this.classList.remove('pop');
+                void this.offsetWidth;
+                this.classList.add('pop');
+                this.classList.toggle('is-liked');
+
+                const icon = this.querySelector('i.fa-heart');
+                if (icon) {
+                    const liked = this.classList.contains('is-liked');
+                    icon.classList.toggle('fa-regular', !liked);
+                    icon.classList.toggle('fa-solid', liked);
+                }
+            });
+
+            heart.addEventListener('animationend', function () {
+                this.classList.remove('pop');
+            });
+        });
+
         //view more
         document.getElementById('viewMoreBtn').addEventListener('click', function () {
             const moreContent = document.getElementById('moreContent');
@@ -607,6 +647,8 @@
                 this.innerHTML = `View More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
             }
         });
+
+        
     </script>
 </body>
 
