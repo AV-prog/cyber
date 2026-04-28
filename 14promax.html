@@ -54,6 +54,7 @@
 
 <body class="overflow-x-hidden bg-white">
     <!-- Navbar Section -->
+    <header>
     <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
         <!-- Logo -->
         <div>
@@ -118,6 +119,7 @@
             </a>
         </div>
     </nav>
+    </header>
 
     <!-- Product Container -->
     <div id="product"
@@ -128,29 +130,29 @@
             <div class="column w-12">
                 <img src="images/14pm1.png"
                     class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm2.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm3.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm4.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
         </div>
 
         <!-- Main Image Container - matches gallery height -->
         <div class="container flex justify-center w-full max-w-[320px] sm:max-w-[420px] lg:w-[300px] mb-0 lg:mb-[100px]">
             <img id="expandedImg" src="images/14pm1.png "
-                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" />
+                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" loading="lazy" />
         </div>
 
         <!-- Product Info Container -->
