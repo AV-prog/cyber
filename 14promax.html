@@ -17,11 +17,12 @@
 
 <body class="overflow-x-hidden bg-white">
     <!-- Navbar Section -->
+    <header>
     <nav
         class="relative w-full max-w-[1300px] min-h-[88px] max-[960px]:min-h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between gap-4 py-[16px] px-4 sm:px-6 lg:px-[140px] mx-auto z-[10000]">
         <div class="max-[960px]:pl-[5px]">
             <a href="index.html">
-                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
+                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo" loading="lazy">
             </a>
         </div>
 
@@ -87,7 +88,7 @@
         </div>
         <div class="icons w-[126px] h-[32px] flex items-center justify-between max-[960px]:flex max-[960px]:w-full max-[960px]:justify-center max-[960px]:gap-x-[10px] mt-[8px] ml-[20px]">
             <span class="h-[32px] w-[32px] opacity-60 hover:opacity-100 transition-opacity duration-300" >
-                <a href="">
+                <a href="#">
                     <i class="fa-regular fa-heart" style="color:#000000;"></i>
                 </a>
             </span>
@@ -103,6 +104,7 @@
             </span>
         </div>
     </nav>
+    </header>
 
     <!-- Product Container -->
     <div id="product"
@@ -113,29 +115,29 @@
             <div class="column w-12">
                 <img src="images/14pm1.png"
                     class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm2.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm3.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
             <div class="column w-12">
                 <img src="images/14pm4.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" />
+                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
             </div>
         </div>
 
         <!-- Main Image Container - matches gallery height -->
         <div class="container flex justify-center w-full max-w-[320px] sm:max-w-[420px] lg:w-[300px] mb-0 lg:mb-[100px]">
             <img id="expandedImg" src="images/14pm1.png "
-                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" />
+                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" loading="lazy" />
         </div>
 
         <!-- Product Info Container -->
