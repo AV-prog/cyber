@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,52 +12,202 @@
     <script src="script/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/Logo-Vector.svg">
     <title>Cyber</title>
+
+    <style>
+        .popup-overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+        }
+
+        .popup-container {
+            transform: scale(0.92) translateY(40px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .popup-container.active {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-main {
+            transition: all 0.25s ease;
+        }
+
+        .btn-main:hover {
+            background: white;
+            color: black;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn {
+            transition: transform 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-80px);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
-<body class="font-['Inter'] antialiased">
-    
+
+<body class="font-['Inter'] antialiased overflow-x-hidden">
+
+    <!-- popup section -->
+    <div id="welcomePopup"
+        class="popup-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/20 backdrop-blur-lg">
+
+        <div id="popupContent" class="popup-container relative w-full max-w-lg mx-4">
+
+            <!-- particles -->
+            <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none rounded-3xl"></div>
+
+            <!-- card -->
+            <div class="relative bg-white rounded-2xl p-8 md:p-12">
+
+                <!-- close -->
+                <button onclick="closePopup()"
+                    class="close-btn absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-black font-bold">
+                    ✕
+                </button>
+
+                <!-- logo -->
+                <div class="flex justify-center mb-6">
+                    <img src="images/cyber black.svg" class="h-8">
+                </div>
+
+                <!-- text -->
+                <div class="text-center mb-8">
+                    <h2 id="welcomeText" class="fade-up text-black text-4xl md:text-5xl font-bold mb-3">
+                        Welcome to <br>
+                        <span class="text-purple-500">
+                            CYBER
+                        </span>
+                    </h2>
+
+                    <p id="subText" class="fade-up text-gray-700 text-lg mt-2">
+                        Premium tech, redefined.
+                    </p>
+                </div>
+
+                <!-- button -->
+                <a href="products.html">
+                    <button onclick="closePopup()"
+                        class="w-full py-4 px-6 bg-black rounded-xl font-semibold text-white border border-black active:scale-[0.98] hover:scale-105 transition-all duration-300">
+                        Explore Collection
+                    </button>
+                </a>
+
+                <!-- divider -->
+                <div class="mt-6 flex items-center justify-center gap-2">
+                    <div class="h-px w-12 bg-gradient-to-r from-transparent to-purple-500/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-black"></div>
+                    <div class="h-px w-12 bg-gradient-to-l from-transparent to-purple-500/50"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar Section -->
-    <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+    <nav
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
         <!-- Logo -->
         <div>
-            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo"></a>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
         </div>
 
         <!-- Desktop Search -->
         <div class="search relative hidden sm:block">
-            <input type="text" placeholder="Search" class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <input type="text" placeholder="Search"
+                class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
             <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
                 <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
             </div>
         </div>
 
         <!-- Mobile Search Toggle -->
-        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
         </button>
 
         <!-- Mobile Search Dropdown -->
-        <div id="mobile-search-dropdown" class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
+        <div id="mobile-search-dropdown"
+            class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <input type="text" placeholder="Search"
+                    class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
                 <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
                     <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu" class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
         <!-- Navbar Menu -->
-        <div id="navbar-menu" class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
-            <a id="home-page" href="index.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-100!important hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-100 lg:opacity-100">Home</a>
-            <a id="about-page" href="about.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
-            <a id="contact-us-page" href="contact-us.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact Us</a>
-            <a id="blog-page" href="blog.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+        <div id="navbar-menu"
+            class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-100!important hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-100 lg:opacity-100">Home</a>
+            <a id="about-page" href="about.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact
+                Us</a>
+            <a id="blog-page" href="blog.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
 
             <!-- Mobile Icons in Menu -->
             <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
@@ -71,22 +222,27 @@
             <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-heart text-black"></i>
             </a>
-            <a href="shopping cart.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="shopping cart.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-solid fa-cart-shopping text-black"></i>
             </a>
-            <a href="login.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="login.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-user text-black"></i>
             </a>
         </div>
     </nav>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-[30px] right-[30px] w-[50px] h-[50px] bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 z-[999]" aria-label="Back to top">
+    <button id="back-to-top"
+        class="fixed bottom-[30px] right-[30px] w-[50px] h-[50px] bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 z-[999]"
+        aria-label="Back to top">
         <i class="fa-solid fa-arrow-up" style="color:#FFFFFF;"></i>
     </button>
 
     <!-- Hero Section -->
-    <section class="h-[900px] sm:h-[593px] w-full bg-[#211C24] flex flex-col items-center text-center px-4 pt-14 pb-0 gap-5 sm:flex-row sm:justify-between sm:items-start sm:text-left sm:px-[150px] sm:pt-[152px] sm:pb-0 sm:h-[593px]">
+    <section
+        class="h-[900px] sm:h-[593px] w-full bg-[#211C24] flex flex-col items-center text-center px-4 pt-14 pb-0 gap-5 sm:flex-row sm:justify-between sm:items-start sm:text-left sm:px-[150px] sm:pt-[152px] sm:pb-0 sm:h-[593px]">
         <div class="flex flex-col items-center gap-5 sm:items-start sm:gap-6 sm:w-[714px]">
             <p class="text-white/40 font-semibold text-[34px] leading-tight sm:text-[23px] sm:leading-8">Pro.Beyond.</p>
             <h1 class="text-white font-thin text-[96px] leading-[0.92] sm:text-[94px] sm:leading-[72px]">
@@ -95,7 +251,7 @@
             <p class="text-[#909090] font-medium text-[19px] leading-relaxed max-w-[360px] sm:text-lg sm:leading-6 sm:max-w-none">Created to change everything for the better. For everyone</p>
             <a href="login.html" class="w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full">
                 <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
-            </a>        
+            </a>
         </div>
         <div class="w-full mt-5 sm:w-[406px] sm:h-[632px] sm:-mt-[100px]">
             <img class="w-full max-w-[500px] mx-auto sm:max-w-none object-cover" src="images/hero.png" alt="Hero Image">
@@ -107,52 +263,73 @@
         <!-- Left Column -->
         <div class="w-full flex flex-col sm:w-1/2">
             <!-- PlayStation -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-white order-3 sm:order-none sm:flex-row sm:justify-between sm:gap-8 sm:px-5 sm:h-1/2">
+            <div
+                class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-white order-3 sm:order-none sm:flex-row sm:justify-between sm:gap-8 sm:px-5 sm:h-1/2">
                 <div class="w-[70%] max-w-[260px] sm:w-[420px] sm:max-w-none sm:-ml-[148px]">
                     <img class="w-full h-full object-contain" src="images/playstation.png" alt="PlayStation">
                 </div>
-                <div class="flex flex-col gap-4 items-center text-center sm:items-start sm:text-left sm:w-[338px] sm:-ml-[60px]">
-                    <p class="text-[36px] leading-10 text-black font-medium sm:text-[49px] sm:leading-10">Playstation 5</p>
-                    <p class="text-[#909090] font-medium text-sm leading-6">Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.</p>
+                <div
+                    class="flex flex-col gap-4 items-center text-center sm:items-start sm:text-left sm:w-[338px] sm:-ml-[60px]">
+                    <p class="text-[36px] leading-10 text-black font-medium sm:text-[49px] sm:leading-10">Playstation 5
+                    </p>
+                    <p class="text-[#909090] font-medium text-sm leading-6">Incredibly powerful CPUs, GPUs, and an SSD
+                        with integrated I/O will redefine your PlayStation experience.</p>
                 </div>
             </div>
 
             <!-- Bottom Row: AirPods + Vision Pro -->
             <div class="w-full flex flex-col sm:flex-row sm:h-1/2">
                 <!-- AirPods -->
-                <div class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-[#EDEDED] order-1 sm:z-[200] sm:flex-row sm:w-1/2 sm:px-4 sm:py-0">
+                <div
+                    class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-[#EDEDED] order-1 sm:z-[200] sm:flex-row sm:w-1/2 sm:px-4 sm:py-0">
                     <div class="w-full max-w-[180px] sm:w-[220px] sm:max-w-none sm:-ml-[168px]">
                         <img class="w-full h-full object-contain" src="images/headphone.png" alt="Headphones">
                     </div>
-                    <div class="flex flex-col gap-2 items-center text-center sm:items-start sm:text-left sm:w-[140px] sm:mt-[70px]">
-                        <p class="w-[300px] font-light text-[29px] leading-10 text-black sm:w-[140px]">Apple AirPods <span class="font-medium">Max</span></p>
-                        <p class="w-[300px] text-[#909090] font-medium text-[13px] leading-6 sm:w-[140px]">Computational audio. Listen, it's powerful</p>
+                    <div
+                        class="flex flex-col gap-2 items-center text-center sm:items-start sm:text-left sm:w-[140px] sm:mt-[70px]">
+                        <p class="w-[300px] font-light text-[29px] leading-10 text-black sm:w-[140px]">Apple AirPods
+                            <span class="font-medium">Max</span>
+                        </p>
+                        <p class="w-[300px] text-[#909090] font-medium text-[13px] leading-6 sm:w-[140px]">Computational
+                            audio. Listen, it's powerful</p>
                     </div>
                 </div>
 
                 <!-- Vision Pro -->
-                <div class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-[#353535] -mt-5 order-2 sm:flex-row sm:w-1/2 sm:mt-0">
+                <div
+                    class="w-full flex flex-col items-center justify-center gap-4 px-4 py-6 bg-[#353535] -mt-5 order-2 sm:flex-row sm:w-1/2 sm:mt-0">
                     <div class="w-[75%] max-w-[260px] sm:w-[320px] sm:max-w-none sm:-ml-[168px]">
-                        <img class="w-full h-full object-contain -scale-x-100" src="images/vision-pro.png" alt="Vision Pro">
+                        <img class="w-full h-full object-contain -scale-x-100" src="images/vision-pro.png"
+                            alt="Vision Pro">
                     </div>
-                    <div class="flex flex-col gap-2 items-center text-center sm:items-start sm:text-left sm:w-[140px] sm:mt-[70px]">
-                        <p class="w-[300px] font-light text-[29px] leading-10 text-white sm:w-[140px]">Apple Vision <span class="font-medium">Pro</span></p>
-                        <p class="w-[250px] text-[#909090] font-medium text-[13px] leading-6 sm:w-[140px]">An immersive way to experience entertainment</p>
+                    <div
+                        class="flex flex-col gap-2 items-center text-center sm:items-start sm:text-left sm:w-[140px] sm:mt-[70px]">
+                        <p class="w-[300px] font-light text-[29px] leading-10 text-white sm:w-[140px]">Apple Vision
+                            <span class="font-medium">Pro</span>
+                        </p>
+                        <p class="w-[250px] text-[#909090] font-medium text-[13px] leading-6 sm:w-[140px]">An immersive
+                            way to experience entertainment</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Right Column: MacBook -->
-        <div class="w-full flex flex-col sm:flex-row items-center bg-[#EDEDED] justify-center gap-4 px-4 py-6 bg-[#000000]sm:flex-row sm:w-1/2 sm:px-0 sm:py-0 sm:z-[30]">
-            <div class="flex flex-col gap-6 items-center text-center order-2 sm:order-none sm:items-start sm:text-left sm:ml-[40px] sm:w-1/2 sm:px-5">
-                <p class="text-[48px] leading-[48px] font-thin sm:text-[64px] sm:leading-[56px]">Macbook <span class="font-medium">Air</span></p>
-                <p class="text-[#909090] font-medium text-sm leading-6">The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
-                <a href="products.html" class="w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+        <div
+            class="w-full flex flex-col sm:flex-row items-center bg-[#EDEDED] justify-center gap-4 px-4 py-6 bg-[#000000]sm:flex-row sm:w-1/2 sm:px-0 sm:py-0 sm:z-[30]">
+            <div
+                class="flex flex-col gap-6 items-center text-center order-2 sm:order-none sm:items-start sm:text-left sm:ml-[40px] sm:w-1/2 sm:px-5">
+                <p class="text-[48px] leading-[48px] font-thin sm:text-[64px] sm:leading-[56px]">Macbook <span
+                        class="font-medium">Air</span></p>
+                <p class="text-[#909090] font-medium text-sm leading-6">The new 15-inch MacBook Air makes room for more
+                    of what you love with a spacious Liquid Retina display.</p>
+                <a href="products.html"
+                    class="w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                     <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
                 </a>
             </div>
-            <div class="w-full max-w-[450px] order-1 sm:order-none sm:w-[240px] sm:h-[503px] sm:shrink-0 sm:-mt-[30px] sm:ml-auto">
+            <div
+                class="w-full max-w-[450px] order-1 sm:order-none sm:w-[240px] sm:h-[503px] sm:shrink-0 sm:-mt-[30px] sm:ml-auto">
                 <picture>
                     <source media="(max-width: 639px)" srcset="images/MacBook-Pro-14-mq.png">
                     <img class="w-full h-full object-contain" src="images/MacBook-Pro-14.png" alt="MacBook Pro 14">
@@ -173,35 +350,46 @@
 
         <div class="w-full overflow-hidden">
             <div id="category-track" class="w-full flex gap-4 sm:gap-8 transition-transform duration-300 ease-in-out">
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-solid fa-mobile-screen w-10 h-10 text-2xl"></i>
                     <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center">Phones</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-regular fa-clock w-10 h-10 text-2xl"></i>
-                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart Watches</p>
+                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart
+                        Watches</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-regular fa-clock w-10 h-10 text-2xl"></i>
-                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart Watches</p>
+                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart
+                        Watches</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-regular fa-clock w-10 h-10 text-2xl"></i>
-                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart Watches</p>
+                    <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center whitespace-nowrap">Smart
+                        Watches</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-solid fa-camera w-10 h-10 text-2xl"></i>
                     <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center">Cameras</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-solid fa-headphones w-10 h-10 text-2xl"></i>
                     <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center">Headphones</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-solid fa-computer w-10 h-10 text-2xl"></i>
                     <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center">Computers</p>
                 </a>
-                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]" href="products.html">
+                <a class="flex-none w-[calc(50%-8px)] h-[102px] py-4 px-5 gap-1.5 rounded-xl flex flex-col items-center justify-center bg-[#EDEDED] hover:bg-[#D3D3D3] transition-colors duration-300 sm:w-[calc((100%-160px)/6)]"
+                    href="products.html">
                     <i class="fa-solid fa-gamepad w-10 h-10 text-2xl"></i>
                     <p class="font-['Inter'] font-medium text-[13.6px] leading-5 text-center">Gaming</p>
                 </a>
@@ -212,9 +400,12 @@
     <!-- Products -->
     <section class="w-full max-w-[1440px] py-14 px-4 flex flex-col gap-4 mx-auto sm:px-10 lg:px-40">
         <div class="products-tabs w-full max-w-[620px] h-8 flex gap-4">
-            <a class="w-[120px] h-8 -ml-2.5 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center border-black hover:text-black transition-colors duration-300" href="#new-arrivals">New Arrival</a>
-            <a class="w-[120px] h-8 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center text-gray-400 hover:text-black transition-colors duration-300" href="#bestsellers">Bestseller</a>
-            <a class="w-[170px] h-8 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center text-gray-400 hover:text-black transition-colors duration-300" href="#on-sale">Featured Products</a>
+            <a class="w-[120px] h-8 -ml-2.5 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center border-black hover:text-black transition-colors duration-300"
+                href="#new-arrivals">New Arrival</a>
+            <a class="w-[120px] h-8 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center text-gray-400 hover:text-black transition-colors duration-300"
+                href="#bestsellers">Bestseller</a>
+            <a class="w-[170px] h-8 font-['Inter'] font-medium text-sm sm:text-base lg:text-lg leading-8 text-center text-gray-400 hover:text-black transition-colors duration-300"
+                href="#on-sale">Featured Products</a>
         </div>
 
         <!-- New arrivals -->
@@ -225,132 +416,167 @@
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[140px] lg:max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/14pm1.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+                    <img class="max-w-full max-h-full object-contain" src="images/14pm1.png"
+                        alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro Max 128GB
+                        Deep Purple</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$900</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/camera.png" alt="Blackmagic Pocket Cinema Camera 6k">
+                    <img class="max-w-full max-h-full object-contain" src="images/camera.png"
+                        alt="Blackmagic Pocket Cinema Camera 6k">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Blackmagic Pocket Cinema Camera 6k</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Blackmagic Pocket Cinema Camera
+                        6k</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$2535</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/apple-watch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
+                    <img class="max-w-full max-h-full object-contain" src="images/apple-watch.png"
+                        alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple Watch Series 9 GPS 41mm Starlight Aluminium</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple Watch Series 9 GPS 41mm
+                        Starlight Aluminium</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$399</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[140px] lg:max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/headphone.png" alt="AirPods Max Silver Starlight Aluminium">
+                    <img class="max-w-full max-h-full object-contain" src="images/headphone.png"
+                        alt="AirPods Max Silver Starlight Aluminium">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">AirPods Max Silver Starlight Aluminium</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">AirPods Max Silver Starlight
+                        Aluminium</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$549</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/gwatch.png" alt="Samsung Galaxy Watch6 Classic 47mm Black">
+                    <img class="max-w-full max-h-full object-contain" src="images/gwatch.png"
+                        alt="Samsung Galaxy Watch6 Classic 47mm Black">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Samsung Galaxy Watch6 Classic 47mm Black</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Samsung Galaxy Watch6 Classic
+                        47mm Black</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$369</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-red-500">
                     <i class="fa-solid fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/zfold.png" alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black">
+                    <img class="max-w-full max-h-full object-contain" src="images/zfold.png"
+                        alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Galaxy Z Fold5 Unlocked | 256GB
+                        | Phantom Black</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$1799</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/buds.png" alt="Galaxy Buds FE Graphite">
+                    <img class="max-w-full max-h-full object-contain" src="images/buds.png"
+                        alt="Galaxy Buds FE Graphite">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
                     <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Galaxy Buds FE Graphite</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em] lg:mt-5">$99.99</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[130px] lg:max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/tablet.png" alt='Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021'>
+                    <img class="max-w-full max-h-full object-contain" src="images/tablet.png"
+                        alt='Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021'>
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2 mt-2 lg:mt-0">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2 mt-2 lg:mt-0">Apple iPad 9 10.2"
+                        64GB Wi-Fi Silver (MK2L3) 2021</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$398</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
         </div>
 
         <!-- Bestsellers -->
         <div class="w-full max-w-[1120px] hidden" id="bestsellers">
-            <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center rounded-[2rem] bg-gradient-to-b from-slate-950/95 to-slate-900/95 p-6 sm:p-10 text-white shadow-[0_28px_60px_rgba(15,23,42,0.18)]">
+            <div
+                class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center rounded-[2rem] bg-gradient-to-b from-slate-950/95 to-slate-900/95 p-6 sm:p-10 text-white shadow-[0_28px_60px_rgba(15,23,42,0.18)]">
                 <div class="w-full max-w-[700px] mb-7 flex items-center justify-between text-2xl text-slate-300">
                     <span>Our Bestseller</span>
                     <span class="font-semibold text-white">$5499</span>
                 </div>
                 <div class="w-full max-w-[700px] h-auto sm:h-auto overflow-hidden rounded-[1.75rem] bg-slate-950">
-                    <img class="w-full h-full object-cover -scale-x-100" src="images/vision-pro.png" alt="Bestseller Product">
+                    <img class="w-full h-full object-cover -scale-x-100" src="images/vision-pro.png"
+                        alt="Bestseller Product">
                 </div>
                 <div class="flex flex-col gap-6 w-full text-center">
                     <p class="mt-7 text-xl leading-7 text-slate-300">Fast, sleek, and powerful ready for every day.</p>
-                    <a href="products.html" class="w-full max-w-[300px] mx-auto h-14 flex items-center justify-center text-lg rounded-lg bg-black text-white transition-all duration-300 hover:scale-105">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full max-w-[300px] mx-auto h-14 flex items-center justify-center text-lg rounded-lg bg-black text-white transition-all duration-300 hover:scale-105">Buy
+                        Now</a>
                 </div>
             </div>
         </div>
 
-        
+
         <!-- Featured Products -->
         <div class="w-full max-w-[1120px] hidden" id="on-sale">
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6]">
@@ -359,23 +585,33 @@
                         <img class="h-full object-contain mx-auto" src="images/14pro1.png" alt="Featured Product 1">
                     </div>
                     <div class="flex flex-col gap-3 sm:mt-8 sm:pl-5">
-                        <p class="font-['Inter'] font-medium text-sm leading-6 text-center sm:text-left">Apple iPhone 14 Pro 512GB Gold (MQ233)</p>
-                        <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em] text-center sm:text-left">$1437</p>
-                        <a href="products.html" class="w-full mx-auto sm:mx-0 max-w-[166px] h-14 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                        <p class="font-['Inter'] font-medium text-sm leading-6 text-center sm:text-left">Apple iPhone 14
+                            Pro 512GB Gold (MQ233)</p>
+                        <p
+                            class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em] text-center sm:text-left">
+                            $1437</p>
+                        <a href="products.html"
+                            class="w-full mx-auto sm:mx-0 max-w-[166px] h-14 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                            Now</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] mt-4">
                 <div class="flex flex-col sm:flex-row gap-4 mt-10 pl-2.5">
-                    
+
                     <div class="w-full sm:w-[300px] h-[260px]">
                         <img class="h-full object-contain mx-auto" src="images/zfold.png" alt="Featured Product 2">
                     </div>
                     <div class="flex flex-col gap-3 sm:mt-8 sm:pl-5">
-                        <p class="font-['Inter'] font-medium text-sm leading-6 text-center sm:text-left">Samsung Galaxy Z Fold 5 256GB Phantom Silver</p>
-                        <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em] text-center sm:text-left">$1799</p>
-                        <a href="products.html" class="w-full mx-auto sm:mx-0 max-w-[166px] h-14 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                        <p class="font-['Inter'] font-medium text-sm leading-6 text-center sm:text-left">Samsung Galaxy
+                            Z Fold 5 256GB Phantom Silver</p>
+                        <p
+                            class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em] text-center sm:text-left">
+                            $1799</p>
+                        <a href="products.html"
+                            class="w-full mx-auto sm:mx-0 max-w-[166px] h-14 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                            Now</a>
                     </div>
                 </div>
             </div>
@@ -384,18 +620,24 @@
 
     <!-- Another Banner -->
     <section id="services" class="w-full max-w-[1070px] mt-10 bg-black">
-        <div class="services-wrapper flex overflow-x-auto snap-x snap-mandatory scrollbar-hide sm:flex-row sm:overflow-visible">  
+        <div
+            class="services-wrapper flex overflow-x-auto snap-x snap-mandatory scrollbar-hide sm:flex-row sm:overflow-visible">
             <!-- Card 1 -->
-            <div class="card flex-none w-full snap-center bg-white p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
+            <div
+                class="card flex-none w-full snap-center bg-white p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
                 <div class="flex flex-col items-center text-center sm:items-start sm:text-left sm:px-auto">
                     <div class="relative w-full h-[200px] sm:h-auto sm:static">
-                        <img class="w-[190px] h-[180px] rotate-[30deg] absolute top-0 left-0 sm:relative sm:top-[22px] sm:left-0 sm:-mt-[330px]" src="images/huawei.png" alt="Huawei">
-                        <img class="w-[150px] h-[180px] rotate-[60deg] absolute top-10 right-0 -scale-x-100 sm:relative sm:top-[112px] sm:left-[117px] sm:-mt-[200px]" src="images/smartwatch.png" alt="Smartwatch">
+                        <img class="w-[190px] h-[180px] rotate-[30deg] absolute top-0 left-0 sm:relative sm:top-[22px] sm:left-0 sm:-mt-[330px]"
+                            src="images/huawei.png" alt="Huawei">
+                        <img class="w-[150px] h-[180px] rotate-[60deg] absolute top-10 right-0 -scale-x-100 sm:relative sm:top-[112px] sm:left-[117px] sm:-mt-[200px]"
+                            src="images/smartwatch.png" alt="Smartwatch">
                     </div>
                     <div class="mt-8 sm:w-[280px] sm:h-[208px] sm:-mt-[10px] sm:gap-4">
                         <p class="font-light text-[31px] leading-[48px]">Popular Products</p>
-                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html" class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
+                            Retina display, incredible performance, multitasking and ease of use.</p>
+                        <a href="products.html"
+                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                             <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
                         </a>
                     </div>
@@ -403,54 +645,66 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="card flex-none w-full snap-center bg-[#F9F9F9] p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
+            <div
+                class="card flex-none w-full snap-center bg-[#F9F9F9] p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
                 <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
                     <div class="relative w-full h-[200px] sm:h-auto sm:static">
-                        <img class="w-[230px] h-[250px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]" src="images/ipad.png" alt="IPad Pro">
+                        <img class="w-[230px] h-[250px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]"
+                            src="images/ipad.png" alt="IPad Pro">
                     </div>
                     <div class="mt-8 sm:w-[280px] sm:h-[208px] sm:gap-4 sm:-mt-[10px]">
                         <p class="font-light text-[31px] leading-[48px]">IPad Pro</p>
-                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html" class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
+                            Retina display, incredible performance, multitasking and ease of use.</p>
+                        <a href="products.html"
+                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                             <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Card 3 -->
-            <div class="card flex-none w-full snap-center bg-[#EAEAEA] p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
+            <div
+                class="card flex-none w-full snap-center bg-[#EAEAEA] p-8 pb-14 sm:w-[320px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
                 <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
                     <div class="relative w-full h-[200px] sm:h-auto sm:static">
-                        <img class="w-[360px] h-[270px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]" src="images/zfold-another.png" alt="Z Fold Another">
+                        <img class="w-[360px] h-[270px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]"
+                            src="images/zfold-another.png" alt="Z Fold Another">
                     </div>
                     <div class="mt-8 sm:w-[280px] sm:h-[208px] sm:gap-4 sm:-mt-[10px]">
                         <p class="font-light text-[31px] leading-[48px]">Samsung Galaxy</p>
-                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html" class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
+                            Retina display, incredible performance, multitasking and ease of use.</p>
+                        <a href="products.html"
+                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                             <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Card 4 -->
-            <div class="card flex-none w-full snap-center bg-[#2C2C2C] text-white p-8 pb-14 sm:w-[310px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
+            <div
+                class="card flex-none w-full snap-center bg-[#2C2C2C] text-white p-8 pb-14 sm:w-[310px] sm:h-[600px] sm:min-w-[280px] sm:pt-[376px] sm:pr-8 sm:pb-14 sm:pl-8">
                 <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
                     <div class="relative w-full h-[200px] sm:h-auto sm:static">
-                        <img class="w-[290px] h-[200px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]" src="images/MacBook-Pro-14-mq.png" alt="MacBook Pro">
+                        <img class="w-[290px] h-[200px] mx-auto sm:relative sm:top-[112px] sm:-mt-[420px]"
+                            src="images/MacBook-Pro-14-mq.png" alt="MacBook Pro">
                     </div>
                     <div class="mt-8 sm:w-[280px] sm:h-[208px] sm:gap-4 sm:-mt-[10px]">
                         <p class="font-light text-[31px] leading-[48px]">MacBook Pro</p>
-                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html" class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                        <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
+                            Retina display, incredible performance, multitasking and ease of use.</p>
+                        <a href="products.html"
+                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                             <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Carousel Dots -->
         <div class="flex justify-center gap-2 py-4 sm:hidden">
             <span class="w-2 h-2 rounded-full bg-black"></span>
@@ -463,7 +717,8 @@
     <!-- Discount -->
     <section class="w-full max-w-[1440px] py-14 px-4 flex flex-col gap-8 mx-auto sm:px-10 lg:px-40">
         <div class="w-full max-w-[1120px] h-8 flex gap-8">
-            <a class="w-[200px] h-8 font-['Inter'] font-medium text-lg leading-8 text-center" href="#new-arrivals">Discounts up to -50%</a>
+            <a class="w-[200px] h-8 font-['Inter'] font-medium text-lg leading-8 text-center"
+                href="#new-arrivals">Discounts up to -50%</a>
         </div>
 
         <div class="discount-grid w-full max-w-[1120px] grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -472,40 +727,34 @@
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[140px] sm:max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/img1.png" alt="Apple iPhone 14 Pro 512GB Gold">
+                    <img class="max-w-full max-h-full object-contain" src="images/img1.png"
+                        alt="Apple iPhone 14 Pro 512GB Gold">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro 512GB Gold (MQ233)</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro 512GB Gold
+                        (MQ233)</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$1437</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
-        
+
             <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
                 <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[140px] sm:max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/headphone.png" alt="AirPods Max Silver Starlight Aluminium">
+                    <img class="max-w-full max-h-full object-contain" src="images/headphone.png"
+                        alt="AirPods Max Silver Starlight Aluminium">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">AirPods Max Silver Starlight Aluminium</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">AirPods Max Silver Starlight
+                        Aluminium</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$549</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
-                </div>
-            </div>
-        
-            <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
-                <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
-                    <i class="fa-regular fa-heart text-xl"></i>
-                </button>
-                <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/apple-watch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
-                </div>
-                <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple Watch Series 9 GPS 41mm Starlight Aluminium</p>
-                    <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$399</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
 
@@ -514,25 +763,52 @@
                     <i class="fa-regular fa-heart text-xl"></i>
                 </button>
                 <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
-                    <img class="max-w-full max-h-full object-contain" src="images/img9.png" alt="Apple iPhone 14 Pro 1TB Gold (MQV23)">
+                    <img class="max-w-full max-h-full object-contain" src="images/apple-watch.png"
+                        alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
                 </div>
                 <div class="flex flex-col gap-3 w-full text-center">
-                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro 1TB Gold (MQV23)</p>
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple Watch Series 9 GPS 41mm
+                        Starlight Aluminium</p>
+                    <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$399</p>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
+                </div>
+            </div>
+
+            <div class="w-full min-w-0 p-4 gap-4 rounded-lg bg-[#F6F6F6] flex flex-col items-center relative">
+                <button class="absolute top-2 right-1 sm:top-3 sm:right-2 text-gray-400">
+                    <i class="fa-regular fa-heart text-xl"></i>
+                </button>
+                <div class="w-full aspect-square max-w-[160px] flex items-center justify-center">
+                    <img class="max-w-full max-h-full object-contain" src="images/img9.png"
+                        alt="Apple iPhone 14 Pro 1TB Gold (MQV23)">
+                </div>
+                <div class="flex flex-col gap-3 w-full text-center">
+                    <p class="font-['Inter'] font-medium text-sm leading-5 line-clamp-2">Apple iPhone 14 Pro 1TB Gold
+                        (MQV23)</p>
                     <p class="font-['Inter'] font-semibold text-2xl leading-6 tracking-[0.03em]">$1499</p>
-                    <a href="products.html" class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy Now</a>
+                    <a href="products.html"
+                        class="w-full h-12 flex items-center justify-center text-base rounded-lg bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 border border-black">Buy
+                        Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Final Banner -->
-    <section class="w-full max-w-[1440px] h-[480px] flex bg-[url(/images/Final-Banner-Image.png)] bg-cover bg-center mx-auto mt-14">
-        <div class="w-full max-w-[703px] h-[400px] flex flex-col justify-center items-center gap-10 text-white my-auto mx-auto px-4">
+    <section
+        class="w-full max-w-[1440px] h-[480px] flex bg-[url(/images/Final-Banner-Image.png)] bg-cover bg-center mx-auto mt-14">
+        <div
+            class="w-full max-w-[703px] h-[400px] flex flex-col justify-center items-center gap-10 text-white my-auto mx-auto px-4">
             <div class="w-full text-center">
-                <h2 class="font-extralight text-[48px] leading-tight sm:text-[72px] sm:leading-[72px]">Big Summer <span class="font-normal">Sale</span></h2>
-                <p class="font-normal text-base leading-8 text-[#787878] mt-2">Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
+                <h2 class="font-extralight text-[48px] leading-tight sm:text-[72px] sm:leading-[72px]">Big Summer <span
+                        class="font-normal">Sale</span></h2>
+                <p class="font-normal text-base leading-8 text-[#787878] mt-2">Commodo fames vitae vitae leo mauris in.
+                    Eu consequat.</p>
             </div>
-            <a href="login.html" class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+            <a href="login.html"
+                class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
                 <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
             </a>
         </div>
@@ -727,6 +1003,75 @@
                 });
             });
         });
+
+        //popup
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const popup = document.getElementById('welcomePopup');
+            const content = document.getElementById('popupContent');
+            const welcomeText = document.getElementById('welcomeText');
+            const subText = document.getElementById('subText');
+
+            if (!popup) {
+                console.log("Popup not found ❌");
+                return;
+            }
+
+            function openPopup() {
+                document.body.style.overflow = "hidden";
+
+                popup.classList.add('active');
+                content.classList.add('active');
+
+                setTimeout(() => welcomeText.classList.add('active'), 200);
+                setTimeout(() => subText.classList.add('active'), 400);
+
+                createParticles();
+            }
+
+            function closePopup() {
+                content.classList.remove('active');
+                popup.classList.remove('active');
+
+                document.body.style.overflow = "";
+
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 400);
+            }
+
+            function createParticles() {
+                const container = document.getElementById('particles');
+                if (!container) return;
+
+                container.innerHTML = "";
+
+                for (let i = 0; i < 15; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'particle';
+                    p.style.left = Math.random() * 100 + '%';
+                    p.style.top = Math.random() * 100 + '%';
+                    p.style.background = `rgba(139,92,246,${Math.random()})`;
+                    p.style.animation = `float ${3 + Math.random() * 2}s linear infinite`;
+                    container.appendChild(p);
+                }
+            }
+
+            setTimeout(openPopup, 500);
+
+            // close interactions
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) closePopup();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closePopup();
+            });
+
+            // expose close globally (for button)
+            window.closePopup = closePopup;
+        });
     </script>
-</body> 
+</body>
+
 </html>
