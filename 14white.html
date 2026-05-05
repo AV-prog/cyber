@@ -52,14 +52,14 @@
     <title>Cyber</title>
 </head>
 
-<body>
-    <!-- navbar -->
+<body class="overflow-x-hidden bg-white">
+    <!-- Navbar Section -->
     <nav
-        class="navbar relative w-full max-w-[1300px] h-[88px] max-[960px]:h-[80px] border-b-[1px] border-b-[#B5B5B5] bg-[#FFFFFF] flex items-center justify-between py-[16px] max-[960px]:py-0 px-[140px] max-[960px]:px-0 mx-auto z-[1]">
-        <div id="navbar__logo" class="max-[960px]:pl-[5px]">
-                <a href="index.html">
-                <img class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo">
-            </a>
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+        <!-- Logo -->
+        <div>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
         </div>
 
         <!-- Desktop Search -->
@@ -137,7 +137,6 @@
             </a>
         </div>
     </nav>
-    </header>
 
     <!-- Product Container -->
     <div id="product"
@@ -146,35 +145,37 @@
         <div class="row flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible w-full lg:w-auto justify-center lg:justify-start"
             id="thumbnailRow">
             <div class="column w-12">
-                <img src="images/14pro1.png"
+                <img src="images/img4.png"
                     class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
+                    alt="Phone" onclick="myFunction(this);" />
             </div>
             <div class="column w-12">
-                <img src="images/14pro2.jpg"
+                <img src="images/14white-1.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
+                    alt="Phone" onclick="myFunction(this);" />
             </div>
             <div class="column w-12">
-                <img src="images/14pro3.png"
+                <img src="images/14white-2.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
+                    alt="Phone" onclick="myFunction(this);" />
             </div>
             <div class="column w-12">
-                <img src="images/14pro4.png"
+                <img src="images/14white-3.png"
                     class="w-full h-full opacity-50 hover:opacity-100 cursor-pointer rounded  transition-opacity duration-200"
-                    alt="Phone" onclick="myFunction(this);" loading="lazy" />
+                    alt="Phone" onclick="myFunction(this);" />
             </div>
         </div>
 
         <!-- Main Image Container - matches gallery height -->
-        <div class="container flex justify-center w-[300px] mb-[100px]">
-            <img id="expandedImg" src="images/14pro1.png " class="max-h-[600px] w-auto object-contain rounded-lg" loading="lazy" />
+        <div
+            class="container flex justify-center w-full max-w-[320px] sm:max-w-[420px] lg:w-[300px] mb-0 lg:mb-[100px]">
+            <img id="expandedImg" src="images/img4.png "
+                class="w-full max-h-[420px] lg:max-h-[600px] object-contain rounded-lg" />
         </div>
 
         <!-- Product Info Container -->
         <div class="product-info flex flex-col w-full max-w-[520px] lg:w-[400px]">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Apple iPhone 14 Pro</h1>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Apple iPhone 14 Pro </h1>
 
             <div class="price text-2xl sm:text-3xl font-bold mb-4">
                 $<span id="currentPrice">1399</span>
