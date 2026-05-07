@@ -32,62 +32,143 @@
             align-items: start;
         }
 
+        /* ===== PRODUCTS GRID ===== */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
+            gap: 20px;
         }
 
-        .products-grid>.iphonexyz-group,
-        .products-grid>.iphone-11-stack,
-        .products-grid>.products-col {
-            display: contents;
-        }
-
+        /* ===== PRODUCT CARD ===== */
         .product-card {
+            position: relative;
             width: 100%;
             min-width: 0;
-            height: 100%;
+            background: #F6F6F6;
+            border-radius: 9px;
+            padding: 16px 16px 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== WISHLIST HEART ===== */
+        .product-card .wishlist-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-card .wishlist-btn i {
+            font-size: 18px;
+            color: rgba(16, 16, 16, 0.4);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .product-card .wishlist-btn:hover i {
+            color: #e11d48;
+            transform: scale(1.15);
+        }
+
+        /* ===== IMAGE ===== */
         .product-card .image1 {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
+            margin-top: 8px;
         }
 
-        .product-card .image1>span:last-child {
-            display: block;
-            width: 100%;
-            margin-left: 0 !important;
-            text-align: center;
-        }
-
-        .product-card .image1>span:last-child>span {
-            display: block;
-            margin-left: 0 !important;
-            white-space: normal;
-        }
-
-        .product-card button {
-            width: 100%;
-            max-width: 188px;
-            justify-content: center;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-
-        .product-card img {
+        .product-card .image1 img {
             width: 100%;
             max-width: 160px;
             height: auto;
-            margin: 0 auto;
+            object-fit: contain;
+            margin: 0 auto 12px auto;
+            display: block;
         }
 
+        /* ===== TEXT CONTENT ===== */
+        .product-card .image1 .text-center {
+            text-align: center;
+            width: 100%;
+            padding: 0 4px;
+        }
+
+        .product-card .image1 h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            color: #000000;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .product-card .image1 p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 28px;
+            color: #000000;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* ===== BUY NOW BUTTON ===== */
+        .product-card .image1 a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .product-card .image1 button {
+            width: 100%;
+            max-width: 188px;
+            height: 44px;
+            border-radius: 8px;
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            border: 2px solid #000000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .product-card .image1 button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* ===== FILTER STYLES (keep your existing filter CSS) ===== */
         .filter-block {
             width: 100%;
             margin-left: 0;
+            cursor: pointer;
+            user-select: none;
         }
 
         .filter-heading {
@@ -95,6 +176,30 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+        }
+
+        .filter-content {
+            overflow: hidden;
+            max-height: 1000px;
+            transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+            opacity: 1;
+        }
+
+        .filter-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .filter-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .filter-toggle-icon.rotated {
+            transform: rotate(180deg);
         }
 
         .pagination-wrap {
@@ -130,19 +235,17 @@
             justify-content: center;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
             .products-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
             }
         }
 
         @media (max-width: 960px) {
             .catalog-layout {
                 grid-template-columns: 1fr;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .mobile-search-button {
@@ -158,6 +261,7 @@
 
             .products-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .mobile-search-button {
@@ -165,7 +269,6 @@
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -258,6 +361,7 @@
         </nav>
     </header>
 
+    <!-- Breadcrumbs -->
     <div
         class="breadcrumbs w-full max-w-[1300px] mx-auto flex flex-wrap gap-x-[16px] gap-y-[8px] px-[24px] md:px-[40px] lg:px-[60px] pt-[32px] pb-[32px] items-center whitespace-nowrap">
         <span class="font-inter font-medium text-[16px] text-[#A4A4A4]">
@@ -274,134 +378,348 @@
             </a>
         </span>
     </div>
+
+    <!-- Catalog Layout -->
     <main class="catalog-shell">
         <div class="catalog-layout">
+
+            <!-- filters -->
             <aside class="w-full">
-                <div class="frame42 filter-block border-b-[0.5px] pt-[10px] pb-[10px] border-b-[#B5B5B5]">
+                <div class="filter-block border-b-[0.5px] pt-[10px] pb-[10px] border-b-[#B5B5B5]" data-filter="brand">
                     <span
                         class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em] text-[#000000]">
                         Brand
-                        <i class="fa-sharp fa-solid fa-angle-up" style="color:#000000;"></i>
+                        <i class="fa-sharp fa-solid fa-angle-up filter-toggle-icon" style="color:#000000;"></i>
                     </span>
                 </div>
-                <div class="search2 relative mt-[12px]">
-                    <input type="text" placeholder="Search"
-                        class="w-full h-[40px] rounded-[8px] pl-[35px] pr-[16px] pt-[8px] pb-[8px] bg-[#F5F5F5] font-inter text-[14px] font-medium text-[#656565] leading-[18px] outline-none">
-                    <div class="icon absolute left-[12px] top-1/2 -translate-y-1/2">
-                        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                <div class="filter-content" id="filter-brand">
+                    <div class="search2 relative mt-[12px]">
+                        <input type="text" placeholder="Search"
+                            class="w-full h-[40px] rounded-[8px] pl-[35px] pr-[16px] pt-[8px] pb-[8px] bg-[#F5F5F5] font-inter text-[14px] font-medium text-[#656565] leading-[18px] outline-none">
+                        <div class="icon absolute left-[12px] top-1/2 -translate-y-1/2">
+                            <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#656565;"></i>
+                        </div>
+                    </div>
+                    <div class="brand-names w-full flex flex-col gap-y-[8px] mt-[25px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="apple" id="apple" class="accent-black">
+                            <label for="apple">
+                                Apple <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">110</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="samsung" id="samsung" class="accent-black">
+                            <label for="samsung">
+                                Samsung <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">125</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="xiaomi" id="xiaomi" class="accent-black">
+                            <label for="xiaomi">
+                                Xiaomi <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">68</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="poco" id="poco" class="accent-black">
+                            <label for="poco">
+                                Poco <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">44</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="oppo" id="oppo" class="accent-black">
+                            <label for="oppo">
+                                OPPO <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">110</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="honor" id="honor" class="accent-black">
+                            <label for="honor">
+                                Honor <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">10</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="motorola" id="motorola" class="accent-black">
+                            <label for="motorola">
+                                Motorola <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">34</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="nokia" id="nokia" class="accent-black">
+                            <label for="nokia">
+                                Nokia <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">22</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="realme" id="realme" class="accent-black">
+                            <label for="realme">
+                                Realme <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">35</span>
+                            </label>
+                        </span>
                     </div>
                 </div>
-                <div class="brand-names w-full flex flex-col gap-y-[8px] mt-[25px]">
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="apple" id="apple" class="accent-black">
-                        <label for="apple">
-                            Apple <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">110</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="samsung" id="samsung" class="accent-black">
-                        <label for="samsung">
-                            Samsung <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">125</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="xiaomi" id="xiaomi" class="accent-black">
-                        <label for="xiaomi">
-                            Xiaomi <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">68</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="poco" id="poco" class="accent-black">
-                        <label for="poco">
-                            Poco <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">44</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="oppo" id="oppo" class="accent-black">
-                        <label for="oppo">
-                            OPPO <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">110</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="honor" id="honor" class="accent-black">
-                        <label for="honor">
-                            Honor <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">10</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="motorola" id="motorola" class="accent-black">
-                        <label for="motorola">
-                            Motorola <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">34</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="nokia" id="nokia" class="accent-black">
-                        <label for="nokia">
-                            Nokia <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">22</span>
-                        </label>
-                    </span>
-                    <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
-                        <input type="checkbox" name="realme" id="realme" class="accent-black">
-                        <label for="realme">
-                            Realme <span
-                                class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">35</span>
-                        </label>
-                    </span>
-                </div>
-                <div
-                    class="battery filter-block mt-[30px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+
+                <div class="filter-block mt-[30px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]"
+                    data-filter="battery">
                     <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
                         Battery Capacity
                         <span>
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                            <i class="fa-sharp fa-solid fa-angle-down filter-toggle-icon"
+                                style="color: rgb(16, 16, 16);"></i>
                         </span>
                     </span>
                 </div>
-                <div
-                    class="screen filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                <div class="filter-content collapsed" id="filter-battery">
+                    <div class="w-full flex flex-col gap-y-[8px] mt-[12px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="battery-3000" id="battery-3000" class="accent-black">
+                            <label for="battery-3000">
+                                3000 - 3500 mAh <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">24</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="battery-3500" id="battery-3500" class="accent-black">
+                            <label for="battery-3500">
+                                3500 - 4000 mAh <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">45</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="battery-4000" id="battery-4000" class="accent-black">
+                            <label for="battery-4000">
+                                4000 - 4500 mAh <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">62</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="battery-4500" id="battery-4500" class="accent-black">
+                            <label for="battery-4500">
+                                4500 - 5000 mAh <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">38</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="battery-5000" id="battery-5000" class="accent-black">
+                            <label for="battery-5000">
+                                5000+ mAh <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">19</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]"
+                    data-filter="screen">
                     <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
                         Screen Type
                         <span>
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                            <i class="fa-sharp fa-solid fa-angle-down filter-toggle-icon"
+                                style="color: rgb(16, 16, 16);"></i>
                         </span>
                     </span>
                 </div>
-                <div
-                    class="screen-pos filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                <div class="filter-content collapsed" id="filter-screen">
+                    <div class="w-full flex flex-col gap-y-[8px] mt-[12px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="screen-amoled" id="screen-amoled" class="accent-black">
+                            <label for="screen-amoled">
+                                AMOLED <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">52</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="screen-super-amoled" id="screen-super-amoled"
+                                class="accent-black">
+                            <label for="screen-super-amoled">
+                                Super AMOLED <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">34</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="screen-ips" id="screen-ips" class="accent-black">
+                            <label for="screen-ips">
+                                IPS LCD <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">28</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="screen-oled" id="screen-oled" class="accent-black">
+                            <label for="screen-oled">
+                                OLED <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">41</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="screen-ltpo" id="screen-ltpo" class="accent-black">
+                            <label for="screen-ltpo">
+                                LTPO OLED <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">15</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]"
+                    data-filter="diagonal">
                     <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
                         Screen Diagonal
                         <span>
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                            <i class="fa-sharp fa-solid fa-angle-down filter-toggle-icon"
+                                style="color: rgb(16, 16, 16);"></i>
                         </span>
                     </span>
                 </div>
-                <div
-                    class="protection filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                <div class="filter-content collapsed" id="filter-diagonal">
+                    <div class="w-full flex flex-col gap-y-[8px] mt-[12px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="diag-5" id="diag-5" class="accent-black">
+                            <label for="diag-5">
+                                Below 5.5" <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">12</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="diag-55" id="diag-55" class="accent-black">
+                            <label for="diag-55">
+                                5.5" - 6.0" <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">28</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="diag-6" id="diag-6" class="accent-black">
+                            <label for="diag-6">
+                                6.0" - 6.5" <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">45</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="diag-65" id="diag-65" class="accent-black">
+                            <label for="diag-65">
+                                6.5" - 6.8" <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">33</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="diag-68" id="diag-68" class="accent-black">
+                            <label for="diag-68">
+                                6.8" and above <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">18</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]"
+                    data-filter="protection">
                     <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
                         Protection Class
                         <span>
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                            <i class="fa-sharp fa-solid fa-angle-down filter-toggle-icon"
+                                style="color: rgb(16, 16, 16);"></i>
                         </span>
                     </span>
                 </div>
-                <div
-                    class="memory filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]">
+                <div class="filter-content collapsed" id="filter-protection">
+                    <div class="w-full flex flex-col gap-y-[8px] mt-[12px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="prot-ip53" id="prot-ip53" class="accent-black">
+                            <label for="prot-ip53">
+                                IP53 <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">22</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="prot-ip54" id="prot-ip54" class="accent-black">
+                            <label for="prot-ip54">
+                                IP54 <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">18</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="prot-ip67" id="prot-ip67" class="accent-black">
+                            <label for="prot-ip67">
+                                IP67 <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">35</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="prot-ip68" id="prot-ip68" class="accent-black">
+                            <label for="prot-ip68">
+                                IP68 <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">48</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="prot-ip69" id="prot-ip69" class="accent-black">
+                            <label for="prot-ip69">
+                                IP69 <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">8</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filter-block mt-[15px] border-b-[0.5px] border-b-[#B5B5B5] pt-[12px] pb-[12px] flex gap-[10px]"
+                    data-filter="memory">
                     <span class="filter-heading font-inter font-medium text-[18px] leading-[24px] tracking-[0.03em]">
                         Built-In Memory
                         <span>
-                            <i class="fa-sharp fa-solid fa-angle-down" style="color: rgb(16, 16, 16);"></i>
+                            <i class="fa-sharp fa-solid fa-angle-down filter-toggle-icon"
+                                style="color: rgb(16, 16, 16);"></i>
                         </span>
                     </span>
                 </div>
+                <div class="filter-content collapsed" id="filter-memory">
+                    <div class="w-full flex flex-col gap-y-[8px] mt-[12px]">
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="mem-64" id="mem-64" class="accent-black">
+                            <label for="mem-64">
+                                64 GB <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">15</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="mem-128" id="mem-128" class="accent-black">
+                            <label for="mem-128">
+                                128 GB <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">42</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="mem-256" id="mem-256" class="accent-black">
+                            <label for="mem-256">
+                                256 GB <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">38</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="mem-512" id="mem-512" class="accent-black">
+                            <label for="mem-512">
+                                512 GB <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">24</span>
+                            </label>
+                        </span>
+                        <span class="font-inter text-[15px] font-medium leading-[24px] text-black">
+                            <input type="checkbox" name="mem-1tb" id="mem-1tb" class="accent-black">
+                            <label for="mem-1tb">
+                                1 TB <span
+                                    class="font-inter text-[12px] font-regular leading-[24px] text-black opacity-30">12</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
             </aside>
+
+            <!-- main content -->
             <section class="w-full">
                 <div class="flex flex-col gap-[16px] sm:flex-row sm:items-center sm:justify-between mb-[8px]">
                     <p class="font-inter font-medium text-[16px] tracking-[0.03em] text-[#6C6C6C]">
@@ -415,236 +733,261 @@
                         <i class="fa-sharp fa-solid fa-angle-down" style="color:#9F9F9F;"></i>
                     </span>
                 </div>
+
                 <div class="products-row products-grid">
+                    <!-- Product 1 -->
                     <div
-                        class="iphone-14pro product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                        <div class="image1 mt-[25px]">
-                            <span class="absolute top-5 left-55">
-                                <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                            </span>
-                            <img src="images/img1.png" alt="14pro" loading="lazy">
-                            <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-5">
-                                Apple iPhone 14 Pro 512GB<br>
-                                <span class="ml-15">
-                                    Gold (MQ233) <br>
-                                </span>
-                                <span class="ml-20 font-semibold text-[24px]">
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img1.png" alt="Apple iPhone 14 Pro 512GB Gold" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro 512GB<br>Gold (MQ233)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
                                     $1437
-                                </span>
-                                <a href="14pro.html">
+                                </p>
+                                <a href="14pro.html" class="block w-full">
                                     <button
-                                        class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
                                         Buy Now
                                     </button>
                                 </a>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="iphonexyz-group flex flex-col gap-[10px]">
-                        <div
-                            class="iphonexyz product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img2-3.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 11 128GB White<br>
-                                    <span class="ml-20">
-                                        (MQ233) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $510
-                                    </span>
-                                    <a href="11.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div
-                            class="iphonE-14PROgold product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img5.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 14 Pro 1TB Gold<br>
-                                    <span class="ml-20">
-                                        (MQ2V3) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $1399
-                                    </span>
-                                    <a href="14pro.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 cursor-pointer transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-
-                                </span>
-                            </div>
-                        </div>
-                        <div
-                            class="iphonexyz product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img8.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 14 Pro 256GB<br>
-                                    <span class="ml-10">
-                                        Space Black (MQ0T3) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $1399
-                                    </span>
-                                    <a href="14black.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="iphone-11-stack flex flex-col gap-[10px]">
-                        <div
-                            class="iphone-11 product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img2-3.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 11 128GB White<br>
-                                    <span class="ml-20">
-                                        (MQ233) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $550
-                                    </span>
-                                    <a href="11.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
-                            </div>
-
-                        </div>
-                        <div
-                            class="iphone-14purple product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img6.png" alt="11pro" loading="lazy">
-                                <span
-                                    class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-1 whitespace-nowrap">
-                                    Apple iPhone 14 Pro Max 128GB<br>
-                                    <span class="ml-8 whitespace-nowrap">
-                                        Deep Purple(MQ0G3) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $1399
-                                    </span>
-                                    <a href="14promax.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 cursor-pointer transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-
-                                </span>
-                            </div>
-                        </div>
-                        <div
-                            class="iphone-14silver product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img9.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 14 Pro 256GB<br>
-                                    <span class="ml-17">
-                                        Silver (MQ233) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $1399
-                                    </span>
-                                    <a href="14white.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
+                    <!-- Product 2 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img2-3.png" alt="Apple iPhone 11 128GB White" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 11 128GB White<br>(MQ233)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $510
+                                </p>
+                                <a href="11.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="products-col flex flex-col gap-[10px]">
-                        <div
-                            class="iphone-14prowhite product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img4.png" alt="11pro" loading="lazy">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 14 Pro 1TB White<br>
-                                    <span class="ml-20">
-                                        (MQ2V3) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $1499
-                                    </span>
-                                    <a href="14white.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
+
+                    <!-- Product 3 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img5.png" alt="Apple iPhone 14 Pro 1TB Gold" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro 1TB Gold<br>(MQ2V3)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $1399
+                                </p>
+                                <a href="14pro.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
                             </div>
                         </div>
-                        <div
-                            class="iphone-13 product-card rounded-[9px] pt-[24px] pb-[24px] pl-[16px] pr-[16px] flex flex-row gap-[16px] bg-[#F6F6F6] relative">
-                            <div class="image1 mt-[25px]">
-                                <span class="absolute top-5 left-55">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: rgba(16, 16, 16, 0.443);"></i>
-                                </span>
-                                <img src="images/img7.png" alt="11pro">
-                                <span class="font-inter font-medium text-[16px] leading-[24px] text-[#000000] ml-2">
-                                    Apple iPhone 13 mini 128GB<br>
-                                    <span class="ml-17">
-                                        Pink (MLk23) <br>
-                                    </span>
-                                    <span class="ml-22 font-semibold text-[24px]">
-                                        $850
-                                    </span>
-                                    <a href="13mini.html">
-                                        <button
-                                            class="w-[188px] h-[48px] rounded-[8px] pl-[64px] pr-[64px] pt-[12px] pb-[12px] flex gap-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] m-auto mt-3 transition-all duration-300 hover:bg-white hover:text-black hover:border-black hover:border-[2px] hover:transform-[scale(1.1)]">
-                                            Buy Now
-                                        </button>
-                                    </a>
-                                </span>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img8.png" alt="Apple iPhone 14 Pro 256GB Space Black" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro 256GB<br>Space Black (MQ0T3)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $1399
+                                </p>
+                                <a href="14black.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img2-3.png" alt="Apple iPhone 11 128GB White" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 11 128GB White<br>(MQ233)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $550
+                                </p>
+                                <a href="11.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img6.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro Max 128GB<br>Deep Purple (MQ0G3)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $1399
+                                </p>
+                                <a href="14promax.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img9.png" alt="Apple iPhone 14 Pro 256GB Silver" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro 256GB<br>Silver (MQ233)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $1399
+                                </p>
+                                <a href="14white.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img4.png" alt="Apple iPhone 14 Pro 1TB White" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 14 Pro 1TB White<br>(MQ2V3)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $1499
+                                </p>
+                                <a href="14white.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div
+                        class="product-card rounded-[9px] p-[16px] pb-[24px] bg-[#F6F6F6] relative flex flex-col items-center">
+                        <button
+                            class="wishlist-btn absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
+                            aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart text-[18px]" style="color: rgba(16, 16, 16, 0.4);"></i>
+                        </button>
+                        <div class="image1 w-full flex flex-col items-center">
+                            <img src="images/img7.png" alt="Apple iPhone 13 mini 128GB Pink" loading="lazy"
+                                class="w-full max-w-[160px] h-auto object-contain mb-3">
+                            <div class="text-center w-full px-1">
+                                <h3 class="font-inter font-medium text-[15px] leading-[22px] text-[#000000] mb-1">
+                                    Apple iPhone 13 mini 128GB<br>Pink (MLk23)
+                                </h3>
+                                <p class="font-inter font-semibold text-[22px] leading-[28px] text-[#000000] mb-4">
+                                    $850
+                                </p>
+                                <a href="13mini.html" class="block w-full">
+                                    <button
+                                        class="w-full max-w-[188px] h-[44px] rounded-[8px] bg-black text-white text-[14px] font-medium font-inter leading-[24px] transition-all duration-300 hover:bg-white hover:text-black hover:border-[2px] hover:border-black mx-auto">
+                                        Buy Now
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="pagination-wrap">
                     <div class="pages w-[193px] h-[32px] flex gap-x-[8px] mt-[20px]">
                         <span class="opacity-20">
@@ -688,6 +1031,8 @@
             </section>
         </div>
     </main>
+
+    <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
             class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
@@ -758,6 +1103,61 @@
     </button>
 
     <script>
+        // filter Accordion Logic
+        (function () {
+            const filterBlocks = document.querySelectorAll('.filter-block[data-filter]');
+
+            filterBlocks.forEach(block => {
+                const filterKey = block.getAttribute('data-filter');
+                const content = document.getElementById('filter-' + filterKey);
+                const icon = block.querySelector('.filter-toggle-icon');
+                const storageKey = 'filter_' + filterKey + '_open';
+
+                // Restore state from localStorage
+                const savedState = localStorage.getItem(storageKey);
+                if (savedState !== null) {
+                    const isOpen = savedState === 'true';
+                    if (content) {
+                        if (isOpen) {
+                            content.classList.remove('collapsed');
+                        } else {
+                            content.classList.add('collapsed');
+                        }
+                    }
+                    if (icon) {
+                        if (isOpen) {
+                            icon.classList.remove('rotated');
+                        } else {
+                            icon.classList.add('rotated');
+                        }
+                    }
+                }
+
+                block.addEventListener('click', function (e) {
+                    // Don't toggle if clicking inside a checkbox/label
+                    if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL' || e.target.closest('label')) {
+                        return;
+                    }
+
+                    if (content) {
+                        const isCollapsed = content.classList.contains('collapsed');
+                        if (isCollapsed) {
+                            content.classList.remove('collapsed');
+                            localStorage.setItem(storageKey, 'true');
+                        } else {
+                            content.classList.add('collapsed');
+                            localStorage.setItem(storageKey, 'false');
+                        }
+                    }
+
+                    if (icon) {
+                        icon.classList.toggle('rotated');
+                    }
+                });
+            });
+        })();
+
+        // Wishlist Logic
         (function () {
             const storageKey = 'productsWishlistHearts';
             const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
