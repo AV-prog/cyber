@@ -45,47 +45,12 @@
             transform: translateY(0);
         }
 
-        .btn-main {
-            transition: all 0.25s ease;
-        }
-
-        .btn-main:hover {
-            background: white;
-            color: black;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
         .close-btn {
             transition: transform 0.3s ease;
         }
 
         .close-btn:hover {
             transform: rotate(90deg) scale(1.1);
-        }
-
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-80px);
-                opacity: 0;
-            }
         }
     </style>
 </head>
@@ -97,9 +62,6 @@
         class="popup-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/20 backdrop-blur-lg">
 
         <div id="popupContent" class="popup-container relative w-full max-w-lg mx-4">
-
-            <!-- particles -->
-            <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none rounded-3xl"></div>
 
             <!-- card -->
             <div class="relative bg-white rounded-2xl p-8 md:p-12">
@@ -125,7 +87,7 @@
                     </h2>
 
                     <p id="subText" class="fade-up text-gray-700 text-lg mt-2">
-                        Premium tech, redefined.
+                        Powering your digital life.
                     </p>
                 </div>
 
@@ -143,7 +105,6 @@
                     <div class="w-2 h-2 rounded-full bg-black"></div>
                     <div class="h-px w-12 bg-gradient-to-l from-transparent to-purple-500/50"></div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -1028,8 +989,6 @@
 
                 setTimeout(() => welcomeText.classList.add('active'), 200);
                 setTimeout(() => subText.classList.add('active'), 400);
-
-                createParticles();
             }
 
             function closePopup() {
@@ -1041,23 +1000,6 @@
                 setTimeout(() => {
                     popup.style.display = 'none';
                 }, 400);
-            }
-
-            function createParticles() {
-                const container = document.getElementById('particles');
-                if (!container) return;
-
-                container.innerHTML = "";
-
-                for (let i = 0; i < 15; i++) {
-                    const p = document.createElement('div');
-                    p.className = 'particle';
-                    p.style.left = Math.random() * 100 + '%';
-                    p.style.top = Math.random() * 100 + '%';
-                    p.style.background = `rgba(139,92,246,${Math.random()})`;
-                    p.style.animation = `float ${3 + Math.random() * 2}s linear infinite`;
-                    container.appendChild(p);
-                }
             }
 
             setTimeout(openPopup, 500);
