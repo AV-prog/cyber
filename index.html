@@ -209,8 +209,11 @@
             <h1 class="text-white font-thin text-[96px] leading-[0.92] sm:text-[94px] sm:leading-[72px]">
                 IPhone 14 <span class="font-semibold">Pro</span>
             </h1>
-            <p class="text-[#909090] font-medium text-[19px] leading-relaxed max-w-[360px] sm:text-lg sm:leading-6 sm:max-w-none">Created to change everything for the better. For everyone</p>
-            <a href="login.html" class="w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full">
+            <p
+                class="text-[#909090] font-medium text-[19px] leading-relaxed max-w-[360px] sm:text-lg sm:leading-6 sm:max-w-none">
+                Created to change everything for the better. For everyone</p>
+            <a href="login.html"
+                class="w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full">
                 <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
             </a>
         </div>
@@ -967,7 +970,8 @@
 
         //popup
         document.addEventListener("DOMContentLoaded", function () {
-
+            const POPUP_KEY = "welcome_popup_last_shown";
+            const ONE_DAY = 24 * 60 * 60 * 1000;
             const popup = document.getElementById('welcomePopup');
             const content = document.getElementById('popupContent');
             const welcomeText = document.getElementById('welcomeText');
@@ -978,6 +982,15 @@
                 return;
             }
 
+            function shouldShowPopup() {
+                const lastShown = localStorage.getItem(POPUP_KEY);
+
+                if (!lastShown) return true;
+
+                const now = Date.now();
+                return now - Number(lastShown) > ONE_DAY;
+            }
+
             function openPopup() {
                 document.body.style.overflow = "hidden";
 
@@ -986,6 +999,8 @@
 
                 setTimeout(() => welcomeText.classList.add('active'), 200);
                 setTimeout(() => subText.classList.add('active'), 400);
+
+                localStorage.setItem(POPUP_KEY, Date.now());
             }
 
             function closePopup() {
@@ -999,7 +1014,11 @@
                 }, 400);
             }
 
-            setTimeout(openPopup, 500);
+            setTimeout(() => {
+                if (shouldShowPopup()) {
+                    openPopup();
+                }
+            }, 500);
 
             // close interactions
             popup.addEventListener('click', (e) => {
