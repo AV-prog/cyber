@@ -72,6 +72,63 @@
             opacity: 0.6;
         }
 
+        /* Black fill button */
+.btn-black-fill {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-black-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.btn-black-fill:hover::after {
+    width: 100%;
+}
+
+.btn-black-fill span {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* White fill button */
+.btn-white-fill {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-white-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.btn-white-fill:hover::after {
+    width: 100%;
+}
+
+.btn-white-fill span {
+    position: relative;
+    z-index: 2;
+}
+
         @keyframes float {
             0% {
                 transform: translateY(0);
@@ -249,8 +306,8 @@
                 IPhone 14 <span class="font-semibold">Pro</span>
             </h1>
             <p class="text-[#909090] font-medium text-[19px] leading-relaxed max-w-[360px] sm:text-lg sm:leading-6 sm:max-w-none">Created to change everything for the better. For everyone</p>
-            <a href="login.html" class="w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full">
-                <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+            <a href="login.html" class="btn-white-fill w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer outline-none">
+                <span>Shop Now</span>
             </a>
         </div>
         <div class="w-full mt-5 sm:w-[406px] sm:h-[632px] sm:-mt-[100px]">
@@ -323,9 +380,8 @@
                         class="font-medium">Air</span></p>
                 <p class="text-[#909090] font-medium text-sm leading-6">The new 15-inch MacBook Air makes room for more
                     of what you love with a spacious Liquid Retina display.</p>
-                <a href="products.html"
-                    class="w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                    <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+                <a href="products.html" class="btn-black-fill w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer outline-none sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                    <span>Shop Now</span>
                 </a>
             </div>
             <div
@@ -636,9 +692,8 @@
                         <p class="font-light text-[31px] leading-[48px]">Popular Products</p>
                         <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
                             Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html"
-                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                            <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+                        <a href="products.html" class="btn-black-fill w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer outline-none sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                            <span>Shop Now</span>
                         </a>
                     </div>
                 </div>
@@ -656,9 +711,8 @@
                         <p class="font-light text-[31px] leading-[48px]">IPad Pro</p>
                         <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
                             Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html"
-                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                            <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+                        <a href="products.html" class="btn-black-fill w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer outline-none sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                            <span>Shop Now</span>
                         </a>
                     </div>
                 </div>
@@ -676,9 +730,8 @@
                         <p class="font-light text-[31px] leading-[48px]">Samsung Galaxy</p>
                         <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
                             Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html"
-                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-black after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                            <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+                        <a href="products.html" class="btn-black-fill w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-black rounded-md cursor-pointer outline-none sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                            <span>Shop Now</span>
                         </a>
                     </div>
                 </div>
@@ -696,9 +749,8 @@
                         <p class="font-light text-[31px] leading-[48px]">MacBook Pro</p>
                         <p class="font-medium text-xs leading-6 opacity-50 mt-2">iPad combines a magnificent 10.2-inch
                             Retina display, incredible performance, multitasking and ease of use.</p>
-                        <a href="products.html"
-                            class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                            <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+                        <a href="products.html" class="btn-white-fill w-full max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-white border border-white rounded-md cursor-pointer outline-none sm:w-[193px] sm:h-[53px] sm:text-[17px]">
+                            <span>Shop Now</span>
                         </a>
                     </div>
                 </div>
@@ -807,9 +859,8 @@
                 <p class="font-normal text-base leading-8 text-[#787878] mt-2">Commodo fames vitae vitae leo mauris in.
                     Eu consequat.</p>
             </div>
-            <a href="login.html"
-                class="w-full mt-[20px] max-w-[303px] h-[63px] flex items-center justify-center text-xl hover:text-black border border-white rounded-md cursor-pointer relative overflow-hidden transition-all duration-300 outline-none after:content-[''] after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-white after:transition-all after:duration-300 after:rounded-[4px] hover:after:w-full sm:w-[193px] sm:h-[53px] sm:text-[17px]">
-                <span class="relative z-[2] text-inherit no-underline">Shop Now</span>
+            <a href="login.html" class="btn-white-fill w-full max-w-[230px] h-14 flex items-center justify-center text-white hover:text-black border border-white rounded-md cursor-pointer outline-none">
+                <span>Shop Now</span>
             </a>
         </div>
     </section>
