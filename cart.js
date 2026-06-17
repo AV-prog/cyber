@@ -1,6 +1,7 @@
 const cartContainer = document.getElementById("cart");
 const container = document.getElementById("container");
 const emptyCartMsg = document.getElementById("emptyCartMsg");
+const total = document.getElementById("total");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -15,6 +16,21 @@ function updateEmptyState() {
 }
 
 updateEmptyState();
+
+function updateTotal() {
+    //calculate
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        totalPrice = totalPrice + (item.unitPrice * item.quantity);
+    })
+
+    total.innerText = `$${totalPrice}`;
+
+    localStorage.setItem("totalprice", totalPrice);
+}
+
+updateTotal();
 
 cart.forEach(item => {
     const div = document.createElement("div");
@@ -72,6 +88,8 @@ cart.forEach(item => {
                 localStorage.setItem("cart", JSON.stringify(cart));
             }
         }
+
+        updateTotal()
     });
 
     const qty = document.createElement("span");
@@ -100,6 +118,8 @@ cart.forEach(item => {
             cart[index].quantity = item.quantity;
             localStorage.setItem("cart", JSON.stringify(cart));
         }
+
+        updateTotal();
     });
 
     const price = document.createElement("span");
@@ -122,6 +142,7 @@ cart.forEach(item => {
         localStorage.setItem("cart", JSON.stringify(cart));
 
         updateEmptyState();
+        updateTotal();
     });
 
     actions.appendChild(minus);
