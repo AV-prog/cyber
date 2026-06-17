@@ -12,54 +12,72 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="script/script.js" defer></script>
+    <script src="cart.js" defer></script>
     <link rel="icon" type="image/png" href="images/Logo-Vector-blck.svg">
     <title>Cyber</title>
 </head>
 
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+    <nav
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
         <!-- Logo -->
         <div>
-            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo"></a>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
         </div>
 
         <!-- Desktop Search -->
         <div class="search relative hidden sm:block">
-            <input type="text" placeholder="Search" class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <input type="text" placeholder="Search"
+                class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
             <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
                 <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
             </div>
         </div>
 
         <!-- Mobile Search Toggle -->
-        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
         </button>
 
         <!-- Mobile Search Dropdown -->
-        <div id="mobile-search-dropdown" class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
+        <div id="mobile-search-dropdown"
+            class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <input type="text" placeholder="Search"
+                    class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
                 <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
                     <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu" class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
         <!-- Navbar Menu -->
-        <div id="navbar-menu" class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
-            <a id="home-page" href="index.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
-            <a id="about-page" href="about.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
-            <a id="contact-us-page" href="contact-us.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact Us</a>
-            <a id="blog-page" href="blog.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+        <div id="navbar-menu"
+            class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
+            <a id="about-page" href="about.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact
+                Us</a>
+            <a id="blog-page" href="blog.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
 
             <!-- Mobile Icons in Menu -->
             <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
@@ -74,21 +92,28 @@
             <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-heart text-black"></i>
             </a>
-            <a href="shopping cart.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="shopping cart.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-solid fa-cart-shopping text-black"></i>
             </a>
-            <a href="login.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="login.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-user text-black"></i>
             </a>
         </div>
     </nav>
 
-    <div
+    <p id="emptyCartMsg" class="text-center mt-10 hidden h-screen">
+        Your cart is empty 🛒
+    </p>
+
+    <div id="container"
         class="container w-full max-w-[1300px] h-fit mt-15 mb-5 mx-auto flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
 
-        <div class="cart w-full flex-1 h-fit mb-30 font-inter">
+        <div id="cart" class="cart w-full flex-1 h-fit mb-30 font-inter">
             <span class="font-bold text-lg leading-[24px]">Shopping Cart</span>
-            <div
+
+            <!-- <div
                 class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
                 <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/cart phone.svg" alt="">
                 <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 sm:flex-1">
@@ -108,6 +133,7 @@
                                 style="color: rgb(16, 16, 16);"></i></a></span>
                 </div>
             </div>
+
             <div
                 class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
                 <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/pods cart.svg" alt="">
@@ -127,6 +153,7 @@
                                 style="color: rgb(16, 16, 16);"></i></a></span>
                 </div>
             </div>
+
             <div
                 class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
                 <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/watch cart.svg" alt="">
@@ -147,8 +174,9 @@
                     <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs"
                                 style="color: rgb(16, 16, 16);"></i></a></span>
                 </div>
-            </div>
+            </div> -->
         </div>
+
         <div
             class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10  flex flex-col px-[20px] py-[24px] sm:px-10">
             <span class="font-bold text-lg leading-[24px]">Order Summary</span>
@@ -192,8 +220,7 @@
         </div>
 
     </div>
-    </div>
-    </div>
+
     <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
@@ -256,7 +283,7 @@
             </div>
         </div>
     </footer>
-        <script>
+    <script>
         const catLeft = document.querySelector('#cat-left');
         const catRight = document.querySelector('#cat-right');
         const categoryTrack = document.querySelector('#category-track');
