@@ -177,46 +177,61 @@
             </div> -->
         </div>
 
+        <!-- summary -->
         <div
-            class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10  flex flex-col px-[20px] py-[24px] sm:px-10">
-            <span class="font-bold text-lg leading-[24px]">Order Summary</span>
-            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Discount code/ Promo code</span>
+            class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10 flex flex-col px-[20px] py-[20px] sm:px-10 gap-0">
+            <span class="font-bold text-lg leading-[24px] mb-6">Order Summary</span>
+
+            <!-- Discount code -->
+            <span class="text-[13px] font-medium text-[#545454] mb-2">Discount code / Promo code</span>
             <input type="text" name="promo" id="promo" placeholder="Code"
-                class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3">
-            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Your bonus card number</span>
-            <div class="relative">
-                <input type="text" number="bonus-card" id="bonus-card" placeholder="Enter card Number"
-                    class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3 pr-[88px]">
-                <span
-                    class="absolute border-[1px] rounded-[6px] h-[35px] w-[70px] right-[12px] top-1/6 -translate-y-1/2 px-4 py-1 font-inter hover:bg-black hover:text-white cursor-pointer">
+                class="w-full h-[50px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-4 text-[14px] placeholder:text-[#BDBDBD] outline-none focus:border-black transition-colors">
+
+            <!-- Bonus card -->
+            <span class="text-[13px] font-medium text-[#545454] mt-5 mb-2">Your bonus card number</span>
+            <div class="relative flex items-center">
+                <input type="text" id="bonus-card" placeholder="Enter card number"
+                    class="w-full h-[50px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-4 pr-[90px] text-[14px] placeholder:text-[#BDBDBD] outline-none focus:border-black transition-colors">
+                <button
+                    class="absolute right-[10px] h-[34px] px-4 rounded-[5px] border-[0.5px] border-black text-[13px] font-medium hover:bg-black hover:text-white transition-colors cursor-pointer">
                     Apply
-                </span>
-                <div class="flex items-center justify-between gap-4 mt-5">
-                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Subtotal</span>
-                    <span class="font-inter font-medium">$2347</span>
+                </button>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-black/8 my-6"></div>
+
+            <!-- Price breakdown -->
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-[15px] font-semibold">Subtotal</span>
+                    <span class="text-[15px] font-semibold">$2347</span>
                 </div>
-                <div class="mt-4 flex items-center justify-between gap-4">
-                    <span class="text-[#545454]">Estimated Tax</span>
-                    <span>$50</span>
+                <div class="flex items-center justify-between">
+                    <span class="text-[14px] text-[#757575]">Estimated Tax</span>
+                    <span class="text-[14px] text-[#757575]">$50</span>
                 </div>
-                <div class="mt-4 flex items-center justify-between gap-4">
-                    <span class="text-[#545454] whitespace-nowrap">Estimated Shipping and handling</span>
-                    <span>$29</span>
-                </div>
-                <div class="flex items-center justify-between gap-4 mt-5">
-                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Total</span>
-                    <span class="font-inter font-medium">$2426</span>
+                <div class="flex items-center justify-between">
+                    <span class="text-[14px] text-[#757575]">Estimated Shipping</span>
+                    <span class="text-[14px] text-[#757575]">$29</span>
                 </div>
             </div>
+
+            <!-- Divider -->
+            <div class="border-t border-black/8 my-5"></div>
+
+            <!-- Total -->
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-[16px] font-bold">Total</span>
+                <span class="text-[16px] font-bold">$2426</span>
+            </div>
+
             <a href="Address-page.html">
                 <button
-                    class="w-full h-[56px] rounded-[6px] pt-[16px] pb-[16px] px-[24px] bg-[#000000] text-white font-white font-medium mt-5 hover:transform-[scale(1.05)] cursor-pointer">
-
+                    class="w-full h-[52px] rounded-[6px] bg-black text-white text-[15px] font-medium hover:bg-[#1a1a1a] active:scale-[0.99] transition-all cursor-pointer">
                     Checkout
                 </button>
             </a>
-
-
         </div>
 
     </div>
