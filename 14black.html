@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/09dda602fe.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
     <script src="script/script.js" defer></script>
+    <script src="script/products.js" defer></script>
     <link rel="icon" type="image/png" href="/images/Logo-Vector.svg">
     <style>
         .wishlist-heart {
@@ -145,7 +146,7 @@
         <div class="row flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible w-full lg:w-auto justify-center lg:justify-start"
             id="thumbnailRow">
             <div class="column w-12">
-                <img src="images/img8.png"
+                <img id="main_image" src="images/img8.png"
                     class="active w-full h-full opacity-100 cursor-pointer rounded transition-opacity duration-200"
                     alt="Phone" onclick="myFunction(this);" />
             </div>
@@ -175,7 +176,8 @@
 
         <!-- Product Info Container -->
         <div class="product-info flex flex-col w-full max-w-[520px] lg:w-[400px]">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Apple iPhone 14 Pro </h1>
+            <h1 id="phoneName" class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Apple iPhone 14 Pro Space Black
+            </h1>
 
             <div class="price text-2xl sm:text-3xl font-bold mb-4">
                 $<span id="currentPrice">1399</span>
@@ -246,7 +248,7 @@
                     onclick="alert('Added to Wishlist')">Add
                     to Wishlist</button>
                 <button class="flex-1 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition"
-                    onclick="alert('Added to Cart')">Add
+                    id="cartBtn">Add
                     to Cart</button>
             </div>
         </div>
@@ -578,104 +580,37 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-[30px] right-[30px] w-[50px] h-[50px] bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 z-[999]"
+        class="fixed bottom-[30px] right-[30px] w-[50px] h-[50px] bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 z-[40]"
         aria-label="Back to top">
         <i class="fa-solid fa-arrow-up" style="color:#FFFFFF;"></i>
     </button>
 
-    <!-- javascript -->
-    <script>
-        //thumbnail
-        function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            expandImg.src = imgs.src;
-            expandImg.parentElement.style.display = "flex";
+    <!-- mini cart -->
+    <div id="miniCart" class="hidden fixed bottom-5 right-5 w-[320px] bg-white shadow-xl rounded-xl p-4 border
+            translate-y-5 opacity-0 transition-all duration-300 z-50">
 
-            var thumbnails = document.querySelectorAll(".column img");
-            thumbnails.forEach(img => {
-                img.classList.remove("active", "opacity-100", "border-blue-500");
-                img.classList.add("opacity-50", "border-transparent");
-            });
+        <h3 class="font-bold mb-3">Added to cart</h3>
 
-            imgs.classList.remove("opacity-50", "border-transparent");
-            imgs.classList.add("active", "opacity-100", "border-blue-500");
-        }
+        <div id="miniCartItem" class="flex gap-3 items-center">
+            <img id="miniCartImg" class="w-16 h-16 object-cover rounded" />
 
-        //change price on click
-        const storageButtons = document.querySelectorAll('.storage-btn');
-        const currentPriceEl = document.getElementById('currentPrice');
-        const originalPriceEl = document.getElementById('originalPrice');
+            <div class="text-sm">
+                <p id="miniCartName" class="font-semibold"></p>
+                <p id="miniCartVariant" class="text-gray-500"></p>
+                <p id="miniCartPrice" class="font-bold"></p>
+            </div>
+        </div>
 
-        const originalPrices = {
-            '128GB': 1199,
-            '256GB': 1299,
-            '512GB': 1399,
-            '1TB': 1499
-        };
+        <div class="flex gap-2 mt-4">
+            <button id="closeMiniCart" class="flex-1 bg-gray-200 py-2 rounded">
+                Continue
+            </button>
 
-        storageButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active state from all buttons
-                storageButtons.forEach(btn => {
-                    btn.classList.remove('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
-                    btn.classList.add('border', 'border-gray-300', 'text-gray-500');
-                });
-
-                // Add active state to clicked button
-                button.classList.remove('border', 'border-gray-300', 'text-gray-500');
-                button.classList.add('border-2', 'border-black', 'font-semibold', 'bg-white', 'active');
-
-                // Update prices - FIX: use parseInt on dataset.price (just the number)
-                const newPrice = parseInt(button.dataset.price);
-                const storage = button.dataset.storage;
-                const newOriginalPrice = originalPrices[storage];
-
-                currentPriceEl.textContent = newPrice;
-                originalPriceEl.textContent = newOriginalPrice;
-            });
-        });
-
-        // hearts
-        const heartButtons = document.querySelectorAll('.wishlist-heart');
-
-        heartButtons.forEach(heart => {
-            heart.addEventListener('click', function (e) {
-                if (this.tagName === 'A') e.preventDefault();
-
-                this.classList.remove('pop');
-                void this.offsetWidth;
-                this.classList.add('pop');
-                this.classList.toggle('is-liked');
-
-                const icon = this.querySelector('i.fa-heart');
-                if (icon) {
-                    const liked = this.classList.contains('is-liked');
-                    icon.classList.toggle('fa-regular', !liked);
-                    icon.classList.toggle('fa-solid', liked);
-                }
-            });
-
-            heart.addEventListener('animationend', function () {
-                this.classList.remove('pop');
-            });
-        });
-
-        //view more
-        document.getElementById('viewMoreBtn').addEventListener('click', function () {
-            const moreContent = document.getElementById('moreContent');
-            const arrow = this.querySelector('svg');
-
-            if (moreContent.classList.contains('hidden')) {
-                moreContent.classList.remove('hidden');
-                this.innerHTML = `View Less <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
-            } else {
-                moreContent.classList.add('hidden');
-                this.innerHTML = `View More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
-            }
-        });
-
-
-    </script>
+            <button id="goToCartFromMini" class="flex-1 bg-black text-white py-2 rounded">
+                Go to cart
+            </button>
+        </div>
+    </div>
 </body>
 
 </html>

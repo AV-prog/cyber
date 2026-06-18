@@ -11,14 +11,23 @@
     <script src="https://kit.fontawesome.com/09dda602fe.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/353bd79a2e.js" crossorigin="anonymous"></script>
     <script src="script/script.js" defer></script>
+    <script defer src="script/payment.js"></script>
     <link rel="icon" type="image/png" href="images/Logo-Vector.svg">
     <title>Cyber</title>
 
     <style>
         @keyframes heartPop {
-            0% { transform: scale(1); }
-            40% { transform: scale(1.25); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(1.25);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .wishlist-heart.pop {
@@ -42,48 +51,65 @@
 
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+    <nav
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
         <!-- Logo -->
         <div>
-            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo"></a>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
         </div>
 
         <!-- Desktop Search -->
         <div class="search relative hidden sm:block">
-            <input type="text" placeholder="Search" class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <input type="text" placeholder="Search"
+                class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
             <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
                 <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
             </div>
         </div>
 
         <!-- Mobile Search Toggle -->
-        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
         </button>
 
         <!-- Mobile Search Dropdown -->
-        <div id="mobile-search-dropdown" class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
+        <div id="mobile-search-dropdown"
+            class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <input type="text" placeholder="Search"
+                    class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
                 <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
                     <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu" class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
         <!-- Navbar Menu -->
-        <div id="navbar-menu" class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
-            <a id="home-page" href="index.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
-            <a id="about-page" href="about.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
-            <a id="contact-us-page" href="contact-us.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact Us</a>
-            <a id="blog-page" href="blog.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+        <div id="navbar-menu"
+            class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
+            <a id="about-page" href="about.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact
+                Us</a>
+            <a id="blog-page" href="blog.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
 
             <!-- Mobile Icons in Menu -->
             <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
@@ -98,10 +124,12 @@
             <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-heart text-black"></i>
             </a>
-            <a href="shopping cart.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="shopping cart.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-solid fa-cart-shopping text-black"></i>
             </a>
-            <a href="login.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="login.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-user text-black"></i>
             </a>
         </div>
@@ -159,33 +187,33 @@
                 <h2 class="text-[18px] font-bold mb-6">Summary</h2>
 
                 <!-- items -->
-                <div class="space-y-4 mb-6">
-                    <!-- item 1 -->
+                <div id="items" class="space-y-4 mb-6">
+                    <!-- item 1
                     <div class="flex items-center gap-4 bg-gray-100 rounded-xl p-5">
                         <img src="images/payment-hp (2).png" alt="iPhone" class="w-12 h-12 object-contain">
                         <div class="flex-1">
                             <p class="text-sm font-medium">Apple iPhone 14 Pro Max 128Gb</p>
                         </div>
                         <p class="font-bold">$1399</p>
-                    </div>
+                    </div> -->
 
-                    <!-- item 2 -->
+                    <!-- item 2
                     <div class="flex items-center gap-4 bg-gray-100 rounded-xl p-5">
                         <img src="images/payment-hp (1).png" alt="AirPods" class="w-12 h-12 object-contain">
                         <div class="flex-1">
                             <p class="text-sm font-medium">AirPods Max Silver</p>
                         </div>
                         <p class="font-bold">$549</p>
-                    </div>
+                    </div> -->
 
                     <!-- item 3 -->
-                    <div class="flex items-center gap-4 bg-gray-100 rounded-xl p-5">
+                    <!-- <div class="flex items-center gap-4 bg-gray-100 rounded-xl p-5">
                         <img src="images/payment-hp (3).png" alt="Watch" class="w-12 h-12 object-contain">
                         <div class="flex-1">
                             <p class="text-sm font-medium">Apple Watch Series 9 GPS 41mm</p>
                         </div>
                         <p class="font-bold">$399</p>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- address & shipment -->
@@ -202,7 +230,7 @@
 
                 <!-- Totals -->
                 <div class="space-y-3 pt-4 border-t border-gray-300">
-                    <div class="flex justify-between text-md">
+                    <!-- <div class="flex justify-between text-md">
                         <span class="text-gray-600">Subtotal</span>
                         <span class="font-medium">$2347</span>
                     </div>
@@ -213,10 +241,10 @@
                     <div class="flex justify-between text-md">
                         <span class="text-gray-600">Estimated shipping & Handling</span>
                         <span class="font-medium">$29</span>
-                    </div>
+                    </div> -->
                     <div class="flex justify-between text-xl font-bold pt-2">
                         <span>Total</span>
-                        <span>$2426</span>
+                        <span id="total"></span>
                     </div>
                 </div>
             </div>

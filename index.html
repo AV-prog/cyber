@@ -1043,7 +1043,8 @@
 
         //popup
         document.addEventListener("DOMContentLoaded", function () {
-
+            const POPUP_KEY = "welcome_popup_last_shown";
+            const ONE_DAY = 24 * 60 * 60 * 1000;
             const popup = document.getElementById('welcomePopup');
             const content = document.getElementById('popupContent');
             const welcomeText = document.getElementById('welcomeText');
@@ -1054,6 +1055,15 @@
                 return;
             }
 
+            function shouldShowPopup() {
+                const lastShown = localStorage.getItem(POPUP_KEY);
+
+                if (!lastShown) return true;
+
+                const now = Date.now();
+                return now - Number(lastShown) > ONE_DAY;
+            }
+
             function openPopup() {
                 document.body.style.overflow = "hidden";
 
@@ -1062,6 +1072,8 @@
 
                 setTimeout(() => welcomeText.classList.add('active'), 200);
                 setTimeout(() => subText.classList.add('active'), 400);
+
+                localStorage.setItem(POPUP_KEY, Date.now());
             }
 
             function closePopup() {
@@ -1075,7 +1087,11 @@
                 }, 400);
             }
 
-            setTimeout(openPopup, 500);
+            setTimeout(() => {
+                if (shouldShowPopup()) {
+                    openPopup();
+                }
+            }, 500);
 
             // close interactions
             popup.addEventListener('click', (e) => {

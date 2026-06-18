@@ -12,54 +12,72 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="script/script.js" defer></script>
+    <script src="script/cart.js" defer></script>
     <link rel="icon" type="image/png" href="images/Logo-Vector-blck.svg">
     <title>Cyber</title>
 </head>
 
 <body>
     <!-- Navbar Section -->
-    <nav class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+    <nav
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
         <!-- Logo -->
         <div>
-            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg" alt="Cyber Logo"></a>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
         </div>
 
         <!-- Desktop Search -->
         <div class="search relative hidden sm:block">
-            <input type="text" placeholder="Search" class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <input type="text" placeholder="Search"
+                class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
             <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
                 <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
             </div>
         </div>
 
         <!-- Mobile Search Toggle -->
-        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden" aria-label="Toggle search" aria-expanded="false">
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden"
+            aria-label="Toggle search" aria-expanded="false">
             <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
         </button>
 
         <!-- Mobile Search Dropdown -->
-        <div id="mobile-search-dropdown" class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
+        <div id="mobile-search-dropdown"
+            class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
             <div class="relative">
-                <input type="text" placeholder="Search" class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <input type="text" placeholder="Search"
+                    class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
                 <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
                     <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu" class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden" aria-label="Toggle menu" aria-expanded="false">
-            <span id="bar1" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar2" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
-            <span id="bar3" class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        <button id="mobile-menu"
+            class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
         </button>
 
         <!-- Navbar Menu -->
-        <div id="navbar-menu" class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
-            <a id="home-page" href="index.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
-            <a id="about-page" href="about.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
-            <a id="contact-us-page" href="contact-us.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact Us</a>
-            <a id="blog-page" href="blog.html" class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+        <div id="navbar-menu"
+            class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
+            <a id="about-page" href="about.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact
+                Us</a>
+            <a id="blog-page" href="blog.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
 
             <!-- Mobile Icons in Menu -->
             <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
@@ -74,41 +92,75 @@
             <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-heart text-black"></i>
             </a>
-            <a href="shopping cart.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="shopping cart.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-solid fa-cart-shopping text-black"></i>
             </a>
-            <a href="login.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="login.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-user text-black"></i>
             </a>
         </div>
     </nav>
 
-    <div
+    <div id="emptyCartMsg" class="hidden flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center px-4">
+
+        <!-- icon -->
+        <div class="w-20 h-20 rounded-full bg-neutral-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-neutral-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6h13M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z" />
+            </svg>
+        </div>
+
+        <!-- text -->
+        <div class="flex flex-col gap-1">
+            <h2 class="text-lg font-bold text-neutral-900">Your cart is empty</h2>
+            <p class="text-sm text-neutral-600 max-w-[260px]">
+                Looks like you haven't added anything yet. Start browsing to find something you'll love.
+            </p>
+        </div>
+
+        <!-- ctas -->
+        <div class="flex gap-3 flex-wrap justify-center">
+            <a href="products.html"
+                class="px-6 py-2.5 bg-black text-white text-sm font-medium rounded-md hover:opacity-85 transition-opacity">
+                Shop now
+            </a>
+            <a href="wishlist.html"
+                class="px-6 py-2.5 text-sm text-neutral-600 border border-neutral-300 rounded-md hover:bg-neutral-50 transition-colors">
+                View wishlist
+            </a>
+        </div>
+
+        <!-- categories -->
+        <hr class="w-full max-w-sm border-neutral-200 my-1" />
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Browse categories</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Phones
+            </a>
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Cameras
+            </a>
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Headphones
+            </a>
+        </div>
+
+    </div>
+
+    <div id="container"
         class="container w-full max-w-[1300px] h-fit mt-15 mb-5 mx-auto flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
 
-        <div class="cart w-full flex-1 h-fit mb-30 font-inter">
+        <div id="cart" class="cart w-full flex-1 h-fit mb-30 font-inter">
             <span class="font-bold text-lg leading-[24px]">Shopping Cart</span>
-            <div
-                class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
-                <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/cart phone.svg" alt="">
-                <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 sm:flex-1">
-                    <span>Apple iphone 14 Pro Max</span>
-                    <span class="">128GB Deep purple</span>
-                    <span class="font-regular text-[11px] mt-2">#25139526913984</span>
-                </div>
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-2 sm:ml-auto sm:mt-7">
-                    <span class="text-[22px] cursor-pointer"><i class="fa-sharp fa-solid fa-minus fa-2xs"
-                            style="color: rgb(16, 16, 16);"></i></span>
-                    <span
-                        class="w-[35px] h-[27px] cursor-none border-[0.5px] border-[#D9D9D9] pl-[10px] pr-[10px] pt-[2px] pb-[2px] rounded-[4px]">1</span>
-                    <span class="text-[20px] cursor-pointer"><i class="fa-sharp fa-solid fa-plus fa-2xs"
-                            style="color: rgb(16, 16, 16);"></i></span>
-                    <span class="ml-4">$1399</span>
-                    <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs"
-                                style="color: rgb(16, 16, 16);"></i></a></span>
-                </div>
-            </div>
-            <div
+
+            <!-- <div
                 class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
                 <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/pods cart.svg" alt="">
                 <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 sm:flex-1">
@@ -126,74 +178,68 @@
                     <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs"
                                 style="color: rgb(16, 16, 16);"></i></a></span>
                 </div>
-            </div>
-            <div
-                class="mt-9 flex w-full flex-col gap-[16px] border-b-[0.5px] border-b-[#A3A3A3] pb-[16px] sm:flex-row sm:items-start">
-                <img class="mx-auto mb-4 w-[120px] sm:mx-0 sm:mb-0 sm:w-[96px]" src="images/watch cart.svg" alt="">
-                <div class="flex flex-col text-[13px] font-semibold gap-y-1/2 font-inter sm:flex-1">
-                    <span>Apple Watch Series 9</span>
-                    <span>GPS 41mm Starlight</span>
-                    <span>Aluminium</span>
-                    <span class="font-regular text-[11px] mt-2">#25139526913984</span>
-                </div>
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-2 sm:ml-auto sm:mt-7">
-                    <span class="text-[22px] cursor-pointer"><i class="fa-sharp fa-solid fa-minus fa-2xs"
-                            style="color: rgb(16, 16, 16);"></i></span>
-                    <span
-                        class="w-[35px] h-[27px] cursor-none border-[0.5px] border-[#D9D9D9] pl-[10px] pr-[10px] pt-[2px] pb-[2px] rounded-[4px]">1</span>
-                    <span class="text-[20px] cursor-pointer"><i class="fa-sharp fa-solid fa-plus fa-2xs"
-                            style="color: rgb(16, 16, 16);"></i></span>
-                    <span class="ml-4">$399</span>
-                    <span class="ml-4"><a href=""><i class="fa-sharp fa-solid fa-xmark fa-2xs"
-                                style="color: rgb(16, 16, 16);"></i></a></span>
-                </div>
-            </div>
+            </div> -->
         </div>
+
+        <!-- summary -->
         <div
-            class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10  flex flex-col px-[20px] py-[24px] sm:px-10">
-            <span class="font-bold text-lg leading-[24px]">Order Summary</span>
-            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Discount code/ Promo code</span>
+            class="total w-full lg:w-[536px] rounded-[10px] h-fit shrink-0 mb-30 border-[1px] border-black/10 flex flex-col px-[20px] py-[20px] sm:px-10 gap-0">
+            <span class="font-bold text-lg leading-[24px] mb-6">Order Summary</span>
+
+            <!-- Discount code -->
+            <span class="text-[13px] font-medium text-[#545454] mb-2">Discount code / Promo code</span>
             <input type="text" name="promo" id="promo" placeholder="Code"
-                class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3">
-            <span class="mt-5 font-inter font-medium  font-[14px] text-[#545454]">Your bonus card number</span>
-            <div class="relative">
-                <input type="text" number="bonus-card" id="bonus-card" placeholder="Enter card Number"
-                    class="w-full h-[56px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-5 mt-3 pr-[88px]">
-                <span
-                    class="absolute border-[1px] rounded-[6px] h-[35px] w-[70px] right-[12px] top-1/6 -translate-y-1/2 px-4 py-1 font-inter hover:bg-black hover:text-white cursor-pointer">
+                class="w-full h-[50px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-4 text-[14px] placeholder:text-[#BDBDBD] outline-none focus:border-black transition-colors">
+
+            <!-- Bonus card -->
+            <span class="text-[13px] font-medium text-[#545454] mt-5 mb-2">Your bonus card number</span>
+            <div class="relative flex items-center">
+                <input type="text" id="bonus-card" placeholder="Enter card number"
+                    class="w-full h-[50px] rounded-[7px] border-[0.5px] border-[#9F9F9F] pl-4 pr-[90px] text-[14px] placeholder:text-[#BDBDBD] outline-none focus:border-black transition-colors">
+                <button
+                    class="absolute right-[10px] h-[34px] px-4 rounded-[5px] border-[0.5px] border-black text-[13px] font-medium hover:bg-black hover:text-white transition-colors cursor-pointer">
                     Apply
-                </span>
-                <div class="flex items-center justify-between gap-4 mt-5">
-                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Subtotal</span>
-                    <span class="font-inter font-medium">$2347</span>
-                </div>
-                <div class="mt-4 flex items-center justify-between gap-4">
-                    <span class="text-[#545454]">Estimated Tax</span>
-                    <span>$50</span>
-                </div>
-                <div class="mt-4 flex items-center justify-between gap-4">
-                    <span class="text-[#545454] whitespace-nowrap">Estimated Shipping and handling</span>
-                    <span>$29</span>
-                </div>
-                <div class="flex items-center justify-between gap-4 mt-5">
-                    <span class="font-inter font-semibold tracking-[0.03em] text-[15px]">Total</span>
-                    <span class="font-inter font-medium">$2426</span>
-                </div>
+                </button>
             </div>
+
+            <!-- Divider
+            <div class="border-t border-black/8 my-6"></div> -->
+
+            <!-- Price breakdown
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-[15px] font-semibold">Subtotal</span>
+                    <span class="text-[15px] font-semibold">$2347</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[14px] text-[#757575]">Estimated Tax</span>
+                    <span class="text-[14px] text-[#757575]">$50</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[14px] text-[#757575]">Estimated Shipping</span>
+                    <span class="text-[14px] text-[#757575]">$29</span>
+                </div>
+            </div> -->
+
+            <!-- Divider -->
+            <div class="border-t border-black/8 my-5"></div>
+
+            <!-- Total -->
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-[16px] font-bold">Total</span>
+                <span id="total" class="text-[16px] font-bold"></span>
+            </div>
+
             <a href="Address-page.html">
                 <button
-                    class="w-full h-[56px] rounded-[6px] pt-[16px] pb-[16px] px-[24px] bg-[#000000] text-white font-white font-medium mt-5 hover:transform-[scale(1.05)] cursor-pointer">
-
+                    class="w-full h-[52px] rounded-[6px] bg-black text-white text-[15px] font-medium hover:bg-[#1a1a1a] active:scale-[0.99] transition-all cursor-pointer">
                     Checkout
                 </button>
             </a>
-
-
         </div>
 
     </div>
-    </div>
-    </div>
+
     <!-- footer -->
     <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
         <div
@@ -256,7 +302,7 @@
             </div>
         </div>
     </footer>
-        <script>
+    <script>
         const catLeft = document.querySelector('#cat-left');
         const catRight = document.querySelector('#cat-right');
         const categoryTrack = document.querySelector('#category-track');
