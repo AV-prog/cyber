@@ -254,7 +254,7 @@
 
             <!-- Mobile Icons in Menu -->
             <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
-                <a href="" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
+                <a href="wishlist.html" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
                 <a href="shopping cart.html" class="text-xl"><i class="fa-solid fa-cart-shopping text-black"></i></a>
                 <a href="login.html" class="text-xl"><i class="fa-regular fa-user text-black"></i></a>
             </div>
@@ -262,7 +262,7 @@
 
         <!-- Desktop Icons -->
         <div class="hidden sm:flex items-center justify-between w-[126px] h-8 ml-5">
-            <a href="" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+            <a href="wishlist.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                 <i class="fa-regular fa-heart text-black"></i>
             </a>
             <a href="shopping cart.html"
@@ -1017,26 +1017,59 @@
                 showSection(defaultTab.getAttribute('href').slice(1));
             }
 
-            // New arrivals heart toggle
-            const newArrivalHearts = document.querySelectorAll('#new-arrivals button');
-            newArrivalHearts.forEach((button) => {
+            const getWishlist = () => JSON.parse(localStorage.getItem('wishlist')) || [];
+            const setWishlist = (wishlist) => localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            const makeWishlistId = (name) => `wishlist-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+            const getStorageFromName = (name) => {
+                const match = name.match(/\b\d+\s?(GB|TB)\b/i);
+                return match ? match[0].replace(/\s+/g, '').toUpperCase() : 'Standard';
+            };
+            const getProductFromCard = (card) => {
+                const image = card.querySelector('img');
+                const name = card.querySelector('p:not([class*="text-2xl"])')?.textContent.trim();
+                const priceText = card.querySelector('p[class*="text-2xl"]')?.textContent || '0';
+                const unitPrice = Number(priceText.replace(/[^0-9.]/g, ''));
+
+                return {
+                    id: makeWishlistId(name || image?.alt || 'product'),
+                    name: name || image?.alt || 'Product',
+                    storage: getStorageFromName(name || ''),
+                    unitPrice,
+                    image: image?.getAttribute('src') || '',
+                    quantity: 1
+                };
+            };
+            const setHeartState = (button, liked) => {
+                const icon = button.querySelector('i');
+                if (!icon) return;
+
+                icon.classList.toggle('fa-solid', liked);
+                icon.classList.toggle('fa-regular', !liked);
+                button.classList.toggle('text-red-500', liked);
+                button.classList.toggle('text-gray-400', !liked);
+                button.classList.add('transition-colors');
+            };
+
+            document.querySelectorAll('#new-arrivals button, .discount-grid button').forEach((button) => {
+                const card = button.closest('.relative');
+                if (!card) return;
+
+                const item = getProductFromCard(card);
+                setHeartState(button, getWishlist().some(product => product.id === item.id));
+
                 button.addEventListener('click', function () {
-                    const icon = this.querySelector('i');
-                    if (!icon) return;
+                    const wishlist = getWishlist();
+                    const existingIndex = wishlist.findIndex(product => product.id === item.id);
+                    const isLiked = existingIndex !== -1;
 
-                    const isFilled = icon.classList.contains('fa-solid');
-
-                    if (isFilled) {
-                        icon.classList.remove('fa-solid');
-                        icon.classList.add('fa-regular');
-                        this.classList.remove('text-red-500');
-                        this.classList.add('text-gray-400', 'hover:text-red-500', 'transition-colors');
+                    if (isLiked) {
+                        wishlist.splice(existingIndex, 1);
                     } else {
-                        icon.classList.remove('fa-regular');
-                        icon.classList.add('fa-solid');
-                        this.classList.remove('text-gray-400', 'hover:text-red-500');
-                        this.classList.add('text-red-500', 'transition-colors');
+                        wishlist.push(item);
                     }
+
+                    setWishlist(wishlist);
+                    setHeartState(this, !isLiked);
                 });
             });
         });

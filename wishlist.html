@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0e17cc80b3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script/script.js" defer></script>
+    <script src="script/wishlist.js" defer></script>
+    <link rel="icon" type="image/png" href="images/Logo-Vector-blck.svg">
+    <title>Cyber</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav
+        class="relative w-full bg-white sm:border-b sm:border-[#B5B5B5] z-[10000] h-[80px] flex items-center justify-between px-5 sm:h-[88px] sm:px-[80px] lg:max-w-[1300px] lg:mx-auto lg:px-[140px]">
+        <!-- Logo -->
+        <div>
+            <a href="index.html"><img id="navbar__logo" class="object-scale-down" src="images/cyber black.svg"
+                    alt="Cyber Logo"></a>
+        </div>
+
+        <!-- Desktop Search -->
+        <div class="search relative hidden sm:block">
+            <input type="text" placeholder="Search"
+                class="w-[280px] h-[48px] bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-4 lg:w-[326px] lg:h-[56px]">
+            <div class="search-icon absolute w-5 h-5 left-3 top-1/2 -translate-y-1/2 lg:w-6 lg:h-6">
+                <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
+            </div>
+        </div>
+
+        <!-- Mobile Search Toggle -->
+        <button id="mobile-search-toggle" class="absolute top-1/2 right-[22%] -translate-y-1/2 z-[100] sm:hidden"
+            aria-label="Toggle search" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-magnifying-glass opacity-60 text-black"></i>
+        </button>
+
+        <!-- Mobile Search Dropdown -->
+        <div id="mobile-search-dropdown"
+            class="absolute left-0 top-full w-full px-6 py-2.5 bg-white border-b border-[#B5B5B5] opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out z-[98] sm:hidden">
+            <div class="relative">
+                <input type="text" placeholder="Search"
+                    class="w-full h-12 bg-[#F5F5F5] pl-10 text-[#656565] text-base font-medium outline-none rounded-lg p-3">
+                <div class="absolute w-6 h-6 left-3 top-1/2 -translate-y-1/2">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass text-[#656565]"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu"
+            class=" absolute top-[25%] right-[5%] translate-x-[5%] translate-y-[20%] z-[100]sm:hidden lg:hidden"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span id="bar1"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar2"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+            <span id="bar3"
+                class="block w-[25px] h-[3px] my-[5px] mx-auto bg-black transition-all duration-300 ease-in-out cursor-pointer"></span>
+        </button>
+
+        <!-- Navbar Menu -->
+        <div id="navbar-menu"
+            class="nav fixed inset-x-0 top-[80px] bg-white transition-all duration-500 ease-in-out z-[99] overflow-hidden max-h-0 sm:static sm:max-h-none sm:overflow-visible sm:flex sm:items-center sm:gap-x-11 sm:bg-transparent sm:w-auto lg:gap-x-[45px] [&.active]:max-h-[60vh] [&.active]:border-b [&.active]:border-[#B5B5B5]">
+            <a id="home-page" href="index.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Home</a>
+            <a id="about-page" href="about.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">About</a>
+            <a id="contact-us-page" href="contact-us.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Contact
+                Us</a>
+            <a id="blog-page" href="blog.html"
+                class="block w-[20px] sm:w-full px-6 py-4 text-lg font-medium text-black opacity-60 hover:opacity-100 transition-opacity sm:inline sm:px-0 sm:py-0 sm:text-base sm:opacity-30 sm:hover:opacity-100">Blog</a>
+
+            <!-- Mobile Icons in Menu -->
+            <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
+                <a href="wishlist.html" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
+                <a href="shopping cart.html" class="text-xl"><i class="fa-solid fa-cart-shopping text-black"></i></a>
+                <a href="login.html" class="text-xl"><i class="fa-regular fa-user text-black"></i></a>
+            </div>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="hidden sm:flex items-center justify-between w-[126px] h-8 ml-5">
+            <a href="wishlist.html" class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-regular fa-heart text-black"></i>
+            </a>
+            <a href="shopping cart.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-solid fa-cart-shopping text-black"></i>
+            </a>
+            <a href="login.html"
+                class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                <i class="fa-regular fa-user text-black"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div id="emptyCartMsg" class="hidden flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center px-4">
+
+        <!-- icon -->
+        <div class="w-20 h-20 rounded-full bg-neutral-100 flex items-center justify-center mt-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+        </div>
+
+        <!-- text -->
+        <div class="flex flex-col gap-1">
+            <h2 class="text-lg font-bold text-neutral-900">Your wishlist is empty</h2>
+            <p class="text-sm text-neutral-600 max-w-[260px]">
+                Looks like you haven't added anything yet. Start browsing to find something you'll love.
+            </p>
+        </div>
+
+        <!-- ctas -->
+        <div class="flex gap-3 flex-wrap justify-center">
+            <a href="products.html"
+                class="px-6 py-2.5 bg-black text-white text-sm font-medium rounded-md hover:opacity-85 transition-opacity">
+                Shop now
+            </a>
+        </div>
+
+        <!-- categories -->
+        <hr class="w-full max-w-sm border-neutral-200 my-1" />
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Browse categories</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Phones
+            </a>
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Cameras
+            </a>
+            <a href="#"
+                class="flex items-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl text-sm font-medium hover:bg-neutral-50 transition-colors">
+                Headphones
+            </a>
+        </div>
+
+    </div>
+
+    <div id="container"
+        class="container w-full max-w-[1300px] h-fit mt-15 mb-5 mx-auto flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[40px] px-[24px] md:px-[40px] lg:px-[60px]">
+
+        <div id="cart" class="cart w-full flex-1 h-fit mb-30 font-inter">
+            <span class="font-bold text-lg leading-[24px]">Wishlist</span>
+
+
+        </div>
+    </div>
+
+    <!-- mini cart -->
+    <div id="miniCart" class="hidden fixed bottom-5 right-5 w-[calc(100%-40px)] max-w-[320px] bg-white shadow-xl rounded-xl p-4 border
+            translate-y-5 opacity-0 transition-all duration-300 z-50">
+
+        <h3 class="font-bold mb-3">Added to cart</h3>
+
+        <div id="miniCartItem" class="flex gap-3 items-center">
+            <img id="miniCartImg" class="w-16 h-16 object-cover rounded" alt="">
+
+            <div class="text-sm min-w-0">
+                <p id="miniCartName" class="font-semibold truncate"></p>
+                <p id="miniCartVariant" class="text-gray-500"></p>
+                <p id="miniCartPrice" class="font-bold"></p>
+            </div>
+        </div>
+
+        <div class="flex gap-2 mt-4">
+            <button id="closeMiniCart" class="flex-1 bg-gray-200 py-2 rounded">
+                Continue
+            </button>
+
+            <button id="goToCartFromMini" class="flex-1 bg-black text-white py-2 rounded">
+                Go to cart
+            </button>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="w-full mt-[20px] bg-black px-[24px] py-[56px] md:px-[40px] lg:px-[60px]">
+        <div
+            class="mx-auto grid w-full max-w-[1300px] gap-[40px] md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
+            <div class="font-inter">
+                <div
+                    class=" txt flex max-w-[280px] flex-col gap-[6px] pt-[4px] text-[12px] font-medium text-[#CFCFCF] mt-1">
+                    <div class="logo">
+                        <img src="images/cyber white.svg" alt="logo">
+                    </div>
+                    <span>We are a residential interior design firm located in</span>
+                    <span>Portland. Our boutique-studio offers more than</span>
+                </div>
+                <div class="mt-[24px] flex flex-wrap items-center gap-[24px] text-white">
+                    <span>
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram fa-sm" style="color:#FFFFFF;"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Services</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Bonus Program</a></span>
+                    <span><a href="#">Gift Cards</a></span>
+                    <span><a href="#">Credit and Payment</a></span>
+                    <span><a href="#">Service Contracts</a></span>
+                    <span><a href="#">Non-cash Accounts</a></span>
+                    <span><a href="#">Payment</a></span>
+                </div>
+            </div>
+
+            <div class="font-inter text-white">
+                <span class="text-[17px] font-semibold">Assistacnce to the buyer</span>
+                <div class="mt-[12px] flex flex-col gap-[12px] text-[12px] font-medium text-[#CFCFCF]">
+                    <span><a href="#">Find an order</a></span>
+                    <span><a href="#">Terms of delivery</a></span>
+                    <span><a href="#">Exchange and return of goods</a></span>
+                    <span><a href="#">Guarantee</a></span>
+                    <span><a href="#">Frequently asked questions</a></span>
+                    <span><a href="#">Terms of use of the site</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const catLeft = document.querySelector('#cat-left');
+        const catRight = document.querySelector('#cat-right');
+        const categoryTrack = document.querySelector('#category-track');
+
+        if (catLeft && catRight && categoryTrack) {
+            let categoryIndex = 0;
+            const visibleCards = 6;
+            const scrollCards = 2;
+
+            const getMaxIndex = () => {
+                const totalCards = categoryTrack.querySelectorAll('a').length;
+                const hiddenCards = Math.max(totalCards - visibleCards, 0);
+                return Math.ceil(hiddenCards / scrollCards);
+            };
+
+            const getStep = () => {
+                const firstCard = categoryTrack.querySelector('a');
+                if (!firstCard) return 0;
+                const gap = parseFloat(getComputedStyle(categoryTrack).columnGap || getComputedStyle(categoryTrack).gap || '0');
+                return firstCard.getBoundingClientRect().width + gap;
+            };
+
+            const updateCategorySlider = () => {
+                const step = getStep();
+                categoryTrack.style.transform = `translateX(-${categoryIndex * step * scrollCards}px)`;
+                const maxIndex = getMaxIndex();
+                catLeft.classList.toggle('opacity-40', categoryIndex === 0);
+                catRight.classList.toggle('opacity-40', categoryIndex === maxIndex);
+            };
+
+            catRight.addEventListener('click', () => {
+                const maxIndex = getMaxIndex();
+                if (categoryIndex < maxIndex) {
+                    categoryIndex += 1;
+                    updateCategorySlider();
+                }
+            });
+
+            catLeft.addEventListener('click', () => {
+                if (categoryIndex > 0) {
+                    categoryIndex -= 1;
+                    updateCategorySlider();
+                }
+            });
+
+            updateCategorySlider();
+        }
+    </script>
+</body>
+
+</html>

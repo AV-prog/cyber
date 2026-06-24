@@ -336,7 +336,7 @@
 
                 <!-- Mobile Icons in Menu -->
                 <div class="flex justify-evenly items-center gap-6 px-6 py-6 sm:hidden">
-                    <a href="" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
+                    <a href="wishlist.html" class="text-xl"><i class="fa-regular fa-heart text-black"></i></a>
                     <a href="shopping cart.html" class="text-xl"><i
                             class="fa-solid fa-cart-shopping text-black"></i></a>
                     <a href="login.html" class="text-xl"><i class="fa-regular fa-user text-black"></i></a>
@@ -345,7 +345,7 @@
 
             <!-- Desktop Icons -->
             <div class="hidden sm:flex items-center justify-between w-[126px] h-8 ml-5">
-                <a href=""
+                <a href="wishlist.html"
                     class="h-8 w-8 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
                     <i class="fa-regular fa-heart text-black"></i>
                 </a>
@@ -1161,12 +1161,27 @@
         (function () {
             const storageKey = 'productsWishlistHearts';
             const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+            const getWishlist = () => JSON.parse(localStorage.getItem('wishlist')) || [];
+            const setWishlist = (wishlist) => localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            const makeWishlistId = (name) => `wishlist-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 
             const getCardId = (card, index) => {
-                const titleWrap = card.querySelector('.image1 > span:last-child');
-                const raw = titleWrap ? titleWrap.childNodes[0]?.textContent || '' : '';
-                const title = raw.trim().replace(/\s+/g, ' ');
-                return title || `product-${index}`;
+                const title = card.querySelector('h3')?.textContent.trim().replace(/\s+/g, ' ');
+                return title ? makeWishlistId(title) : `product-${index}`;
+            };
+
+            const getCardItem = (card, id) => {
+                const name = card.querySelector('h3')?.textContent.trim().replace(/\s+/g, ' ') || 'Product';
+                const priceText = card.querySelector('p')?.textContent || '0';
+                const image = card.querySelector('img')?.getAttribute('src') || '';
+
+                return {
+                    id,
+                    name,
+                    unitPrice: Number(priceText.replace(/[^0-9.]/g, '')) || 0,
+                    image,
+                    quantity: 1
+                };
             };
 
             const hearts = document.querySelectorAll('.product-card i.fa-heart');
@@ -1178,6 +1193,7 @@
                 if (!card) return;
 
                 const id = getCardId(card, index);
+                const item = getCardItem(card, id);
                 heart.style.cursor = 'pointer';
 
                 const setState = (liked) => {
@@ -1200,6 +1216,19 @@
                     setState(liked);
                     saved[id] = liked;
                     localStorage.setItem(storageKey, JSON.stringify(saved));
+
+                    const wishlist = getWishlist();
+                    const existingIndex = wishlist.findIndex(product => String(product.id) === String(id));
+
+                    if (liked && existingIndex === -1) {
+                        wishlist.push(item);
+                    }
+
+                    if (!liked && existingIndex !== -1) {
+                        wishlist.splice(existingIndex, 1);
+                    }
+
+                    setWishlist(wishlist);
                 });
 
                 heart.addEventListener('animationend', function () {
